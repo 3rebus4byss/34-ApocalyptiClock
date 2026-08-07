@@ -15,6 +15,10 @@
        goes here once approved
      ============================================================ -->
 <!-- PASTE MONETAG SITE TAG HERE -->
+<script>(function(s){s.dataset.zone='11527783',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+<!-- Adsterra Popunder removed -- it hijacked the visitor's first click on
+     the page to open a new tab, which is bad UX for a small site like this.
+     Banner + Native Banner ads below are non-intrusive and kept instead. -->
 <!-- PASTE ADSENSE VERIFICATION/AUTO-ADS TAG HERE (once approved) -->
 <!-- ============================================================ -->
 <style>
@@ -248,7 +252,6 @@ const ROTATION_HOURS = 6; // categories cycle through hourly runs, 6 categories 
 
 function parseTimestamp(ts) {
   if (!ts) return null;
-  // "2026-08-07 18:00:00 UTC" -> "2026-08-07T18:00:00Z"
   const iso = ts.replace(' UTC', 'Z').replace(' ', 'T');
   const d = new Date(iso);
   return isNaN(d.getTime()) ? null : d;
@@ -266,9 +269,7 @@ function formatRelative(date) {
 function saveFilters() {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(enabled)));
-  } catch (e) {
-    // localStorage unavailable (e.g. private browsing) -- filters just won't persist
-  }
+  } catch (e) {}
 }
 
 function loadSavedFilters(allCategoryIds) {
