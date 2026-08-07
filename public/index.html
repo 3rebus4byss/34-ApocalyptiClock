@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ApocalyptiClock — An AI's Reading of Current Events</title>
+<style>
+  :root {
+    --bg: #0b0b0c;
+    --panel: #161618;
+    --border: #2a2a2e;
+    --text: #f0f0f2;
+    --muted: #a1a1aa;
+    --dim: #71717a;
+    --accent: #ef4444;
+    --accent-dim: #7f1d1d;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 40px 16px;
+  }
+  .container { max-width: 640px; margin: 0 auto; }
+  .disclaimer {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+  .disclaimer strong { color: var(--text); }
+  h1 {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    color: var(--muted);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .subhead {
+    text-align: center;
+    color: var(--dim);
+    font-size: 0.85rem;
+    margin-bottom: 30px;
+  }
+  .clock-panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 20px;
+    text-align: center;
+  }
+  .clock-display { font-size: 3.5rem; font-weight: 800; color: var(--accent); margin: 0; }
+  .clock-label { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+  .timestamp { font-size: 0.78rem; color: var(--dim); margin-top: 18px; }
+
+  .filter-panel {
+    margin-top: 20px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .filter-title {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+  .filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+  }
+  .filter-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--text);
+    cursor: pointer;
+    user-select: none;
+    padding: 6px 4px;
+  }
+  .filter-item input { accent-color: var(--accent); width: 16px; height: 16px; cursor: pointer; }
+  .filter-item .contrib {
+    margin-left: auto;
+    font-size: 0.76rem;
+    color: var(--dim);
+  }
+  .filter-schedule {
+    font-size: 0.68rem;
+    color: var(--dim);
+    padding-left: 24px;
+    margin: -4px 0 6px 0;
+  }
+  .filter-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 14px;
+  }
+  .filter-actions button {
+    background: none;
+    border: none;
+    color: var(--dim);
+    font-size: 0.76rem;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+  }
+  .filter-actions button:hover { color: var(--text); }
+
+  h2 {
+    font-size: 1rem;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-top: 40px;
+  }
+  .entry {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .entry:last-child { border-bottom: none; }
+  .entry-time { font-size: 0.72rem; color: var(--dim); margin-bottom: 8px; }
+  .cat-row {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .cat-row.dimmed { opacity: 0.35; }
+  .cat-tag {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--accent);
+    white-space: nowrap;
+    min-width: 92px;
+  }
+  .cat-delta { color: var(--dim); font-size: 0.72rem; white-space: nowrap; }
+  .cat-status-nodata { color: var(--dim); font-size: 0.72rem; font-style: italic; }
+  .cat-rationale { font-size: 0.86rem; color: #d4d4d8; line-height: 1.5; }
+  .cat-sources a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--dim);
+    margin-right: 10px;
+    font-size: 0.74rem;
+  }
+  .cat-sources a:hover { color: var(--text); }
+
+  .ad-slot {
+    margin-top: 36px;
+    padding: 14px;
+    background: var(--panel);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    text-align: center;
+    color: var(--dim);
+    font-size: 0.75rem;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="disclaimer">
+    <strong>What this is:</strong> ApocalyptiClock is an independent, unofficial project. Once an
+    hour, an AI model checks real, recent news headlines (via GDELT) for <em>one</em> risk category
+    at a time — nuclear, conflict, climate, biosecurity, AI risk, or human factors (misinformation,
+    mass panic, negligence) — rotating through all six over a 6-hour span, and judges whether that
+    category's risk moved up, down, or held steady, citing the specific stories behind its call.
+    This is <strong>not</strong> the official Doomsday Clock and is not affiliated with the Bulletin
+    of the Atomic Scientists. Treat it as one model's reading of the news, not a scientific
+    measurement. Use the filters below to include or exclude categories and see how the setting
+    shifts.
+  </div>
+
+  <h1>ApocalyptiClock</h1>
+  <p class="subhead">An AI's periodic reading of real-world risk signals</p>
+
+  <div class="clock-panel">
+    <p class="clock-display" id="clock-time">Loading...</p>
+    <p class="clock-label">seconds to midnight</p>
+    <p class="timestamp" id="last-updated">Checking sync status...</p>
+    <p class="timestamp" id="rotation-status"></p>
+  </div>
+
+  <div class="filter-panel">
+    <div class="filter-title">Categories included</div>
+    <div class="filter-grid" id="filter-grid">Loading categories...</div>
+    <div class="filter-actions">
+      <button id="select-all">Select all</button>
+      <button id="select-none">Select none</button>
+    </div>
+  </div>
+
+  <h2>Why it moved</h2>
+  <div id="log-container">Loading recent assessments...</div>
+
+  <div class="ad-slot">Advertisement space</div>
+
+</div>
+
+<script>
+let clockData = null;
+const enabled = new Set();
+const STORAGE_KEY = 'apocalypticlock-filters';
+const ROTATION_HOURS = 6; // categories cycle through hourly runs, 6 categories total
+
+function parseTimestamp(ts) {
+  if (!ts) return null;
+  // "2026-08-07 18:00:00 UTC" -> "2026-08-07T18:00:00Z"
+  const iso = ts.replace(' UTC', 'Z').replace(' ', 'T');
+  const d = new Date(iso);
+  return isNaN(d.getTime()) ? null : d;
+}
+
+function formatRelative(date) {
+  if (!date) return null;
+  const diffMs = Date.now() - date.getTime();
+  const diffMin = Math.round(diffMs / 60000);
+  const abs = Math.abs(diffMin);
+  const unit = abs < 60 ? `${abs}m` : `${Math.round(abs / 60)}h`;
+  return diffMin >= 0 ? `${unit} ago` : `in ~${unit}`;
+}
+
+function saveFilters() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(enabled)));
+  } catch (e) {
+    // localStorage unavailable (e.g. private browsing) -- filters just won't persist
+  }
+}
+
+function loadSavedFilters(allCategoryIds) {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    const saved = JSON.parse(raw);
+    if (!Array.isArray(saved)) return null;
+    // Only keep saved ids that still exist as real categories -- if the
+    // backend added/removed a category since the last visit, don't carry
+    // over stale ids.
+    return saved.filter(id => allCategoryIds.includes(id));
+  } catch (e) {
+    return null;
+  }
+}
+
+function computeSeconds() {
+  if (!clockData) return null;
+  let total = clockData.baseline || 0;
+  for (const [catId, cat] of Object.entries(clockData.categories || {})) {
+    if (enabled.has(catId)) total += (cat.cumulative_delta || 0);
+  }
+  return total;
+}
+
+function renderClock() {
+  const seconds = computeSeconds();
+  document.getElementById('clock-time').innerText =
+    seconds === null ? '—' : seconds.toFixed(1) + 's';
+  document.getElementById('last-updated').innerText =
+    'Last checked: ' + (clockData.last_run_time || 'unknown');
+
+  const rotationEl = document.getElementById('rotation-status');
+  const lastCat = clockData.last_run_category;
+  const lastLabel = lastCat && clockData.categories[lastCat]
+    ? clockData.categories[lastCat].label : null;
+
+  const order = Object.keys(clockData.categories || {});
+  let nextLabel = null;
+  if (lastCat && order.length) {
+    const idx = order.indexOf(lastCat);
+    if (idx !== -1) nextLabel = clockData.categories[order[(idx + 1) % order.length]].label;
+  }
+
+  const lastRunDate = parseTimestamp(clockData.last_run_time);
+  let nextRunText = '';
+  if (lastRunDate) {
+    const nextRunDate = new Date(lastRunDate.getTime() + 60 * 60 * 1000); // +1h, hourly cadence
+    nextRunText = ` · Next check (${nextLabel || '—'}) ${formatRelative(nextRunDate)}`;
+  }
+
+  rotationEl.innerText = lastLabel
+    ? `Last category checked: ${lastLabel}${nextRunText}`
+    : 'No categories checked yet.';
+}
+
+function renderFilters() {
+  const grid = document.getElementById('filter-grid');
+  const cats = clockData.categories || {};
+  grid.innerHTML = Object.entries(cats).map(([catId, cat]) => {
+    const contrib = (cat.cumulative_delta > 0 ? '+' : '') + cat.cumulative_delta.toFixed(1) + 's';
+
+    const lastUpdatedDate = parseTimestamp(cat.last_updated);
+    const lastAttemptedDate = parseTimestamp(cat.last_attempted);
+    let scheduleText;
+    if (lastAttemptedDate) {
+      const nextDue = new Date(lastAttemptedDate.getTime() + ROTATION_HOURS * 60 * 60 * 1000);
+      const updatedText = lastUpdatedDate ? `updated ${formatRelative(lastUpdatedDate)}` : 'no data yet';
+      scheduleText = `${updatedText} · next check ${formatRelative(nextDue)}`;
+    } else {
+      scheduleText = 'not checked yet';
+    }
+
+    return `
+      <div>
+        <label class="filter-item">
+          <input type="checkbox" data-cat="${catId}" ${enabled.has(catId) ? 'checked' : ''}>
+          ${cat.label}
+          <span class="contrib">${contrib}</span>
+        </label>
+        <div class="filter-schedule">${scheduleText}</div>
+      </div>
+    `;
+  }).join('');
+
+  grid.querySelectorAll('input[type=checkbox]').forEach(box => {
+    box.addEventListener('change', () => {
+      const catId = box.dataset.cat;
+      if (box.checked) enabled.add(catId); else enabled.delete(catId);
+      saveFilters();
+      renderClock();
+      renderLog();
+    });
+  });
+}
+
+function renderLog() {
+  const logContainer = document.getElementById('log-container');
+  const recent = (clockData.history || []).slice(-12).reverse();
+
+  if (recent.length === 0) {
+    logContainer.innerText = 'No assessments logged yet.';
+    return;
+  }
+
+  logContainer.innerHTML = recent.map(tick => {
+    const label = (clockData.categories[tick.category] || {}).label || tick.category;
+    const dimmed = enabled.has(tick.category) ? '' : ' dimmed';
+
+    if (tick.status === 'no_data') {
+      return `
+        <div class="entry">
+          <div class="entry-time">${tick.time}</div>
+          <div class="cat-row${dimmed}">
+            <span class="cat-tag">${label}</span>
+            <span class="cat-status-nodata">checked — no usable data this hour, unchanged</span>
+          </div>
+        </div>
+      `;
+    }
+
+    const deltaStr = (tick.delta > 0 ? '+' : '') + tick.delta + 's';
+    const sources = (tick.sources || []).slice(0, 3).map((url, i) =>
+      `<a href="${url}" target="_blank" rel="noopener">src ${i + 1}</a>`
+    ).join('');
+
+    return `
+      <div class="entry">
+        <div class="entry-time">${tick.time}</div>
+        <div class="cat-row${dimmed}">
+          <span class="cat-tag">${label}</span>
+          <span class="cat-delta">${deltaStr} · ${tick.direction}</span>
+        </div>
+        <p class="cat-rationale${dimmed ? ' dimmed' : ''}">${tick.rationale || ''}</p>
+        <div class="cat-sources">${sources}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+async function fetchClockData() {
+  try {
+    const response = await fetch('clock-data.json?v=' + Date.now());
+    clockData = await response.json();
+
+    const allCategoryIds = Object.keys(clockData.categories || {});
+    const saved = loadSavedFilters(allCategoryIds);
+
+    if (saved !== null) {
+      // Restore exactly what the visitor last chose, even an empty set.
+      saved.forEach(catId => enabled.add(catId));
+    } else {
+      // First-ever visit: default to everything on.
+      allCategoryIds.forEach(catId => enabled.add(catId));
+    }
+
+    renderClock();
+    renderFilters();
+    renderLog();
+  } catch (error) {
+    document.getElementById('clock-time').innerText = '—';
+    document.getElementById('last-updated').innerText = 'Unable to load live data.';
+    document.getElementById('filter-grid').innerText = 'Unable to load categories.';
+  }
+}
+
+document.getElementById('select-all').addEventListener('click', () => {
+  if (!clockData) return;
+  Object.keys(clockData.categories).forEach(catId => enabled.add(catId));
+  saveFilters();
+  renderFilters(); renderClock(); renderLog();
+});
+document.getElementById('select-none').addEventListener('click', () => {
+  enabled.clear();
+  saveFilters();
+  renderFilters(); renderClock(); renderLog();
+});
+
+fetchClockData();
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+{
+  "baseline": 85.0,
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-08-07 20:42:31 UTC",
+  "categories": {
+    "nuclear": {
+      "label": "Nuclear",
+      "cumulative_delta": 0.0,
+      "last_attempted": "2026-08-07 20:13:02 UTC",
+      "last_updated": null
+    },
+    "conflict": {
+      "label": "Conflict",
+      "cumulative_delta": 0.0,
+      "last_attempted": "2026-08-07 20:42:31 UTC",
+      "last_updated": null
+    },
+    "climate": {
+      "label": "Climate",
+      "cumulative_delta": 0.0,
+      "last_attempted": null,
+      "last_updated": null
+    },
+    "biosecurity": {
+      "label": "Biosecurity",
+      "cumulative_delta": 0.0,
+      "last_attempted": null,
+      "last_updated": null
+    },
+    "ai_risk": {
+      "label": "AI Risk",
+      "cumulative_delta": 0.0,
+      "last_attempted": null,
+      "last_updated": null
+    },
+    "human_factors": {
+      "label": "Human Factors",
+      "cumulative_delta": 0.0,
+      "last_attempted": null,
+      "last_updated": null
+    }
+  },
+  "history": [
+    {
+      "time": "2026-08-07 20:13:02 UTC",
+      "category": "nuclear",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-07 20:42:31 UTC",
+      "category": "conflict",
+      "status": "no_data"
+    }
+  ]
+}
