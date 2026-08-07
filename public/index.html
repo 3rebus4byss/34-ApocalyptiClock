@@ -4,6 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ApocalyptiClock — An AI's Reading of Current Events</title>
+
+<!-- ============================================================
+     AD NETWORK SITE-WIDE TAGS GO HERE (paste as-is, don't modify)
+     - Monetag: verification meta tag + site-wide ad zone tags
+       (Popunder, Push Notifications) usually go here, as high as
+       possible in <head>
+     - Adsterra: Social Bar / Popunder codes usually go here too
+     - Google AdSense: the site verification + auto-ads snippet
+       goes here once approved
+     ============================================================ -->
+<!-- PASTE MONETAG SITE TAG HERE -->
+<script src="https://pl30740942.effectivecpmnetwork.com/82/fe/82/82fe822959aa1f9a33d35b3274deb029.js"></script>
+<!-- ADSTERRA POPUNDER (above) -->
+<!-- PASTE ADSENSE VERIFICATION/AUTO-ADS TAG HERE (once approved) -->
+<!-- ============================================================ -->
 <style>
   :root {
     --bg: #0b0b0c;
@@ -206,7 +221,24 @@
   <h2>Why it moved</h2>
   <div id="log-container">Loading recent assessments...</div>
 
-  <div class="ad-slot">Advertisement space</div>
+  <!-- Banner-format ad codes (e.g. Adsterra Banner/Native, Monetag In-Page Push,
+       AdSense display unit) go INSIDE these divs, replacing the placeholder text. -->
+  <div class="ad-slot" id="ad-slot-1">
+    <script>
+      atOptions = {
+        'key' : 'ea9e01157e91b756d92c3bf8ec0b0a22',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script src="https://www.highperformanceformat.com/ea9e01157e91b756d92c3bf8ec0b0a22/invoke.js"></script>
+  </div>
+  <div class="ad-slot" id="ad-slot-2">
+    <script async="async" data-cfasync="false" src="https://pl30740945.effectivecpmnetwork.com/91a0ae27d0f886395822176199000361/invoke.js"></script>
+    <div id="container-91a0ae27d0f886395822176199000361"></div>
+  </div>
 
 </div>
 
@@ -247,9 +279,6 @@ function loadSavedFilters(allCategoryIds) {
     if (!raw) return null;
     const saved = JSON.parse(raw);
     if (!Array.isArray(saved)) return null;
-    // Only keep saved ids that still exist as real categories -- if the
-    // backend added/removed a category since the last visit, don't carry
-    // over stale ids.
     return saved.filter(id => allCategoryIds.includes(id));
   } catch (e) {
     return null;
@@ -287,7 +316,7 @@ function renderClock() {
   const lastRunDate = parseTimestamp(clockData.last_run_time);
   let nextRunText = '';
   if (lastRunDate) {
-    const nextRunDate = new Date(lastRunDate.getTime() + 60 * 60 * 1000); // +1h, hourly cadence
+    const nextRunDate = new Date(lastRunDate.getTime() + 60 * 60 * 1000);
     nextRunText = ` · Next check (${nextLabel || '—'}) ${formatRelative(nextRunDate)}`;
   }
 
@@ -389,10 +418,8 @@ async function fetchClockData() {
     const saved = loadSavedFilters(allCategoryIds);
 
     if (saved !== null) {
-      // Restore exactly what the visitor last chose, even an empty set.
       saved.forEach(catId => enabled.add(catId));
     } else {
-      // First-ever visit: default to everything on.
       allCategoryIds.forEach(catId => enabled.add(catId));
     }
 
