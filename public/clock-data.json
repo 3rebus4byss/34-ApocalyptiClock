@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 5,
-  "last_run_category": "ai_risk",
-  "last_run_time": "2026-08-11 12:17:17 UTC",
+  "rotation_index": 0,
+  "last_run_category": "human_factors",
+  "last_run_time": "2026-08-11 12:22:47 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -37,7 +37,7 @@
     "human_factors": {
       "label": "Human Factors",
       "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-11 10:37:51 UTC",
+      "last_attempted": "2026-08-11 12:22:47 UTC",
       "last_updated": "2026-08-11 10:25:34 UTC"
     }
   },
@@ -512,6 +512,11 @@
     {
       "time": "2026-08-11 12:17:17 UTC",
       "category": "ai_risk",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 12:22:47 UTC",
+      "category": "human_factors",
       "status": "no_data"
     }
   ]
