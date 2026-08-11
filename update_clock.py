@@ -40,7 +40,7 @@ GDELT_ENDPOINT = "https://api.gdeltproject.org/api/v2/doc/doc"
 # Free-tier Gemini model. Check https://ai.google.dev/gemini-api/docs/models
 # if this ever 404s -- Google renames/retires free-tier model IDs periodically.
 # As of mid-2026, this is a current free-tier lightweight model.
-GEMINI_MODEL = "gemini-2.5-flash-lite"
+GEMINI_MODEL = "gemini-3.5-flash-lite"
 GEMINI_ENDPOINT = (
     f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
 )
