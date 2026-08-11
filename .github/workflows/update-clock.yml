@@ -5,11 +5,17 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   update-clock:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -38,17 +44,11 @@ jobs:
           git diff --quiet --cached || git commit -m "Hourly update: $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
 
-      - name: Set up Node (for Netlify CLI)
-        uses: actions/setup-node@v5
+      - name: Upload site as a Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          node-version: '20'
+          path: public
 
-      - name: Install Netlify CLI
-        run: npm install -g netlify-cli
-
-      - name: Deploy public/ directly to Netlify (bypasses Netlify's own build system --
-          avoids burning build minutes on every hourly commit)
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: netlify deploy --prod --dir=public --auth="$NETLIFY_AUTH_TOKEN" --site="$NETLIFY_SITE_ID"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
