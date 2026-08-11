@@ -38,6 +38,7 @@ jobs:
       - name: Run the update (rotates one category, calls Gemini)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GDELT_CLOUD_API_KEY: ${{ secrets.GDELT_CLOUD_API_KEY }}
         run: python3 update_clock.py
 
       - name: Commit and push updated data (retries on push races)
