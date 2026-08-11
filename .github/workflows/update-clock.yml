@@ -3,7 +3,21 @@ name: Update ApocalyptiClock
 on:
   schedule:
     - cron: '0 * * * *'
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      category:
+        description: 'Category to test (leave as "auto" for normal rotation)'
+        required: false
+        default: 'auto'
+        type: choice
+        options:
+          - auto
+          - nuclear
+          - conflict
+          - climate
+          - biosecurity
+          - ai_risk
+          - human_factors
 
 permissions:
   contents: write
@@ -32,18 +46,21 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Random jitter delay (avoids GitHub's scheduled-workflow thundering herd hitting GDELT at once)
+      - name: Random jitter delay (skipped for manual category tests; avoids GitHub's
+          scheduled-workflow thundering herd hitting GDELT at once on real hourly runs)
+        if: ${{ github.event.inputs.category == '' || github.event.inputs.category == 'auto' }}
         run: sleep $(( RANDOM % 240 ))
 
       - name: Run the update (rotates one category, calls Gemini)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GDELT_CLOUD_API_KEY: ${{ secrets.GDELT_CLOUD_API_KEY }}
+          CATEGORY_OVERRIDE: ${{ github.event.inputs.category == 'auto' && '' || github.event.inputs.category }}
         run: python3 update_clock.py
 
       - name: Commit and push updated data (retries on push races)
         run: |
-          set +e   # don't let GitHub Actions' default errexit kill the loop on the first failure
+          set +e
           git config --global user.name "apocalypticlock-bot"
           git config --global user.email "bot@users.noreply.github.com"
 
