@@ -111,10 +111,21 @@ def fetch_rss_headlines(keywords: list, max_records: int = 8):
     """
     Fallback source when GDELT is unavailable. Pulls from a handful of major
     outlets' public RSS feeds and keeps only headlines matching at least one
-    of the category's keywords (same keywords used in the GDELT query,
-    substring-matched case-insensitively against the title).
+    of the category's keywords (same keywords used in the GDELT query),
+    matched with word boundaries -- NOT raw substring. Raw substring
+    matching would let short keywords like "war" or "riot" false-positive
+    inside unrelated words ("warehouse", "software", "patriot"), which
+    hurts precision without adding real recall.
     """
+    import re
     import xml.etree.ElementTree as ET
+
+    # Pre-compile one word-boundary regex per keyword (phrases like "climate
+    # crisis" get boundaries around the whole phrase, not each word).
+    patterns = [
+        re.compile(r"\b" + re.escape(kw.strip()) + r"\b", re.IGNORECASE)
+        for kw in keywords if kw.strip()
+    ]
 
     matches = []
     headers = {"User-Agent": "ApocalyptiClock/1.0 (+news risk aggregator)"}
@@ -136,8 +147,7 @@ def fetch_rss_headlines(keywords: list, max_records: int = 8):
                 if not title or not link:
                     continue
 
-                title_lower = title.lower()
-                if any(kw.strip().lower() in title_lower for kw in keywords if kw.strip()):
+                if any(p.search(title) for p in patterns):
                     matches.append({"title": title, "url": link})
                     feed_matches += 1
                     if len(matches) >= max_records:
@@ -213,33 +223,60 @@ def fetch_gdeltcloud_headlines(query: str, max_records: int = 5):
         return []
 
 
+WEAK_RSS_THRESHOLD = 3  # fewer than this many RSS matches counts as "weak" -- supplement with GDELT Cloud
+
+
 def get_headlines_for_category(cat_id: str):
     """
-    Two-tier fallback chain:
-      1. RSS feeds (primary) -- free, no quota, no auth
-      2. GDELT Cloud, if RSS finds nothing AND GDELT_CLOUD_API_KEY is set
-         (rare, keeps us well under its 100 QU/month free quota)
+    RSS is checked first (free, no quota, no auth). GDELT Cloud supplements
+    it -- not just as an empty-RSS fallback, but also when RSS finds a weak
+    signal (fewer than WEAK_RSS_THRESHOLD headlines). On a weak-but-nonzero
+    RSS result, the two sources' headlines are MERGED (deduped by title) so
+    Gemini gets a richer combined picture rather than picking one source
+    over the other. This still respects GDELT Cloud's 100 QU/month free
+    quota, since it only fires on genuinely thin RSS results, not every run.
+
     Returns (headlines, source_used) where source_used is
-    'rss', 'gdeltcloud', or None.
+    'rss', 'gdeltcloud', 'rss+gdeltcloud', or None.
     """
     query = CATEGORIES[cat_id]["query"]
     label = CATEGORIES[cat_id]["label"]
 
     keywords = query.split(" OR ")
-    headlines = fetch_rss_headlines(keywords)
-    if headlines:
-        print(f"[info] RSS succeeded for '{label}': {len(headlines)} matching headlines.")
-        return headlines, "rss"
+    rss_headlines = fetch_rss_headlines(keywords)
 
-    print(f"[info] RSS produced nothing for '{label}' "
-          f"(no matching headlines across {len(RSS_FEEDS)} feeds). "
-          f"Trying GDELT Cloud (fallback)...")
-    headlines = fetch_gdeltcloud_headlines(query)
-    if headlines:
-        print(f"[info] GDELT Cloud fallback succeeded for '{label}': {len(headlines)} headlines.")
-        return headlines, "gdeltcloud"
+    if len(rss_headlines) >= WEAK_RSS_THRESHOLD:
+        print(f"[info] RSS succeeded for '{label}': {len(rss_headlines)} matching headlines.")
+        return rss_headlines, "rss"
 
-    print(f"[info] Both sources produced nothing for '{label}' this hour.")
+    if rss_headlines:
+        print(f"[info] RSS found only {len(rss_headlines)} for '{label}' (weak, "
+              f"threshold is {WEAK_RSS_THRESHOLD}). Supplementing with GDELT Cloud...")
+    else:
+        print(f"[info] RSS produced nothing for '{label}' "
+              f"(no matching headlines across {len(RSS_FEEDS)} feeds). "
+              f"Trying GDELT Cloud...")
+
+    gdeltcloud_headlines = fetch_gdeltcloud_headlines(query)
+
+    if rss_headlines and gdeltcloud_headlines:
+        seen_titles = {h["title"] for h in rss_headlines}
+        merged = rss_headlines + [h for h in gdeltcloud_headlines if h["title"] not in seen_titles]
+        print(f"[info] Merged RSS ({len(rss_headlines)}) + GDELT Cloud "
+              f"({len(gdeltcloud_headlines)}) for '{label}': {len(merged)} total after dedup.")
+        return merged, "rss+gdeltcloud"
+
+    if gdeltcloud_headlines:
+        print(f"[info] GDELT Cloud succeeded for '{label}': {len(gdeltcloud_headlines)} headlines.")
+        return gdeltcloud_headlines, "gdeltcloud"
+
+    if rss_headlines:
+        # GDELT Cloud found nothing new, but RSS's weak result is still real data -- use it.
+        print(f"[info] GDELT Cloud found nothing additional; using RSS's {len(rss_headlines)} "
+              f"result(s) for '{label}' as-is.")
+        return rss_headlines, "rss"
+
+    print(f"[info] Both sources produced nothing for '{label}' this run.")
     return [], None
 
 
