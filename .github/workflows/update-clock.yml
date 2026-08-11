@@ -10,6 +10,10 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: update-clock
+  cancel-in-progress: false
+
 jobs:
   update-clock:
     runs-on: ubuntu-latest
