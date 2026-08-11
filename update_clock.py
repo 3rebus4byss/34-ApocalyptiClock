@@ -531,8 +531,13 @@ def main():
         })
     else:
         new_cumulative = cat_state["cumulative_delta"] + assessment["delta_seconds"]
+        # Rounded to 1 decimal (not 2) to exactly match the frontend's display
+        # precision -- otherwise the displayed per-category numbers won't
+        # visibly sum to the displayed total (a hidden 2nd decimal gets
+        # rounded away inconsistently between the category list and the
+        # combined clock reading).
         new_cumulative = max(-MAX_CATEGORY_CUMULATIVE,
-                              min(MAX_CATEGORY_CUMULATIVE, round(new_cumulative, 2)))
+                              min(MAX_CATEGORY_CUMULATIVE, round(new_cumulative, 1)))
         cat_state["cumulative_delta"] = new_cumulative
         cat_state["last_updated"] = timestamp
 

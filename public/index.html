@@ -80,6 +80,8 @@
     line-height: 1.5;
     margin-bottom: 24px;
   }
+  .disclaimer p { margin: 0 0 10px 0; }
+  .disclaimer p:last-of-type { margin-bottom: 0; }
   .disclaimer strong { color: var(--text); }
   .how-it-works {
     margin-top: 12px;
@@ -252,24 +254,27 @@
 
   <div class="intro-section">
     <div class="disclaimer">
-      <strong>What this is:</strong> ApocalyptiClock is an independent, unofficial project. Every 4
-      hours, an AI model checks real, recent news headlines for <em>one</em> risk category at a
-      time — nuclear, conflict, climate, biosecurity, AI risk, or information warfare
-      (misinformation, disinformation, propaganda) — rotating through all six over a 24-hour span,
-      and judges whether that category's risk moved up, down, or held steady, citing the specific
-      stories behind its call. This is <strong>not</strong> the official Doomsday Clock and is not
-      affiliated with the Bulletin of the Atomic Scientists. Treat it as one model's reading of the
-      news, not a scientific measurement. Use the filters below to include or exclude categories
-      and see how the setting shifts.
+      <p><strong>ApocalyptiClock</strong> — A live, independent reading of existential risk.</p>
+      <p>
+        Every four hours an AI scans real headlines (BBC, Al Jazeera, The Guardian, NPR, with
+        GDELT Cloud as fallback) for one of six categories — nuclear, conflict, climate,
+        biosecurity, AI risk, or information warfare. It decides whether that category just got
+        more dangerous, less dangerous, or stayed the same, and only moves the clock when there
+        is a genuine new development it can cite.
+      </p>
+      <p>
+        This is <strong>not</strong> the official Doomsday Clock. It is not affiliated with the
+        Bulletin of the Atomic Scientists. It is one model's continuous, source-linked assessment
+        of the same risks the official clock tracks once a year.
+      </p>
+      <p>
+        Use the filters to include or exclude categories and watch the number respond in real
+        time — each toggle adds or removes that category's full accumulated total, not just its
+        most recent check.
+      </p>
 
       <details class="how-it-works">
         <summary>How this actually works (not random)</summary>
-        <p>
-          Each check pulls real headlines from named editorial sources — BBC, Al Jazeera,
-          The Guardian, and NPR — filtered to that category's topic. If none of those have
-          anything relevant, it falls back to GDELT Cloud, a structured news-event database,
-          before giving up for that check.
-        </p>
         <p>
           The model isn't judging headlines in isolation. Each check is given the category's
           current standing and its last few results, and is explicitly told: if the new
