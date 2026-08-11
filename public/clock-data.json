@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 3,
-  "last_run_category": "climate",
-  "last_run_time": "2026-08-11 11:41:08 UTC",
+  "rotation_index": 4,
+  "last_run_category": "biosecurity",
+  "last_run_time": "2026-08-11 12:11:27 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -25,7 +25,7 @@
     "biosecurity": {
       "label": "Biosecurity",
       "cumulative_delta": -1.25,
-      "last_attempted": "2026-08-11 10:37:16 UTC",
+      "last_attempted": "2026-08-11 12:11:27 UTC",
       "last_updated": "2026-08-11 10:25:15 UTC"
     },
     "ai_risk": {
@@ -502,6 +502,11 @@
     {
       "time": "2026-08-11 11:41:08 UTC",
       "category": "climate",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 12:11:27 UTC",
+      "category": "biosecurity",
       "status": "no_data"
     }
   ]
