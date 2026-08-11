@@ -54,32 +54,41 @@ GEMINI_ENDPOINT = (
 CATEGORIES = {
     "nuclear": {
         "label": "Nuclear",
-        "query": "nuclear weapons OR nuclear escalation OR proliferation",
+        "query": "nuclear weapons OR nuclear escalation OR proliferation OR "
+                  "missile test OR ballistic missile OR uranium enrichment OR "
+                  "IAEA OR warhead OR atomic bomb",
     },
     "conflict": {
         "label": "Conflict",
-        "query": "war OR armed conflict OR military escalation",
+        "query": "war OR armed conflict OR military escalation OR invasion OR "
+                  "airstrike OR ceasefire OR insurgency OR troop deployment OR sanctions",
     },
     "climate": {
         "label": "Climate",
-        "query": "climate crisis OR extreme weather disaster",
+        "query": "climate crisis OR extreme weather disaster OR wildfire OR "
+                  "drought OR flooding OR heatwave OR hurricane OR global warming OR "
+                  "carbon emissions",
     },
     "biosecurity": {
         "label": "Biosecurity",
-        "query": "pandemic OR bioweapon OR disease outbreak",
+        "query": "pandemic OR bioweapon OR disease outbreak OR epidemic OR "
+                  "virus outbreak OR bird flu OR WHO health emergency OR lab leak",
     },
     "ai_risk": {
         "label": "AI Risk",
-        "query": "AI safety OR artificial intelligence risk",
+        "query": "AI safety OR artificial intelligence risk OR AI regulation OR "
+                  "AI alignment OR superintelligence OR AI existential risk",
     },
     "human_factors": {
         "label": "Human Factors",
         "query": "misinformation OR disinformation OR mass panic OR "
-                  "human error disaster OR conspiracy theory violence",
+                  "human error disaster OR conspiracy theory violence OR "
+                  "civil unrest OR riot OR election interference OR fake news",
     },
 }
 CATEGORY_ORDER = list(CATEGORIES.keys())  # fixed rotation order
-ROTATION_HOURS = len(CATEGORY_ORDER)      # each category is "due" every N hours
+HOURS_BETWEEN_RUNS = 4                     # matches the cron schedule
+ROTATION_HOURS = len(CATEGORY_ORDER) * HOURS_BETWEEN_RUNS  # 24h -- each category is "due" once per full cycle
 
 DATA_FILE = "public/clock-data.json"
 STARTING_BASELINE = 85.0  # seconds to midnight, anchored to the real 2025 Bulletin setting

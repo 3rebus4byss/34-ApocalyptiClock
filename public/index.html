@@ -36,13 +36,39 @@
   }
   * { box-sizing: border-box; }
   body {
-    background: var(--bg);
+    background:
+      /* Bump the ?v= number below every time you replace image-01.png --
+         otherwise browsers will keep showing the old cached version. */
+      linear-gradient(rgba(11, 11, 12, 0.88), rgba(11, 11, 12, 0.88)),
+      url('assets/images/image-01.png?v=1');
+    background-size: 100% auto;      /* full width, height auto -- shows whole image, no cropping */
+    background-position: top center; /* top of image stays at top of page */
+    background-repeat: no-repeat;
+    background-attachment: scroll;   /* scrolls with the page instead of staying pinned to viewport */
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     margin: 0;
     padding: 40px 16px;
+    min-height: 100vh;
   }
-  .container { max-width: 640px; margin: 0 auto; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .intro-section { max-width: 640px; margin: 0 auto; } /* keeps disclaimer/logo readable-width even in the wider container */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+    margin-top: 20px;
+  }
+  .clock-column, .log-column {
+    min-width: 0; /* lets grid columns shrink properly instead of overflowing on long content */
+  }
+  @media (max-width: 800px) {
+    .two-col {
+      grid-template-columns: 1fr; /* stack vertically on narrow screens */
+    }
+  }
+  .log-column h2 { margin-top: 0; }
   .disclaimer {
     background: var(--panel);
     border: 1px solid var(--border);
@@ -61,6 +87,15 @@
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 4px;
+  }
+  .logo-heading {
+    text-align: center;
+    margin: 0 0 4px 0;
+  }
+  .logo-image {
+    max-width: 420px;
+    width: 60%;
+    height: auto;
   }
   .subhead {
     text-align: center;
@@ -95,8 +130,13 @@
   }
   .filter-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
+  }
+  @media (max-width: 480px) {
+    .filter-grid {
+      grid-template-columns: repeat(2, 1fr); /* 3 columns too cramped on small phones */
+    }
   }
   .filter-item {
     display: flex;
@@ -191,39 +231,49 @@
 <body>
 <div class="container">
 
-  <div class="disclaimer">
-    <strong>What this is:</strong> ApocalyptiClock is an independent, unofficial project. Once an
-    hour, an AI model checks real, recent news headlines (via GDELT) for <em>one</em> risk category
-    at a time — nuclear, conflict, climate, biosecurity, AI risk, or human factors (misinformation,
-    mass panic, negligence) — rotating through all six over a 6-hour span, and judges whether that
-    category's risk moved up, down, or held steady, citing the specific stories behind its call.
-    This is <strong>not</strong> the official Doomsday Clock and is not affiliated with the Bulletin
-    of the Atomic Scientists. Treat it as one model's reading of the news, not a scientific
-    measurement. Use the filters below to include or exclude categories and see how the setting
-    shifts.
+  <div class="intro-section">
+    <div class="disclaimer">
+      <strong>What this is:</strong> ApocalyptiClock is an independent, unofficial project. Every 4
+      hours, an AI model checks real, recent news headlines for <em>one</em> risk category at a
+      time — nuclear, conflict, climate, biosecurity, AI risk, or human factors (misinformation,
+      mass panic, negligence) — rotating through all six over a 24-hour span, and judges whether
+      that category's risk moved up, down, or held steady, citing the specific stories behind its
+      call. This is <strong>not</strong> the official Doomsday Clock and is not affiliated with the
+      Bulletin of the Atomic Scientists. Treat it as one model's reading of the news, not a
+      scientific measurement. Use the filters below to include or exclude categories and see how
+      the setting shifts.
+    </div>
+
+    <h1 class="logo-heading">
+      <img src="assets/images/logo.png?v=1" alt="ApocalyptiClock" class="logo-image">
+    </h1>
+    <p class="subhead">An AI's periodic reading of real-world risk signals</p>
   </div>
 
-  <h1>ApocalyptiClock</h1>
-  <p class="subhead">An AI's periodic reading of real-world risk signals</p>
+  <div class="two-col">
+    <div class="clock-column">
+      <div class="clock-panel">
+        <p class="clock-display" id="clock-time">Loading...</p>
+        <p class="clock-label">seconds to midnight</p>
+        <p class="timestamp" id="last-updated">Checking sync status...</p>
+        <p class="timestamp" id="rotation-status"></p>
+      </div>
 
-  <div class="clock-panel">
-    <p class="clock-display" id="clock-time">Loading...</p>
-    <p class="clock-label">seconds to midnight</p>
-    <p class="timestamp" id="last-updated">Checking sync status...</p>
-    <p class="timestamp" id="rotation-status"></p>
-  </div>
+      <div class="filter-panel">
+        <div class="filter-title">Categories included</div>
+        <div class="filter-grid" id="filter-grid">Loading categories...</div>
+        <div class="filter-actions">
+          <button id="select-all">Select all</button>
+          <button id="select-none">Select none</button>
+        </div>
+      </div>
+    </div>
 
-  <div class="filter-panel">
-    <div class="filter-title">Categories included</div>
-    <div class="filter-grid" id="filter-grid">Loading categories...</div>
-    <div class="filter-actions">
-      <button id="select-all">Select all</button>
-      <button id="select-none">Select none</button>
+    <div class="log-column">
+      <h2>Why it moved</h2>
+      <div id="log-container">Loading recent assessments...</div>
     </div>
   </div>
-
-  <h2>Why it moved</h2>
-  <div id="log-container">Loading recent assessments...</div>
 
   <!-- Banner-format ad codes (e.g. Adsterra Banner/Native, Monetag In-Page Push,
        AdSense display unit) go INSIDE these divs, replacing the placeholder text. -->
@@ -250,10 +300,11 @@
 let clockData = null;
 const enabled = new Set();
 const STORAGE_KEY = 'apocalypticlock-filters';
-const ROTATION_HOURS = 6; // categories cycle through hourly runs, 6 categories total
+const ROTATION_HOURS = 24; // 6 categories, one every 4h -- full cycle = 24h
 
 function parseTimestamp(ts) {
   if (!ts) return null;
+  // "2026-08-07 18:00:00 UTC" -> "2026-08-07T18:00:00Z"
   const iso = ts.replace(' UTC', 'Z').replace(' ', 'T');
   const d = new Date(iso);
   return isNaN(d.getTime()) ? null : d;
@@ -271,7 +322,9 @@ function formatRelative(date) {
 function saveFilters() {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(enabled)));
-  } catch (e) {}
+  } catch (e) {
+    // localStorage unavailable (e.g. private browsing) -- filters just won't persist
+  }
 }
 
 function loadSavedFilters(allCategoryIds) {
@@ -280,6 +333,9 @@ function loadSavedFilters(allCategoryIds) {
     if (!raw) return null;
     const saved = JSON.parse(raw);
     if (!Array.isArray(saved)) return null;
+    // Only keep saved ids that still exist as real categories -- if the
+    // backend added/removed a category since the last visit, don't carry
+    // over stale ids.
     return saved.filter(id => allCategoryIds.includes(id));
   } catch (e) {
     return null;
@@ -317,7 +373,7 @@ function renderClock() {
   const lastRunDate = parseTimestamp(clockData.last_run_time);
   let nextRunText = '';
   if (lastRunDate) {
-    const nextRunDate = new Date(lastRunDate.getTime() + 60 * 60 * 1000);
+    const nextRunDate = new Date(lastRunDate.getTime() + 4 * 60 * 60 * 1000); // +4h, matches cron cadence
     nextRunText = ` · Next check (${nextLabel || '—'}) ${formatRelative(nextRunDate)}`;
   }
 
@@ -419,8 +475,10 @@ async function fetchClockData() {
     const saved = loadSavedFilters(allCategoryIds);
 
     if (saved !== null) {
+      // Restore exactly what the visitor last chose, even an empty set.
       saved.forEach(catId => enabled.add(catId));
     } else {
+      // First-ever visit: default to everything on.
       allCategoryIds.forEach(catId => enabled.add(catId));
     }
 

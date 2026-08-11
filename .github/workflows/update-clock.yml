@@ -2,8 +2,9 @@ name: Update ApocalyptiClock
 
 on:
   schedule:
-    - cron: '0 * * * *'   # every hour, on the hour -- runs on GitHub's servers,
-                            # completely independent of whether your local machine is on
+    - cron: '0 */4 * * *'   # every 4 hours (00:00, 04:00, 08:00, 12:00, 16:00, 20:00 UTC) --
+                              # 6 runs/day, matching the 6 categories exactly: each one lands
+                              # on the same clock time every day, full cycle = 24 hours
   workflow_dispatch:        # lets you trigger a run manually from the Actions tab
     inputs:
       category:
