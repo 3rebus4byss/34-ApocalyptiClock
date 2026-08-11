@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-08-11 16:47:33 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-08-11 16:57:46 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-11 14:15:13 UTC",
-      "last_updated": "2026-08-11 14:15:13 UTC"
+      "last_attempted": "2026-08-11 16:57:46 UTC",
+      "last_updated": "2026-08-11 16:57:46 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,11 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-08 08:41:08 UTC",
-      "category": "climate",
-      "status": "no_data"
-    },
     {
       "time": "2026-08-11 06:47:39 UTC",
       "category": "biosecurity",
@@ -560,6 +555,20 @@
       "time": "2026-08-11 16:47:33 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 16:57:46 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines indicate a continuation of ongoing conflicts such as the US-Iran and Russia-Ukraine wars, with new reports of drone incidents in Europe and Houthi attacks. However, these do not represent a significant escalation or de-escalation beyond previously assessed trends.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/ckg9wpmzmlno?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/news/2026/8/11/new-level-of-danger-drone-incidents-scare-europe-amid-russia-ukraine-war?traffic_source=rss",
+        "https://www.npr.org/2026/08/11/g-s1-138160/us-iran-war"
+      ],
+      "data_source": "rss"
     }
   ]
 }
