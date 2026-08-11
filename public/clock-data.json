@@ -1,13 +1,13 @@
 {
   "baseline": 85.0,
-  "rotation_index": 0,
+  "rotation_index": 1,
   "last_run_category": "nuclear",
-  "last_run_time": "2026-08-11 10:39:31 UTC",
+  "last_run_time": "2026-08-11 10:44:36 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
       "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-11 10:39:31 UTC",
+      "last_attempted": "2026-08-11 10:44:36 UTC",
       "last_updated": "2026-08-11 10:26:01 UTC"
     },
     "conflict": {
@@ -477,6 +477,11 @@
     },
     {
       "time": "2026-08-11 10:39:31 UTC",
+      "category": "nuclear",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:44:36 UTC",
       "category": "nuclear",
       "status": "no_data"
     }
