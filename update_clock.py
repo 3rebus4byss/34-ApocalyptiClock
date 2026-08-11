@@ -37,6 +37,13 @@ import requests
 
 GDELT_ENDPOINT = "https://api.gdeltproject.org/api/v2/doc/doc"
 
+# Third-tier fallback: GDELT Cloud (gdeltcloud.com), a separate newer paid/free-tier
+# product from the GDELT team with real rate-limit headers and structured data.
+# Free tier is only 100 query units/month -- nowhere near enough to be a primary
+# source at 24 checks/day, so this is used ONLY when both the free GDELT DOC API
+# AND the RSS fallback produce nothing in the same run.
+GDELT_CLOUD_ENDPOINT = "https://gdeltcloud.com/api/v2/stories"
+
 # Free-tier Gemini model. Check https://ai.google.dev/gemini-api/docs/models
 # if this ever 404s -- Google renames/retires free-tier model IDs periodically.
 # As of mid-2026, this is a current free-tier lightweight model.
@@ -201,11 +208,78 @@ def fetch_rss_headlines(keywords: list, max_records: int = 8):
     return matches
 
 
+def fetch_gdeltcloud_headlines(query: str, max_records: int = 5):
+    """
+    Third-tier fallback: GDELT Cloud's /stories endpoint. Only called if
+    GDELT_CLOUD_API_KEY is set AND both the free GDELT DOC API and RSS
+    produced nothing this run -- keeps us well within the 100 QU/month
+    free tier given this should rarely trigger.
+
+    Prefers real news-source URLs from each story's top_articles (skipping
+    entries with a null title, which do occur in their data) over GDELT
+    Cloud's own story page, since we want to cite the original article.
+    """
+    api_key = os.environ.get("GDELT_CLOUD_API_KEY")
+    if not api_key:
+        return []
+
+    headers = {"Authorization": f"Bearer {api_key}"}
+    # GDELT Cloud's search doesn't document boolean OR syntax like the old
+    # DOC API -- use just the first keyword phrase, since this fallback only
+    # needs to be "good enough", not exhaustive, given the tight quota.
+    first_keyword = query.split(" OR ")[0].strip()
+
+    try:
+        resp = requests.get(
+            GDELT_CLOUD_ENDPOINT,
+            headers=headers,
+            params={"search": first_keyword, "limit": max_records},
+            timeout=20,
+        )
+        if resp.status_code == 429:
+            retry_after = int(resp.headers.get("Retry-After", 30))
+            print(f"[warn] GDELT Cloud rate-limited, waiting {retry_after}s and retrying once...",
+                  file=sys.stderr)
+            time.sleep(retry_after)
+            resp = requests.get(
+                GDELT_CLOUD_ENDPOINT,
+                headers=headers,
+                params={"search": first_keyword, "limit": max_records},
+                timeout=20,
+            )
+
+        resp.raise_for_status()
+        payload = resp.json()
+        stories = payload.get("data", [])
+
+        results = []
+        for story in stories:
+            # Prefer a real original-source article over GDELT Cloud's own page.
+            picked = None
+            for article in story.get("top_articles", []) or []:
+                if article.get("title") and article.get("url"):
+                    picked = {"title": article["title"], "url": article["url"]}
+                    break
+            if picked is None and story.get("title") and story.get("url"):
+                picked = {"title": story["title"], "url": story["url"]}
+            if picked:
+                results.append(picked)
+
+        return results
+    except Exception as exc:
+        print(f"[warn] GDELT Cloud fetch failed: {exc}", file=sys.stderr)
+        return []
+
+
 def get_headlines_for_category(cat_id: str):
     """
-    Try GDELT first (primary source). If it fails after MAX_RETRIES attempts,
-    fall back to RSS feeds filtered by the same category keywords. Returns
-    (headlines, source_used) where source_used is 'gdelt', 'rss', or None.
+    Three-tier fallback chain:
+      1. GDELT's free DOC API (primary)
+      2. RSS feeds, if GDELT fails
+      3. GDELT Cloud, if GDELT_CLOUD_API_KEY is set AND both above fail
+         (rare, keeps us well under its 100 QU/month free quota)
+    Returns (headlines, source_used) where source_used is
+    'gdelt', 'rss', 'gdeltcloud', or None.
     """
     query = CATEGORIES[cat_id]["query"]
     label = CATEGORIES[cat_id]["label"]
@@ -223,7 +297,14 @@ def get_headlines_for_category(cat_id: str):
         return headlines, "rss"
 
     print(f"[info] RSS fallback also produced nothing for '{label}' "
-          f"(no matching headlines across {len(RSS_FEEDS)} feeds).")
+          f"(no matching headlines across {len(RSS_FEEDS)} feeds). "
+          f"Trying GDELT Cloud (final fallback)...")
+    headlines = fetch_gdeltcloud_headlines(query)
+    if headlines:
+        print(f"[info] GDELT Cloud fallback succeeded for '{label}': {len(headlines)} headlines.")
+        return headlines, "gdeltcloud"
+
+    print(f"[info] All three sources produced nothing for '{label}' this hour.")
     return [], None
 
 
