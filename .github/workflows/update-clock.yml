@@ -42,27 +42,54 @@ jobs:
 
       - name: Commit and push updated data (retries on push races)
         run: |
+          set +e   # don't let GitHub Actions' default errexit kill the loop on the first failure
           git config --global user.name "apocalypticlock-bot"
           git config --global user.email "bot@users.noreply.github.com"
 
+          success=0
           for attempt in 1 2 3 4 5; do
             git add public/clock-data.json
-            if git diff --cached --quiet; then
+            git diff --cached --quiet
+            if [ $? -eq 0 ]; then
               echo "No changes to commit."
+              success=1
               break
             fi
+
             git commit -m "Hourly update: $(date -u +'%Y-%m-%d %H:%M UTC')"
 
-            if git push; then
+            git push
+            if [ $? -eq 0 ]; then
               echo "Pushed successfully on attempt $attempt."
+              success=1
               break
             fi
 
             echo "Push rejected (attempt $attempt/5) -- someone else pushed in the meantime. Pulling and retrying..."
+
             git fetch origin main
+            if [ $? -ne 0 ]; then
+              echo "git fetch failed, waiting and retrying..."
+              sleep $(( RANDOM % 10 + 5 ))
+              continue
+            fi
+
             git merge -X ours origin/main -m "Merge: keep bot's clock-data.json (auto-resolved race)"
+            if [ $? -ne 0 ]; then
+              echo "Merge failed -- aborting merge and forcing a clean reapply of the bot's commit on top of origin/main."
+              git merge --abort 2>/dev/null
+              git reset --soft origin/main
+              git add public/clock-data.json
+              git diff --cached --quiet || git commit -m "Hourly update: $(date -u +'%Y-%m-%d %H:%M UTC') (recovered)"
+            fi
+
             sleep $(( RANDOM % 10 + 5 ))
           done
+
+          if [ "$success" -ne 1 ]; then
+            echo "::error::Failed to push after 5 attempts."
+            exit 1
+          fi
 
       - name: Upload site as a Pages artifact
         uses: actions/upload-pages-artifact@v3
