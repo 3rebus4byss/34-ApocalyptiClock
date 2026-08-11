@@ -2,8 +2,8 @@ name: Update ApocalyptiClock
 
 on:
   schedule:
-    - cron: '0 * * * *'   # every hour, on the hour -- one category rotates through per run
-  workflow_dispatch: {}       # allows manual runs from the Actions tab
+    - cron: '0 * * * *'
+  workflow_dispatch: {}
 
 jobs:
   update-clock:
@@ -19,18 +19,21 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Run update script
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python update_clock.py
+      - name: Random jitter delay (avoids GitHub's scheduled-workflow thundering herd hitting GDELT at once)
+        run: sleep $(( RANDOM % 240 ))
 
-      - name: Commit and push updated data
+      - name: Run the update (rotates one category, calls Gemini)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 update_clock.py
+
+      - name: Commit updated data back to the repo
         run: |
-          git config --global user.name "clock-bot"
+          git config --global user.name "apocalypticlock-bot"
           git config --global user.email "bot@users.noreply.github.com"
-          git add clock-data.json
+          git add public/clock-data.json
           git diff --quiet --cached || git commit -m "Hourly update: $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
