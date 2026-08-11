@@ -403,11 +403,16 @@ def main():
     #   - CLI arg:      python3 update_clock.py nuclear
     #   - env var:      CATEGORY_OVERRIDE=nuclear python3 update_clock.py
     # The GitHub Actions workflow_dispatch input feeds this via the env var.
+    # 'auto' (the dropdown's default) and empty both mean "no override".
     override = None
     if len(sys.argv) > 1 and sys.argv[1].strip():
-        override = sys.argv[1].strip()
+        candidate = sys.argv[1].strip()
+        if candidate.lower() != "auto":
+            override = candidate
     elif os.environ.get("CATEGORY_OVERRIDE", "").strip():
-        override = os.environ["CATEGORY_OVERRIDE"].strip()
+        candidate = os.environ["CATEGORY_OVERRIDE"].strip()
+        if candidate.lower() != "auto":
+            override = candidate
 
     if override:
         if override not in CATEGORIES:

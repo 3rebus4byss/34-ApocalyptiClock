@@ -56,7 +56,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GDELT_CLOUD_API_KEY: ${{ secrets.GDELT_CLOUD_API_KEY }}
-          CATEGORY_OVERRIDE: ${{ github.event.inputs.category == 'auto' && '' || github.event.inputs.category }}
+          CATEGORY_OVERRIDE: ${{ github.event.inputs.category }}
         run: python3 update_clock.py
 
       - name: Commit and push updated data (retries on push races)
