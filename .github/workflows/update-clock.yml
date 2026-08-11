@@ -33,7 +33,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Random jitter delay (avoids GitHub's scheduled-workflow thundering herd hitting GDELT at once)
-        run: sleep $(( RANDOM % 15 ))
+        run: sleep $(( RANDOM % 240 ))
 
       - name: Run the update (rotates one category, calls Gemini)
         env:
