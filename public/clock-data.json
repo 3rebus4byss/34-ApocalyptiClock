@@ -2,7 +2,7 @@
   "baseline": 85.0,
   "rotation_index": 0,
   "last_run_category": "human_factors",
-  "last_run_time": "2026-08-11 07:32:14 UTC",
+  "last_run_time": "2026-08-11 07:34:04 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -37,7 +37,7 @@
     "human_factors": {
       "label": "Human Factors",
       "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-11 07:32:14 UTC",
+      "last_attempted": "2026-08-11 07:34:04 UTC",
       "last_updated": null
     }
   },
@@ -68,7 +68,7 @@
       "status": "no_data"
     },
     {
-      "time": "2026-08-11 07:32:14 UTC",
+      "time": "2026-08-11 07:34:04 UTC",
       "category": "human_factors",
       "status": "no_data"
     }
