@@ -2,8 +2,9 @@ name: Update ApocalyptiClock
 
 on:
   schedule:
-    - cron: '0 * * * *'
-  workflow_dispatch:
+    - cron: '0 * * * *'   # every hour, on the hour -- runs on GitHub's servers,
+                            # completely independent of whether your local machine is on
+  workflow_dispatch:        # lets you trigger a run manually from the Actions tab
     inputs:
       category:
         description: 'Category to test (leave as "auto" for normal rotation)'
@@ -20,13 +21,13 @@ on:
           - human_factors
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: write   # needed to commit the updated clock-data.json back to the repo
+  pages: write       # needed to publish to GitHub Pages
+  id-token: write    # required by GitHub Pages' deployment action
 
 concurrency:
   group: update-clock
-  cancel-in-progress: false
+  cancel-in-progress: false   # let the current run finish rather than killing it mid-push
 
 jobs:
   update-clock:
@@ -60,7 +61,7 @@ jobs:
 
       - name: Commit and push updated data (retries on push races)
         run: |
-          set +e
+          set +e   # don't let GitHub Actions' default errexit kill the loop on the first failure
           git config --global user.name "apocalypticlock-bot"
           git config --global user.email "bot@users.noreply.github.com"
 
@@ -92,6 +93,9 @@ jobs:
               continue
             fi
 
+            # This bot only ever touches clock-data.json, and its freshly
+            # computed version is always the most current -- so on any
+            # conflict, keep the bot's version rather than trying to merge.
             git merge -X ours origin/main -m "Merge: keep bot's clock-data.json (auto-resolved race)"
             if [ $? -ne 0 ]; then
               echo "Merge failed -- aborting merge and forcing a clean reapply of the bot's commit on top of origin/main."

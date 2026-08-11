@@ -1,44 +1,44 @@
 {
   "baseline": 85.0,
   "rotation_index": 0,
-  "last_run_category": "human_factors",
-  "last_run_time": "2026-08-11 09:54:05 UTC",
+  "last_run_category": "nuclear",
+  "last_run_time": "2026-08-11 10:39:31 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
       "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-11 08:00:12 UTC",
-      "last_updated": null
+      "last_attempted": "2026-08-11 10:39:31 UTC",
+      "last_updated": "2026-08-11 10:26:01 UTC"
     },
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-11 08:06:19 UTC",
-      "last_updated": "2026-08-11 08:06:19 UTC"
+      "last_attempted": "2026-08-11 10:37:08 UTC",
+      "last_updated": "2026-08-11 10:28:16 UTC"
     },
     "climate": {
       "label": "Climate",
-      "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-11 08:27:29 UTC",
-      "last_updated": null
+      "cumulative_delta": -1.0,
+      "last_attempted": "2026-08-11 10:36:51 UTC",
+      "last_updated": "2026-08-11 10:36:17 UTC"
     },
     "biosecurity": {
       "label": "Biosecurity",
-      "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-11 08:37:51 UTC",
-      "last_updated": null
+      "cumulative_delta": -1.25,
+      "last_attempted": "2026-08-11 10:37:16 UTC",
+      "last_updated": "2026-08-11 10:25:15 UTC"
     },
     "ai_risk": {
       "label": "AI Risk",
-      "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-11 09:32:30 UTC",
-      "last_updated": null
+      "cumulative_delta": -0.25,
+      "last_attempted": "2026-08-11 10:37:43 UTC",
+      "last_updated": "2026-08-11 10:19:10 UTC"
     },
     "human_factors": {
       "label": "Human Factors",
       "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-11 09:54:05 UTC",
-      "last_updated": null
+      "last_attempted": "2026-08-11 10:37:51 UTC",
+      "last_updated": "2026-08-11 10:25:34 UTC"
     }
   },
   "history": [
@@ -108,6 +108,376 @@
     {
       "time": "2026-08-11 09:54:05 UTC",
       "category": "human_factors",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:10:10 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "The headlines indicate ongoing conflicts in Iraq and Ukraine, with no clear resolution in sight. US policy towards Iran appears to be shifting back to sanctions, suggesting a lack of progress in de-escalation. Other headlines discuss domestic political issues and economic concerns rather than active conflict escalation.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/8/11/iraqs-semi-autonomous-kurdish-region-suffers-as-us-iran-war-drags-on?traffic_source=rss",
+        "https://www.aljazeera.com/opinions/2026/8/11/ukraines-40-day-campaign-has-not-brought-the-war-closer-to-an-end?traffic_source=rss",
+        "https://www.npr.org/2026/08/11/g-s1-138160/us-iran-war"
+      ],
+      "data_source": "rss"
+    },
+    {
+      "time": "2026-08-11 10:15:03 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "The ongoing conflicts in Iraq and Ukraine show no signs of resolution, with reports indicating the Ukraine campaign has not brought the war closer to an end. US strategies regarding Iran appear to be shifting back towards sanctions, suggesting a lack of progress in de-escalation.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/8/11/iraqs-semi-autonomous-kurdish-region-suffers-as-us-iran-war-drags-on?traffic_source=rss",
+        "https://www.aljazeera.com/opinions/2026/8/11/ukraines-40-day-campaign-has-not-brought-the-war-closer-to-an-end?traffic_source=rss",
+        "https://www.npr.org/2026/08/11/g-s1-138160/us-iran-war"
+      ],
+      "data_source": "rss"
+    },
+    {
+      "time": "2026-08-11 10:15:13 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "The ongoing US-Iran war continues to impact Iraq, while Ukraine's campaign has not led to an end of hostilities. The US is reportedly reconsidering sanctions against Iran. Other headlines concern domestic political issues and economic matters in Australia and the UK, and a personnel change within the Republican party in the US, which are not directly related to major international conflict.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/8/11/iraqs-semi-autonomous-kurdish-region-suffers-as-us-iran-war-drags-on?traffic_source=rss",
+        "https://www.aljazeera.com/opinions/2026/8/11/ukraines-40-day-campaign-has-not-brought-the-war-closer-to-an-end?traffic_source=rss",
+        "https://www.npr.org/2026/08/11/g-s1-138160/us-iran-war"
+      ],
+      "data_source": "rss"
+    },
+    {
+      "time": "2026-08-11 10:15:17 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines indicate ongoing conflicts and diplomatic maneuvers in the US-Iran and Ukraine wars, with no significant escalation or de-escalation apparent in the provided reports. Domestic political news in Australia and the US, while concerning, do not directly impact global conflict levels.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/8/11/iraqs-semi-autonomous-kurdish-region-suffers-as-us-iran-war-drags-on?traffic_source=rss",
+        "https://www.aljazeera.com/opinions/2026/8/11/ukraines-40-day-campaign-has-not-brought-the-war-closer-to-an-end?traffic_source=rss",
+        "https://www.npr.org/2026/08/11/g-s1-138160/us-iran-war"
+      ],
+      "data_source": "rss"
+    },
+    {
+      "time": "2026-08-11 10:15:21 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "The provided headlines indicate ongoing conflicts in the US-Iran and Ukraine wars, with no clear indication of resolution or escalation. Other headlines relate to domestic political disputes, economic news, or social issues rather than direct armed conflict.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/8/11/iraqs-semi-autonomous-kurdish-region-suffers-as-us-iran-war-drags-on?traffic_source=rss",
+        "https://www.aljazeera.com/opinions/2026/8/11/ukraines-40-day-campaign-has-not-brought-the-war-closer-to-an-end?traffic_source=rss",
+        "https://www.npr.org/2026/08/11/g-s1-138160/us-iran-war"
+      ],
+      "data_source": "rss"
+    },
+    {
+      "time": "2026-08-11 10:15:31 UTC",
+      "category": "nuclear",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "While there are concerns raised about nuclear weapons and warnings of nuclear war, specific actions or escalations that would significantly alter the risk profile are not present in the provided headlines. The assessment of Iran's priorities and discussions about tactical nukes represent ongoing geopolitical considerations rather than immediate shifts.",
+      "sources": [
+        "http://french.people.com.cn/Chine/n3/2026/0810/c31354-20486891.html",
+        "https://www.koreaherald.com/article/10837307",
+        "https://www.zerohedge.com/geopolitical/how-fake-irgc-quote-nuclear-weapons-reached-netanyahus-speech",
+        "https://www.nbcnews.com/politics/national-security/us-assesses-irans-priority-shifted-nuclear-weapons-strait-hormuz-rcna591715",
+        "https://nuclear-news.net/2026/08/11/1-b1-nagasaki-warns-of-risk-of-nuclear-war-on-81st-a-bomb-anniversary/"
+      ],
+      "data_source": "gdeltcloud"
+    },
+    {
+      "time": "2026-08-11 10:17:31 UTC",
+      "category": "climate",
+      "status": "updated",
+      "delta": -0.2,
+      "direction": "worse",
+      "rationale": "Multiple headlines indicate intensifying extreme weather events, including record warmth and more wildfires, alongside warnings about the broader climate impact on oceans and continents.",
+      "sources": [
+        "http://cubadebate.cu/noticias/2026/08/10/copernicus-alerta-sobre-impacto-climatico-en-oceanos-y-continentes/",
+        "https://www.newswire.ca/news-releases/more-wildfires-fewer-experts-pipsc-action-warns-of-climate-cuts-830339648.html",
+        "https://www.asiaone.com:443/china/china-bets-ai-weather-forecasting-extreme-weather-intensifies",
+        "https://aftonbladet.se/nyheter/a/QJaMjV/rekordvarm-juli-for-900-miljoner"
+      ],
+      "data_source": "gdeltcloud"
+    },
+    {
+      "time": "2026-08-11 10:17:54 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "The provided headlines indicate ongoing conflicts in Iraq and Ukraine, but no significant new escalations or de-escalations are apparent. Other headlines concern domestic political matters, economic policy, or weather, and do not directly impact the 'Conflict' category.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/8/11/iraqs-semi-autonomous-kurdish-region-suffers-as-us-iran-war-drags-on?traffic_source=rss",
+        "https://www.aljazeera.com/opinions/2026/8/11/ukraines-40-day-campaign-has-not-brought-the-war-closer-to-an-end?traffic_source=rss"
+      ],
+      "data_source": "rss"
+    },
+    {
+      "time": "2026-08-11 10:18:01 UTC",
+      "category": "nuclear",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines discuss hypothetical scenarios and diplomatic tensions regarding nuclear weapons, with one report suggesting a shift in Iran's priorities away from nuclear weapons development. Nagasaki's warning is a recurring annual event and does not indicate a new escalation.",
+      "sources": [
+        "http://french.people.com.cn/Chine/n3/2026/0810/c31354-20486891.html",
+        "https://www.koreaherald.com/article/10837307",
+        "https://www.zerohedge.com/geopolitical/how-fake-irgc-quote-nuclear-weapons-reached-netanyahus-speech",
+        "https://www.nbcnews.com/politics/national-security/us-assesses-irans-priority-shifted-nuclear-weapons-strait-hormuz-rcna591715",
+        "https://nuclear-news.net/2026/08/11/1-b1-nagasaki-warns-of-risk-of-nuclear-war-on-81st-a-bomb-anniversary/"
+      ],
+      "data_source": "gdeltcloud"
+    },
+    {
+      "time": "2026-08-11 10:18:27 UTC",
+      "category": "climate",
+      "status": "updated",
+      "delta": -0.4,
+      "direction": "worse",
+      "rationale": "Multiple headlines indicate worsening climate impacts including record heat, increased wildfires, and intensified extreme weather events, despite efforts to improve forecasting and climate justice planning.",
+      "sources": [
+        "http://cubadebate.cu/noticias/2026/08/10/copernicus-alerta-sobre-impacto-climatico-en-oceanos-y-continentes/",
+        "https://www.newswire.ca/news-releases/more-wildfires-fewer-experts-pipsc-action-warns-of-climate-cuts-830339648.html",
+        "https://www.asiaone.com:443/china/china-bets-ai-weather-forecasting-extreme-weather-intensifies",
+        "https://aftonbladet.se/nyheter/a/QJaMjV/rekordvarm-juli-for-900-miljoner"
+      ],
+      "data_source": "gdeltcloud"
+    },
+    {
+      "time": "2026-08-11 10:18:49 UTC",
+      "category": "biosecurity",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:19:10 UTC",
+      "category": "ai_risk",
+      "status": "updated",
+      "delta": -0.25,
+      "direction": "worse",
+      "rationale": "Multiple reports highlight major AI models going rogue in cyber tests and concerns about AI safety, even as companies like OpenAI work on stricter security measures. This indicates escalating risks associated with AI's capabilities and potential misuse.",
+      "sources": [
+        "https://www.benchmark.pl/boja-sie-sztucznej-inteligencji-openai-zaostrza-srodki-bezpieczenstwa-7316937576233024a",
+        "https://publictechnology.net/news/major-ai-models-go-rogue-in-government-watchdogs-cyber-tests/",
+        "https://bravenewcoin.com/insights/openai-ceo-sam-altman-says-astra-ai-will-be-generally-available-but-cyber-capabilities-require-more-safety-work"
+      ],
+      "data_source": "gdeltcloud"
+    },
+    {
+      "time": "2026-08-11 10:19:23 UTC",
+      "category": "human_factors",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Multiple reports indicate ongoing challenges with disinformation impacting public health responses and social issues across different countries, suggesting a persistent problem in human factors.",
+      "sources": [
+        "https://www.bursa.ro/the-ambulance8221-case-brings-back-the-need-for-a-law-against-disinformation-04638955",
+        "https://delfino.cr/2026/08/quien-decide-que-es-mentira-el-limite-legal-para-que-costa-rica-combata-la-desinformacion",
+        "https://www.japantimes.co.jp/news/2026/08/10/japan/japan-misinformation-social-media/",
+        "https://radiookapi.net/2026/08/10/actualite/societe/la-desinformation-et-la-mefiance-communautaire-compliquent-la-riposte",
+        "https://aktuality.sk/clanok/B8aeIqr/eu-a-socialne-siete-zasiahnu-proti-hoaxom-o-migrantoch-v-ceute-brusel-sa-dohodol-s-metou-aj-tiktokom/"
+      ],
+      "data_source": "gdeltcloud"
+    },
+    {
+      "time": "2026-08-11 10:21:23 UTC",
+      "category": "biosecurity",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:22:02 UTC",
+      "category": "biosecurity",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:24:08 UTC",
+      "category": "biosecurity",
+      "status": "updated",
+      "delta": -0.75,
+      "direction": "worse",
+      "rationale": "The WHO is warning that efforts to contain the Ebola virus in the Congo are failing, with the death toll exceeding 2,000. Additionally, COVID-19 cases and deaths have reached a seasonal high, and influenza is also on the rise.",
+      "sources": [
+        "https://myjoyonline.com/we-are-chasing-ebola-virus-it-is-ahead-of-us-who-warns/",
+        "https://annahar.com/international/world/337529/%D9%81%D9%8A%D8%B1%D9%88%D8%B3-%D8%A5%D9%8A%D8%A8%D9%88%D9%84%D8%A7-%D9%8A%D9%81%D8%AA%D9%83-%D8%A8%D8%B3%D9%83%D8%A7%D9%86-%D8%A7%D9%84%D9%83%D9%86%D8%BA%D9%88-%D9%88%D8%B9%D8%AF%D8%AF-%D8%A7%D9%84%D9%88%D9%81%D9%8A%D8%A7%D8%AA-%D8%AA%D8%AE%D8%B7%D9%89-%D8%A7%D9%84%D8%A3%D9%84%D9%81%D9%8A%D9%86",
+        "https://cna.com.tw/news/ahel/202608110212.aspx",
+        "https://health.ltn.com.tw/article/breakingnews/5535946"
+      ],
+      "data_source": "gdeltcloud"
+    },
+    {
+      "time": "2026-08-11 10:25:15 UTC",
+      "category": "biosecurity",
+      "status": "updated",
+      "delta": -0.5,
+      "direction": "worse",
+      "rationale": "Multiple reports indicate escalating infectious disease threats, with new highs in COVID-19 and influenza cases and fatalities, while the WHO warns that efforts to contain the Ebola virus in the Congo are falling behind, with deaths exceeding two thousand.",
+      "sources": [
+        "https://health.ltn.com.tw/article/breakingnews/5535946",
+        "https://cna.com.tw/news/ahel/202608110212.aspx",
+        "https://myjoyonline.com/we-are-chasing-ebola-virus-it-is-ahead-of-us-who-warns/",
+        "https://annahar.com/international/world/337529/%D9%81%D9%8A%D8%B1%D9%88%D8%B3-%D8%A5%D9%8A%D8%A8%D9%88%D9%84%D8%A7-%D9%8A%D9%81%D8%AA%D9%83-%D8%A8%D8%B3%D9%83%D8%A7%D9%86-%D8%A7%D9%84%D9%83%D9%86%D8%BA%D9%88-%D9%88%D8%B9%D8%AF%D8%AF-%D8%A7%D9%84%D9%88%D9%81%D9%8A%D8%A7%D8%AA-%D8%AA%D8%AE%D8%B7%D9%89-%D8%A7%D9%84%D8%A3%D9%84%D9%81%D9%8A%D9%86"
+      ],
+      "data_source": "gdeltcloud"
+    },
+    {
+      "time": "2026-08-11 10:25:34 UTC",
+      "category": "human_factors",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Multiple headlines discuss efforts to combat disinformation and misinformation across various countries and platforms, indicating ongoing challenges rather than a significant shift in the human factors landscape.",
+      "sources": [
+        "https://www.bursa.ro/the-ambulance8221-case-brings-back-the-need-for-a-law-against-disinformation-04638955",
+        "https://delfino.cr/2026/08/quien-decide-que-es-mentira-el-limite-legal-para-que-costa-rica-combata-la-desinformacion",
+        "https://www.japantimes.co.jp/news/2026/08/10/japan/japan-misinformation-social-media/",
+        "https://radiookapi.net/2026/08/10/actualite/societe/la-desinformation-et-la-mefiance-communautaire-compliquent-la-riposte",
+        "https://aktuality.sk/clanok/B8aeIqr/eu-a-socialne-siete-zasiahnu-proti-hoaxom-o-migrantoch-v-ceute-brusel-sa-dohodol-s-metou-aj-tiktokom/"
+      ],
+      "data_source": "gdeltcloud"
+    },
+    {
+      "time": "2026-08-11 10:26:01 UTC",
+      "category": "nuclear",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines present a mix of rhetoric, potential misinterpretations, and calls for both escalation and de-escalation regarding nuclear weapons, but no concrete developments have occurred in the last six hours to significantly alter the risk assessment.",
+      "sources": [
+        "http://french.people.com.cn/Chine/n3/2026/0810/c31354-20486891.html",
+        "https://www.koreaherald.com/article/10837307",
+        "https://www.zerohedge.com/geopolitical/how-fake-irgc-quote-nuclear-weapons-reached-netanyahus-speech",
+        "https://www.nbcnews.com/politics/national-security/us-assesses-irans-priority-shifted-nuclear-weapons-strait-hormuz-rcna591715",
+        "https://nuclear-news.net/2026/08/11/1-b1-nagasaki-warns-of-risk-of-nuclear-war-on-81st-a-bomb-anniversary/"
+      ],
+      "data_source": "gdeltcloud"
+    },
+    {
+      "time": "2026-08-11 10:26:10 UTC",
+      "category": "climate",
+      "status": "updated",
+      "delta": -0.4,
+      "direction": "worse",
+      "rationale": "Multiple headlines indicate significant climate impacts, including record warm temperatures, increased wildfires linked to climate cuts, and intensified extreme weather, despite some efforts like climate justice plans.",
+      "sources": [
+        "http://cubadebate.cu/noticias/2026/08/10/copernicus-alerta-sobre-impacto-climatico-en-oceanos-y-continentes/",
+        "https://www.newswire.ca/news-releases/more-wildfires-fewer-experts-pipsc-action-warns-of-climate-cuts-830339648.html",
+        "https://www.asiaone.com:443/china/china-bets-ai-weather-forecasting-extreme-weather-intensifies",
+        "https://aftonbladet.se/nyheter/a/QJaMjV/rekordvarm-juli-for-900-miljoner"
+      ],
+      "data_source": "gdeltcloud"
+    },
+    {
+      "time": "2026-08-11 10:28:03 UTC",
+      "category": "nuclear",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:28:16 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "The provided headlines indicate ongoing conflicts in Iraq and Ukraine, with no clear progress towards resolution. Additionally, a headline discusses US war spending, while another touches on political divisions that do not appear to be directly related to armed conflict.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/8/11/iraqs-semi-autonomous-kurdish-region-suffers-as-us-iran-war-drags-on?traffic_source=rss",
+        "https://www.aljazeera.com/opinions/2026/8/11/ukraines-40-day-campaign-has-not-brought-the-war-closer-to-an-end?traffic_source=rss",
+        "https://www.aljazeera.com/video/money-works/2026/8/11/what-is-the-us-spending-all-their-war-money-on?traffic_source=rss"
+      ],
+      "data_source": "rss"
+    },
+    {
+      "time": "2026-08-11 10:28:23 UTC",
+      "category": "climate",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:28:30 UTC",
+      "category": "biosecurity",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:28:39 UTC",
+      "category": "ai_risk",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:28:48 UTC",
+      "category": "human_factors",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:35:58 UTC",
+      "category": "nuclear",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:36:07 UTC",
+      "category": "nuclear",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:36:17 UTC",
+      "category": "climate",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines continue to report on intensifying extreme weather and climate impacts on oceans and continents, with one article mentioning record warm July. This is consistent with the recent trend and does not represent a significant new development.",
+      "sources": [
+        "http://cubadebate.cu/noticias/2026/08/10/copernicus-alerta-sobre-impacto-climatico-en-oceanos-y-continentes/",
+        "https://www.newswire.ca/news-releases/more-wildfires-fewer-experts-pipsc-action-warns-of-climate-cuts-830339648.html",
+        "https://aftonbladet.se/nyheter/a/QJaMjV/rekordvarm-juli-for-900-miljoner"
+      ],
+      "data_source": "gdeltcloud"
+    },
+    {
+      "time": "2026-08-11 10:36:32 UTC",
+      "category": "nuclear",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:36:43 UTC",
+      "category": "nuclear",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:36:51 UTC",
+      "category": "climate",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:37:08 UTC",
+      "category": "conflict",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:37:16 UTC",
+      "category": "biosecurity",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:37:43 UTC",
+      "category": "ai_risk",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:37:51 UTC",
+      "category": "human_factors",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 10:39:31 UTC",
+      "category": "nuclear",
       "status": "no_data"
     }
   ]

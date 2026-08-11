@@ -2,22 +2,22 @@
 ApocalyptiClock - hourly update job (one category per run).
 
 What this actually does (no randomness, no placeholder text):
-  1. Rotates through the risk categories one at a time, once per hour --
-     never bursting multiple GDELT requests together. Over a 6-hour span,
-     every category gets exactly one fresh check.
+  1. Rotates through the risk categories one at a time, once per hour.
+     Over a 6-hour span, every category gets exactly one fresh check.
   2. For whichever category is "up" this hour, pulls real headlines from
-     the last 6 hours via GDELT's free Doc API, then asks an AI model
-     (Google Gemini, free tier -- no billing required) for a grounded,
-     cited judgment: did THIS category's risk move up, down, or hold, and
-     why -- citing the specific stories that informed the call.
+     public RSS feeds (primary), falling back to GDELT Cloud if RSS finds
+     nothing, then asks an AI model (Google Gemini, free tier -- no
+     billing required) for a grounded, cited judgment: did THIS category's
+     risk move up, down, or hold, and why -- citing the specific stories
+     that informed the call.
   3. Writes the result to clock-data.json as a per-category cumulative
      offset, plus per-category "last checked" / "last updated" timestamps
      so the frontend can show exactly what changed and when each category
      is next due, without re-running anything.
 
-If GDELT returns nothing for this hour's category, or the model call
-fails, no number is invented. That category is left unchanged, logged as
-a no-op, and gets picked up again on its next scheduled turn.
+If both sources return nothing for this hour's category, or the model
+call fails, no number is invented. That category is left unchanged,
+logged as a no-op, and gets picked up again on its next scheduled turn.
 
 MODEL CHOICE: this uses Gemini's free tier (no credit card, generous
 daily quota) to keep running costs at zero pre-revenue. The assessment
@@ -28,20 +28,17 @@ other) API call without touching anything else in this file.
 
 import json
 import os
-import random
 import sys
 import time
 from datetime import datetime, timezone
 
 import requests
 
-GDELT_ENDPOINT = "https://api.gdeltproject.org/api/v2/doc/doc"
-
-# Third-tier fallback: GDELT Cloud (gdeltcloud.com), a separate newer paid/free-tier
-# product from the GDELT team with real rate-limit headers and structured data.
-# Free tier is only 100 query units/month -- nowhere near enough to be a primary
-# source at 24 checks/day, so this is used ONLY when both the free GDELT DOC API
-# AND the RSS fallback produce nothing in the same run.
+# Fallback tier (rarely used): GDELT Cloud (gdeltcloud.com), a separate
+# newer paid/free-tier product from the GDELT team with real rate-limit
+# headers and structured data. Free tier is only 100 query units/month --
+# nowhere near enough to be primary at 24 checks/day, so this is used ONLY
+# when RSS produces nothing in the same run.
 GDELT_CLOUD_ENDPOINT = "https://gdeltcloud.com/api/v2/stories"
 
 # Free-tier Gemini model. Check https://ai.google.dev/gemini-api/docs/models
@@ -88,81 +85,17 @@ DATA_FILE = "public/clock-data.json"
 STARTING_BASELINE = 85.0  # seconds to midnight, anchored to the real 2025 Bulletin setting
 MAX_SHIFT_PER_TICK = 1.0        # cap on a single category's move in one check
 MAX_CATEGORY_CUMULATIVE = 15.0  # cap on how far any one category can drift from 0 over time
-MAX_RETRIES = 2               # after this many failed GDELT attempts, fall back to RSS
-RETRY_BACKOFF_SECONDS = 20      # base wait before retrying a rate-limited/empty response
-MIN_RUN_INTERVAL_MINUTES = 4    # guard against accidental back-to-back runs hammering GDELT
+MIN_RUN_INTERVAL_MINUTES = 4    # guard against accidental back-to-back runs
 
-# Fallback news sources, used only if GDELT fails MAX_RETRIES times in a row.
-# Plain RSS -- no API key, no query-based rate limiting like GDELT's DOC API.
+# Primary source: plain public RSS feeds. No API key, no query-based rate
+# limiting, no quota -- has proven more reliable in practice than GDELT's
+# free DOC API ever was.
 RSS_FEEDS = [
     "https://feeds.bbci.co.uk/news/world/rss.xml",
     "https://www.aljazeera.com/xml/rss/all.xml",
     "https://www.theguardian.com/world/rss",
     "https://feeds.npr.org/1004/rss.xml",
 ]
-
-
-def fetch_category_headlines(query: str, max_records: int = 8):
-    """Pull real recent article titles + URLs from GDELT. Returns [] on failure."""
-    params = {
-        "query": query,
-        "mode": "artlist",
-        "maxrecords": max_records,
-        "timespan": "6h",
-        "sort": "hybridrel",
-        "format": "json",
-    }
-    headers = {"User-Agent": "ApocalyptiClock/1.0 (+news risk aggregator)"}
-
-    for attempt in range(1, MAX_RETRIES + 1):
-        try:
-            resp = requests.get(GDELT_ENDPOINT, params=params, headers=headers, timeout=20)
-
-            if resp.status_code == 429:
-                wait = RETRY_BACKOFF_SECONDS * attempt
-                print(f"[warn] GDELT rate-limited (429), attempt {attempt}/{MAX_RETRIES}, "
-                      f"waiting {wait}s...", file=sys.stderr)
-                time.sleep(wait)
-                continue
-
-            resp.raise_for_status()
-
-            # GDELT sometimes returns HTTP 200 with an EMPTY body when it's
-            # throttling instead of a clean 429. Treat that the same way.
-            body = resp.text.strip()
-            if not body:
-                wait = RETRY_BACKOFF_SECONDS * attempt
-                print(f"[warn] GDELT returned an empty response (likely soft-throttled), "
-                      f"attempt {attempt}/{MAX_RETRIES}, waiting {wait}s...", file=sys.stderr)
-                time.sleep(wait)
-                continue
-
-            payload = json.loads(body)
-            articles = payload.get("articles", [])
-            return [
-                {"title": a.get("title", "").strip(), "url": a.get("url", "")}
-                for a in articles
-                if a.get("title")
-            ]
-        except json.JSONDecodeError:
-            wait = RETRY_BACKOFF_SECONDS * attempt
-            print(f"[warn] GDELT returned non-JSON (likely throttled), "
-                  f"attempt {attempt}/{MAX_RETRIES}, waiting {wait}s...", file=sys.stderr)
-            time.sleep(wait)
-            continue
-        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as exc:
-            wait = RETRY_BACKOFF_SECONDS * attempt
-            print(f"[warn] GDELT connection failed ({type(exc).__name__}), "
-                  f"attempt {attempt}/{MAX_RETRIES}, waiting {wait}s...", file=sys.stderr)
-            time.sleep(wait)
-            continue
-        except Exception as exc:
-            print(f"[warn] GDELT fetch failed with unexpected error: {exc}", file=sys.stderr)
-            return []
-
-    print(f"[warn] GDELT still unavailable after {MAX_RETRIES} attempts, falling back to RSS.",
-          file=sys.stderr)
-    return []
 
 
 def fetch_rss_headlines(keywords: list, max_records: int = 8):
@@ -273,47 +206,52 @@ def fetch_gdeltcloud_headlines(query: str, max_records: int = 5):
 
 def get_headlines_for_category(cat_id: str):
     """
-    Three-tier fallback chain:
-      1. GDELT's free DOC API (primary)
-      2. RSS feeds, if GDELT fails
-      3. GDELT Cloud, if GDELT_CLOUD_API_KEY is set AND both above fail
+    Two-tier fallback chain:
+      1. RSS feeds (primary) -- free, no quota, no auth
+      2. GDELT Cloud, if RSS finds nothing AND GDELT_CLOUD_API_KEY is set
          (rare, keeps us well under its 100 QU/month free quota)
     Returns (headlines, source_used) where source_used is
-    'gdelt', 'rss', 'gdeltcloud', or None.
+    'rss', 'gdeltcloud', or None.
     """
     query = CATEGORIES[cat_id]["query"]
     label = CATEGORIES[cat_id]["label"]
 
-    headlines = fetch_category_headlines(query)
-    if headlines:
-        print(f"[info] GDELT succeeded for '{label}': {len(headlines)} headlines.")
-        return headlines, "gdelt"
-
-    print(f"[info] GDELT produced nothing usable for '{label}'. Trying RSS fallback...")
     keywords = query.split(" OR ")
     headlines = fetch_rss_headlines(keywords)
     if headlines:
-        print(f"[info] RSS fallback succeeded for '{label}': {len(headlines)} matching headlines.")
+        print(f"[info] RSS succeeded for '{label}': {len(headlines)} matching headlines.")
         return headlines, "rss"
 
-    print(f"[info] RSS fallback also produced nothing for '{label}' "
+    print(f"[info] RSS produced nothing for '{label}' "
           f"(no matching headlines across {len(RSS_FEEDS)} feeds). "
-          f"Trying GDELT Cloud (final fallback)...")
+          f"Trying GDELT Cloud (fallback)...")
     headlines = fetch_gdeltcloud_headlines(query)
     if headlines:
         print(f"[info] GDELT Cloud fallback succeeded for '{label}': {len(headlines)} headlines.")
         return headlines, "gdeltcloud"
 
-    print(f"[info] All three sources produced nothing for '{label}' this hour.")
+    print(f"[info] Both sources produced nothing for '{label}' this hour.")
     return [], None
 
 
-def ask_ai_for_single_assessment(cat_id: str, headlines: list):
+def ask_ai_for_single_assessment(cat_id: str, headlines: list, current_cumulative: float,
+                                   recent_entries: list):
     """
     Send this one category's real headlines to Gemini (free tier) and ask
     for a grounded, cited judgment. Returns
       {"direction", "delta_seconds", "rationale", "cited_urls"}
     or None if the model call fails or returns something unusable.
+
+    current_cumulative and recent_entries give the model context on where
+    this category's risk level already stands and what was said in its
+    last few checks -- without this, every check was an isolated snapshot
+    with no memory, which caused genuinely independent judgments to
+    sometimes cancel each other out (a "worse" call followed shortly by
+    an unrelated "better" call nets to ~0, looking like nothing happened
+    even though two real assessments were made). With context, the model
+    is asked to judge change relative to where things already stand, which
+    produces more deliberate, less noisy movement -- closer to how the
+    real Bulletin's annual assessment works.
     """
     if not headlines:
         return None
@@ -326,14 +264,34 @@ def ask_ai_for_single_assessment(cat_id: str, headlines: list):
     label = CATEGORIES[cat_id]["label"]
     digest = "\n".join(f"- {h['title']} ({h['url']})" for h in headlines)
 
+    if recent_entries:
+        history_lines = "\n".join(
+            f"- {e['time']}: {e['direction']} ({e['delta']:+.2f}s) -- {e['rationale']}"
+            for e in recent_entries
+        )
+        history_context = (
+            f"\nThis category's recent check history (most recent last):\n{history_lines}\n"
+        )
+    else:
+        history_context = "\nThis category has no prior check history yet -- this is its first assessment.\n"
+
     system_prompt = (
         f"You are producing a periodic risk assessment for ApocalyptiClock, a website "
         f"that tracks catastrophic risk across separate categories, modeled loosely on "
         f"the Bulletin of the Atomic Scientists' Doomsday Clock but independent from it. "
         f"You are assessing ONLY the '{label}' category this run. You will be given REAL "
-        f"headlines from the last 6 hours in this category. Base your judgment ONLY on "
-        f"these headlines -- do not use outside knowledge of events not listed, and do "
-        f"not invent stories.\n\n"
+        f"headlines from the last 6 hours in this category, PLUS the category's current "
+        f"cumulative standing and its recent check history. Base your judgment ONLY on "
+        f"the headlines provided -- do not use outside knowledge of events not listed, "
+        f"and do not invent stories.\n\n"
+        f"IMPORTANT: judge whether the NEW headlines represent a genuine change relative "
+        f"to the established recent trend, not just whether they sound concerning in "
+        f"isolation. If the new headlines are simply continuing coverage of an "
+        f"already-reflected situation with no material new development, the correct "
+        f"call is 'steady' with a delta near 0 -- do not re-penalize or re-reward the "
+        f"same ongoing situation on every check. Only call 'worse' or 'better' when "
+        f"headlines show an actual escalation or de-escalation beyond what's already "
+        f"been accounted for.\n\n"
         "Respond with ONLY a JSON object, no other text, no markdown fences, in exactly "
         "this shape:\n"
         '{"direction": "worse" | "better" | "steady", '
@@ -341,18 +299,24 @@ def ask_ai_for_single_assessment(cat_id: str, headlines: list):
         'midnight i.e. worse>, '
         '"rationale": "<1-2 sentences grounded in the specific headlines below>", '
         '"cited_urls": ["<url1>", "<url2>"]}\n'
-        "Be conservative: most checks should produce a small move (under 0.3s). Only "
-        "move further for genuinely significant developments clearly reflected in "
-        "multiple headlines."
+        "Be conservative: most checks should produce a small move (under 0.3s) or none "
+        "at all. Only move further for genuinely significant NEW developments clearly "
+        "reflected in multiple headlines."
     )
 
-    user_prompt = f"Real '{label}' headlines from the past 6 hours:\n{digest}\n\nReturn your JSON assessment now."
+    user_prompt = (
+        f"Current cumulative standing for '{label}': {current_cumulative:+.2f}s "
+        f"relative to baseline.\n"
+        f"{history_context}\n"
+        f"Real '{label}' headlines from the past 6 hours:\n{digest}\n\n"
+        f"Return your JSON assessment now."
+    )
 
     body = {
         "system_instruction": {"parts": [{"text": system_prompt}]},
         "contents": [{"role": "user", "parts": [{"text": user_prompt}]}],
         "generationConfig": {
-            "maxOutputTokens": 400,
+            "maxOutputTokens": 800,
             "responseMimeType": "application/json",
         },
     }
@@ -369,7 +333,15 @@ def ask_ai_for_single_assessment(cat_id: str, headlines: list):
 
         text = payload["candidates"][0]["content"]["parts"][0]["text"].strip()
         text = text.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
-        result = json.loads(text)
+        try:
+            result = json.loads(text)
+        except json.JSONDecodeError as parse_exc:
+            # Show what actually came back, truncated or not -- makes future
+            # failures like this one immediately diagnosable instead of just
+            # showing "Unterminated string" with no context.
+            print(f"[warn] Gemini returned unparseable JSON: {parse_exc}", file=sys.stderr)
+            print(f"[warn] Raw response was: {text[:1000]}", file=sys.stderr)
+            return None
 
         delta = float(result["delta_seconds"])
         delta = max(-MAX_SHIFT_PER_TICK, min(MAX_SHIFT_PER_TICK, delta))
@@ -426,30 +398,65 @@ def main():
 
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
 
-    # Guard against accidental back-to-back runs (manual testing, overlapping
-    # cron triggers) hammering GDELT within the same rate-limit window.
-    if data.get("last_run_time"):
-        try:
-            last_run = datetime.strptime(data["last_run_time"], "%Y-%m-%d %H:%M:%S UTC")
-            last_run = last_run.replace(tzinfo=timezone.utc)
-            elapsed_minutes = (datetime.now(timezone.utc) - last_run).total_seconds() / 60
-            if elapsed_minutes < MIN_RUN_INTERVAL_MINUTES:
-                print(f"[info] Last run was {elapsed_minutes:.1f}m ago (minimum interval is "
-                      f"{MIN_RUN_INTERVAL_MINUTES}m). Skipping this run entirely -- "
-                      f"no request sent to GDELT.")
-                return
-        except ValueError:
-            pass  # malformed timestamp, don't block on it
+    # Manual override for testing a specific category, instead of following
+    # the strict rotation. Two ways to set it:
+    #   - CLI arg:      python3 update_clock.py nuclear
+    #   - env var:      CATEGORY_OVERRIDE=nuclear python3 update_clock.py
+    # The GitHub Actions workflow_dispatch input feeds this via the env var.
+    override = None
+    if len(sys.argv) > 1 and sys.argv[1].strip():
+        override = sys.argv[1].strip()
+    elif os.environ.get("CATEGORY_OVERRIDE", "").strip():
+        override = os.environ["CATEGORY_OVERRIDE"].strip()
 
-    # Which single category is "up" this run.
-    idx = data["rotation_index"] % len(CATEGORY_ORDER)
-    cat_id = CATEGORY_ORDER[idx]
+    if override:
+        if override not in CATEGORIES:
+            print(f"[error] Unknown category override '{override}'. "
+                  f"Valid options: {', '.join(CATEGORY_ORDER)}", file=sys.stderr)
+            sys.exit(1)
+        print(f"[info] Manual override: forcing category '{override}' "
+              f"(bypassing normal rotation for this run only).")
+    else:
+        # Guard against accidental back-to-back runs (manual testing, overlapping
+        # cron triggers) hammering GDELT within the same rate-limit window.
+        # Skipped entirely when a manual override is used, since that's an
+        # intentional one-off test, not a background scheduling collision.
+        if data.get("last_run_time"):
+            try:
+                last_run = datetime.strptime(data["last_run_time"], "%Y-%m-%d %H:%M:%S UTC")
+                last_run = last_run.replace(tzinfo=timezone.utc)
+                elapsed_minutes = (datetime.now(timezone.utc) - last_run).total_seconds() / 60
+                if elapsed_minutes < MIN_RUN_INTERVAL_MINUTES:
+                    print(f"[info] Last run was {elapsed_minutes:.1f}m ago (minimum interval is "
+                          f"{MIN_RUN_INTERVAL_MINUTES}m). Skipping this run entirely -- "
+                          f"skipping this run entirely.")
+                    return
+            except ValueError:
+                pass  # malformed timestamp, don't block on it
+
+    # Which single category is "up" this run -- either the override, or
+    # whatever the normal rotation says.
+    if override:
+        cat_id = override
+        idx = CATEGORY_ORDER.index(cat_id)  # keep rotation_index math correct below
+    else:
+        idx = data["rotation_index"] % len(CATEGORY_ORDER)
+        cat_id = CATEGORY_ORDER[idx]
     label = CATEGORIES[cat_id]["label"]
 
     headlines, source = get_headlines_for_category(cat_id)
-    assessment = ask_ai_for_single_assessment(cat_id, headlines) if headlines else None
 
     cat_state = data["categories"][cat_id]
+    current_cumulative = cat_state["cumulative_delta"]
+    recent_entries = [
+        e for e in data.get("history", [])
+        if e.get("category") == cat_id and e.get("status") == "updated"
+    ][-3:]  # last 3 real updates for this category, most recent last
+
+    assessment = (
+        ask_ai_for_single_assessment(cat_id, headlines, current_cumulative, recent_entries)
+        if headlines else None
+    )
     cat_state["last_attempted"] = timestamp
 
     if assessment is None:
@@ -474,7 +481,7 @@ def main():
             "direction": assessment["direction"],
             "rationale": assessment["rationale"],
             "sources": assessment["cited_urls"],
-            "data_source": source,   # 'gdelt' or 'rss' -- transparency on where headlines came from
+            "data_source": source,   # 'rss' or 'gdeltcloud' -- transparency on where headlines came from
         })
         print(f"Updated '{label}' at {timestamp} (via {source}): "
               f"{assessment['delta_seconds']:+}s ({assessment['direction']})")
@@ -482,7 +489,10 @@ def main():
     data["history"] = data["history"][-60:]  # keep the log from growing forever
     data["last_run_category"] = cat_id
     data["last_run_time"] = timestamp
-    data["rotation_index"] = (idx + 1) % len(CATEGORY_ORDER)
+    if not override:
+        data["rotation_index"] = (idx + 1) % len(CATEGORY_ORDER)
+    # else: leave rotation_index untouched -- a manual test shouldn't skip
+    # or reorder the categories scheduled runs will check next.
 
     with open(DATA_FILE, "w") as f:
         json.dump(data, f, indent=2)
