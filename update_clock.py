@@ -61,7 +61,8 @@ CATEGORIES = {
     "conflict": {
         "label": "Conflict",
         "query": "war OR armed conflict OR military escalation OR invasion OR "
-                  "airstrike OR ceasefire OR insurgency OR troop deployment OR sanctions",
+                  "airstrike OR ceasefire OR insurgency OR troop deployment OR sanctions OR "
+                  "drone strike OR artillery OR shelling OR missile attack OR explosion",
     },
     "climate": {
         "label": "Climate",
@@ -80,10 +81,16 @@ CATEGORIES = {
                   "AI alignment OR superintelligence OR AI existential risk",
     },
     "human_factors": {
-        "label": "Human Factors",
-        "query": "misinformation OR disinformation OR mass panic OR "
-                  "human error disaster OR conspiracy theory violence OR "
-                  "civil unrest OR riot OR election interference OR fake news",
+        "label": "Information Warfare",
+        # Redefined to map onto GDELT Cloud's real "Information" domain
+        # (misinformation/disinformation/propaganda), instead of the vaguer
+        # invented grab-bag this used to be (mass panic, civil unrest, riots --
+        # those conceptually belong to Conflict/political-unrest, not an
+        # "information" lens, and were diluting what this category actually
+        # measures).
+        "query": "misinformation OR disinformation OR propaganda OR "
+                  "information warfare OR deepfake OR fake news OR "
+                  "election interference OR influence operation",
     },
 }
 CATEGORY_ORDER = list(CATEGORIES.keys())  # fixed rotation order
@@ -162,9 +169,9 @@ def fetch_rss_headlines(keywords: list, max_records: int = 8):
 
 def fetch_gdeltcloud_headlines(query: str, max_records: int = 5):
     """
-    Third-tier fallback: GDELT Cloud's /stories endpoint. Only called if
-    GDELT_CLOUD_API_KEY is set AND both the free GDELT DOC API and RSS
-    produced nothing this run -- keeps us well within the 100 QU/month
+    Fallback tier: GDELT Cloud's /stories endpoint. Only called if
+    GDELT_CLOUD_API_KEY is set AND RSS (the primary source) produced
+    nothing usable this run -- keeps us well within the 100 QU/month
     free tier given this should rarely trigger.
 
     Prefers real news-source URLs from each story's top_articles (skipping
@@ -440,6 +447,11 @@ def main():
             "label": cat["label"], "cumulative_delta": 0.0,
             "last_attempted": None, "last_updated": None,
         })
+        # Label always tracks the current code definition (e.g. a rename),
+        # even for a category that already existed in the data file --
+        # setdefault above only fills missing keys, it won't fix a stale
+        # label already stored from before a rename.
+        data["categories"][cat_id]["label"] = cat["label"]
     data.setdefault("rotation_index", 0)
 
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")

@@ -1,10 +1,10 @@
 # ApocalyptiClock
 
 Every 4 hours, this checks **real headlines** for **one** risk category at a
-time — nuclear, conflict, climate, biosecurity, AI risk, or human factors
-(misinformation, mass panic, negligence) — rotating through all six over a
-24-hour span. Since there are 6 categories and 6 runs/day (00:00, 04:00,
-08:00, 12:00, 16:00, 20:00 UTC), each category lands on the exact same
+time — nuclear, conflict, climate, biosecurity, AI risk, or information
+warfare (misinformation, disinformation, propaganda) — rotating through all
+six over a 24-hour span. Since there are 6 categories and 6 runs/day (00:00,
+04:00, 08:00, 12:00, 16:00, 20:00 UTC), each category lands on the exact same
 clock time every day. An AI model (Gemini, free tier) gives a grounded,
 cited judgment: did that category's risk move up, down, or hold, and why,
 citing the specific stories behind the call — with awareness of the
@@ -40,7 +40,7 @@ in the repo (Settings → Secrets and variables → Actions), not your local
 
 - `public/index.html` — static frontend: clock, category filters w/ schedule, log, background image, logo
 - `public/clock-data.json` — baseline + per-category cumulative deltas, timestamps, rotation state, history
-- `public/robots.txt` — blocks search engine indexing (remove when ready to launch publicly)
+- `public/robots.txt` — fully open, allows all crawlers (search engines and AI) now that the site is public
 - `public/sw.js` — Monetag ad-network verification service worker
 - `public/assets/images/` — background image and logo
 - `update_clock.py` — the update job: one category's headline fetch + Gemini assessment per run
@@ -138,7 +138,7 @@ python3 update_clock.py       # runs one real rotation step locally
 
 Local runs write to `public/clock-data.json` just like the real workflow.
 Use `git_sync.sh` (instead of plain `git push`) when pushing local changes,
-since it safely handles the case where the hourly-scheduled bot has also
+since it safely handles the case where the scheduled bot has also
 committed in the meantime:
 ```bash
 ./git_sync.sh "your commit message"
@@ -149,23 +149,39 @@ you exactly what needs manual resolution rather than guessing.
 
 ## Ads
 
-Ad network codes are wired into `public/index.html`:
-- Adsterra Banner 728x90 and Native Banner in the visible `ad-slot` divs
-- Monetag In-Page Push tag in `<head>`
+**Both Adsterra placements (728x90 Banner and Native Banner) were removed**
+— they consistently served low-quality/scam-adjacent creative (fake "you're
+the lucky visitor" prize popups, clickbait dating images), and no
+confirmed self-serve category-exclusion filter was found in Adsterra's
+dashboard or docs. At low traffic the revenue was negligible anyway, and
+that content actively damages first-visit trust — not worth the tradeoff.
 
-`public/sw.js` is Monetag's site-verification service worker — must stay
-at the `public/` root to work. `public/robots.txt` currently blocks all
-search engines (pre-launch); remove or edit it when ready to be indexed.
+Currently the only ad running is **Monetag's In-Page Push tag** in
+`<head>` — it hasn't shown this problem. `public/sw.js` is Monetag's
+site-verification service worker — must stay at the `public/` root to
+work.
 
-If you swap any ad codes for new placement IDs (e.g. after changing
-domains), update the corresponding `key`/`src`/`container-` values in
-`index.html` to match.
+Revisit real display ads once approved for **AdSense** (much stricter
+content review than remnant networks like Adsterra) or once real traffic
+attracts better-tier ad demand. If you add new codes, wire them into the
+`.ad-slot` divs / `<head>` following the existing pattern in
+`index.html`, and update the corresponding `key`/`src`/`container-`
+values if placement IDs change (e.g. after a domain change).
 
 ## Analytics
 
 Cloudflare Web Analytics is wired in via a script tag before `</body>` in
 `index.html` — free, privacy-respecting, no cookies. Check traffic at
 Cloudflare dashboard → **Analytics & Logs → Web Analytics**.
+
+## SEO / search indexing
+
+`public/robots.txt` is fully open (`Allow: /`), so all search engines and
+AI crawlers can index the site. A Google Search Console verification meta
+tag is in `<head>` (`google-site-verification`) — use Search Console's
+**URL Inspection → Request Indexing** to speed up initial discovery for a
+brand-new domain with no existing backlinks. Bing Webmaster Tools can
+import verification directly from an existing Search Console setup.
 
 ## Customizing the look
 
