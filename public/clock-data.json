@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 2,
-  "last_run_category": "conflict",
-  "last_run_time": "2026-08-07 20:42:31 UTC",
+  "rotation_index": 3,
+  "last_run_category": "climate",
+  "last_run_time": "2026-08-08 08:41:08 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -19,7 +19,7 @@
     "climate": {
       "label": "Climate",
       "cumulative_delta": 0.0,
-      "last_attempted": null,
+      "last_attempted": "2026-08-08 08:41:08 UTC",
       "last_updated": null
     },
     "biosecurity": {
@@ -50,6 +50,11 @@
     {
       "time": "2026-08-07 20:42:31 UTC",
       "category": "conflict",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-08 08:41:08 UTC",
+      "category": "climate",
       "status": "no_data"
     }
   ]
