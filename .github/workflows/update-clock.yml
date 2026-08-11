@@ -37,3 +37,18 @@ jobs:
           git add public/clock-data.json
           git diff --quiet --cached || git commit -m "Hourly update: $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
+
+      - name: Set up Node (for Netlify CLI)
+        uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli
+
+      - name: Deploy public/ directly to Netlify (bypasses Netlify's own build system --
+          avoids burning build minutes on every hourly commit)
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: netlify deploy --prod --dir=public --auth="$NETLIFY_AUTH_TOKEN" --site="$NETLIFY_SITE_ID"
