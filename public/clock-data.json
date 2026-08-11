@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-08-11 12:43:57 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-08-11 14:15:13 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-11 10:52:29 UTC",
-      "last_updated": "2026-08-11 10:52:29 UTC"
+      "last_attempted": "2026-08-11 14:15:13 UTC",
+      "last_updated": "2026-08-11 14:15:13 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -523,6 +523,20 @@
       "time": "2026-08-11 12:43:57 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-08-11 14:15:13 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "The headlines indicate continued risks in ongoing conflicts like the US-Iran war and the Russia-Ukraine war, with increased drone incidents noted in Europe. However, these developments largely represent ongoing situations rather than significant new escalations or de-escalations.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/8/11/new-level-of-danger-drone-incidents-scare-europe-amid-russia-ukraine-war?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/8/11/iraqs-semi-autonomous-kurdish-region-suffers-as-us-iran-war-drags-on?traffic_source=rss",
+        "https://www.npr.org/2026/08/11/g-s1-138160/us-iran-war"
+      ],
+      "data_source": "rss"
     }
   ]
 }
