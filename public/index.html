@@ -80,6 +80,24 @@
     margin-bottom: 24px;
   }
   .disclaimer strong { color: var(--text); }
+  .how-it-works {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+  .how-it-works summary {
+    cursor: pointer;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .how-it-works summary:hover { color: #ff6b6b; }
+  .how-it-works p {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 8px 0 0 0;
+  }
   h1 {
     font-size: 1.3rem;
     letter-spacing: 1px;
@@ -242,6 +260,24 @@
       Bulletin of the Atomic Scientists. Treat it as one model's reading of the news, not a
       scientific measurement. Use the filters below to include or exclude categories and see how
       the setting shifts.
+
+      <details class="how-it-works">
+        <summary>How this actually works (not random)</summary>
+        <p>
+          Each check pulls real headlines from named editorial sources — BBC, Al Jazeera,
+          The Guardian, and NPR — filtered to that category's topic. If none of those have
+          anything relevant, it falls back to GDELT Cloud, a structured news-event database,
+          before giving up for that check.
+        </p>
+        <p>
+          The model isn't judging headlines in isolation. Each check is given the category's
+          current standing and its last few results, and is explicitly told: if the new
+          headlines are just continuing coverage of something already accounted for, hold
+          steady — don't re-flag the same ongoing story every few hours. The number only
+          moves for a genuine new development, cited with a real source link you can check
+          yourself.
+        </p>
+      </details>
     </div>
 
     <h1 class="logo-heading">
