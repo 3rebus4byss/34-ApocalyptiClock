@@ -40,7 +40,7 @@ GDELT_ENDPOINT = "https://api.gdeltproject.org/api/v2/doc/doc"
 # Free-tier Gemini model. Check https://ai.google.dev/gemini-api/docs/models
 # if this ever 404s -- Google renames/retires free-tier model IDs periodically.
 # As of mid-2026, this is a current free-tier lightweight model.
-GEMINI_MODEL = "gemini-3.5-flash-lite"
+GEMINI_MODEL = "gemini-2.5-flash-lite"
 GEMINI_ENDPOINT = (
     f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
 )
@@ -143,8 +143,14 @@ def fetch_category_headlines(query: str, max_records: int = 8):
                   f"attempt {attempt}/{MAX_RETRIES}, waiting {wait}s...", file=sys.stderr)
             time.sleep(wait)
             continue
+        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as exc:
+            wait = RETRY_BACKOFF_SECONDS * attempt
+            print(f"[warn] GDELT connection failed ({type(exc).__name__}), "
+                  f"attempt {attempt}/{MAX_RETRIES}, waiting {wait}s...", file=sys.stderr)
+            time.sleep(wait)
+            continue
         except Exception as exc:
-            print(f"[warn] GDELT fetch failed: {exc}", file=sys.stderr)
+            print(f"[warn] GDELT fetch failed with unexpected error: {exc}", file=sys.stderr)
             return []
 
     print(f"[warn] GDELT still unavailable after {MAX_RETRIES} attempts, falling back to RSS.",
@@ -170,6 +176,7 @@ def fetch_rss_headlines(keywords: list, max_records: int = 8):
             resp.raise_for_status()
             root = ET.fromstring(resp.content)
 
+            feed_matches = 0
             for item in root.iter("item"):
                 title_el = item.find("title")
                 link_el = item.find("link")
@@ -183,8 +190,10 @@ def fetch_rss_headlines(keywords: list, max_records: int = 8):
                 title_lower = title.lower()
                 if any(kw.strip().lower() in title_lower for kw in keywords if kw.strip()):
                     matches.append({"title": title, "url": link})
+                    feed_matches += 1
                     if len(matches) >= max_records:
                         return matches
+            print(f"[info] RSS {feed_url}: {feed_matches} keyword matches.", file=sys.stderr)
         except Exception as exc:
             print(f"[warn] RSS fetch failed for {feed_url}: {exc}", file=sys.stderr)
             continue
@@ -199,17 +208,22 @@ def get_headlines_for_category(cat_id: str):
     (headlines, source_used) where source_used is 'gdelt', 'rss', or None.
     """
     query = CATEGORIES[cat_id]["query"]
+    label = CATEGORIES[cat_id]["label"]
+
     headlines = fetch_category_headlines(query)
     if headlines:
+        print(f"[info] GDELT succeeded for '{label}': {len(headlines)} headlines.")
         return headlines, "gdelt"
 
+    print(f"[info] GDELT produced nothing usable for '{label}'. Trying RSS fallback...")
     keywords = query.split(" OR ")
     headlines = fetch_rss_headlines(keywords)
     if headlines:
-        print(f"[info] RSS fallback found {len(headlines)} matching headlines for "
-              f"'{CATEGORIES[cat_id]['label']}'.")
+        print(f"[info] RSS fallback succeeded for '{label}': {len(headlines)} matching headlines.")
         return headlines, "rss"
 
+    print(f"[info] RSS fallback also produced nothing for '{label}' "
+          f"(no matching headlines across {len(RSS_FEEDS)} feeds).")
     return [], None
 
 
