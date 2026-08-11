@@ -81,9 +81,18 @@ DATA_FILE = "public/clock-data.json"
 STARTING_BASELINE = 85.0  # seconds to midnight, anchored to the real 2025 Bulletin setting
 MAX_SHIFT_PER_TICK = 1.0        # cap on a single category's move in one check
 MAX_CATEGORY_CUMULATIVE = 15.0  # cap on how far any one category can drift from 0 over time
-MAX_RETRIES = 3
+MAX_RETRIES = 2               # after this many failed GDELT attempts, fall back to RSS
 RETRY_BACKOFF_SECONDS = 20      # base wait before retrying a rate-limited/empty response
 MIN_RUN_INTERVAL_MINUTES = 4    # guard against accidental back-to-back runs hammering GDELT
+
+# Fallback news sources, used only if GDELT fails MAX_RETRIES times in a row.
+# Plain RSS -- no API key, no query-based rate limiting like GDELT's DOC API.
+RSS_FEEDS = [
+    "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "https://www.aljazeera.com/xml/rss/all.xml",
+    "https://www.theguardian.com/world/rss",
+    "https://feeds.npr.org/1004/rss.xml",
+]
 
 
 def fetch_category_headlines(query: str, max_records: int = 8):
@@ -138,9 +147,70 @@ def fetch_category_headlines(query: str, max_records: int = 8):
             print(f"[warn] GDELT fetch failed: {exc}", file=sys.stderr)
             return []
 
-    print(f"[warn] GDELT still unavailable after {MAX_RETRIES} attempts, skipping this hour.",
+    print(f"[warn] GDELT still unavailable after {MAX_RETRIES} attempts, falling back to RSS.",
           file=sys.stderr)
     return []
+
+
+def fetch_rss_headlines(keywords: list, max_records: int = 8):
+    """
+    Fallback source when GDELT is unavailable. Pulls from a handful of major
+    outlets' public RSS feeds and keeps only headlines matching at least one
+    of the category's keywords (same keywords used in the GDELT query,
+    substring-matched case-insensitively against the title).
+    """
+    import xml.etree.ElementTree as ET
+
+    matches = []
+    headers = {"User-Agent": "ApocalyptiClock/1.0 (+news risk aggregator)"}
+
+    for feed_url in RSS_FEEDS:
+        try:
+            resp = requests.get(feed_url, headers=headers, timeout=15)
+            resp.raise_for_status()
+            root = ET.fromstring(resp.content)
+
+            for item in root.iter("item"):
+                title_el = item.find("title")
+                link_el = item.find("link")
+                if title_el is None or link_el is None:
+                    continue
+                title = (title_el.text or "").strip()
+                link = (link_el.text or "").strip()
+                if not title or not link:
+                    continue
+
+                title_lower = title.lower()
+                if any(kw.strip().lower() in title_lower for kw in keywords if kw.strip()):
+                    matches.append({"title": title, "url": link})
+                    if len(matches) >= max_records:
+                        return matches
+        except Exception as exc:
+            print(f"[warn] RSS fetch failed for {feed_url}: {exc}", file=sys.stderr)
+            continue
+
+    return matches
+
+
+def get_headlines_for_category(cat_id: str):
+    """
+    Try GDELT first (primary source). If it fails after MAX_RETRIES attempts,
+    fall back to RSS feeds filtered by the same category keywords. Returns
+    (headlines, source_used) where source_used is 'gdelt', 'rss', or None.
+    """
+    query = CATEGORIES[cat_id]["query"]
+    headlines = fetch_category_headlines(query)
+    if headlines:
+        return headlines, "gdelt"
+
+    keywords = query.split(" OR ")
+    headlines = fetch_rss_headlines(keywords)
+    if headlines:
+        print(f"[info] RSS fallback found {len(headlines)} matching headlines for "
+              f"'{CATEGORIES[cat_id]['label']}'.")
+        return headlines, "rss"
+
+    return [], None
 
 
 def ask_ai_for_single_assessment(cat_id: str, headlines: list):
@@ -281,7 +351,7 @@ def main():
     cat_id = CATEGORY_ORDER[idx]
     label = CATEGORIES[cat_id]["label"]
 
-    headlines = fetch_category_headlines(CATEGORIES[cat_id]["query"])
+    headlines, source = get_headlines_for_category(cat_id)
     assessment = ask_ai_for_single_assessment(cat_id, headlines) if headlines else None
 
     cat_state = data["categories"][cat_id]
@@ -309,8 +379,9 @@ def main():
             "direction": assessment["direction"],
             "rationale": assessment["rationale"],
             "sources": assessment["cited_urls"],
+            "data_source": source,   # 'gdelt' or 'rss' -- transparency on where headlines came from
         })
-        print(f"Updated '{label}' at {timestamp}: "
+        print(f"Updated '{label}' at {timestamp} (via {source}): "
               f"{assessment['delta_seconds']:+}s ({assessment['direction']})")
 
     data["history"] = data["history"][-60:]  # keep the log from growing forever
