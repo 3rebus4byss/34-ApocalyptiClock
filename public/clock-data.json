@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 2,
-  "last_run_category": "conflict",
-  "last_run_time": "2026-08-12 01:41:21 UTC",
+  "rotation_index": 3,
+  "last_run_category": "climate",
+  "last_run_time": "2026-08-12 05:28:46 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -18,9 +18,9 @@
     },
     "climate": {
       "label": "Climate",
-      "cumulative_delta": -1.5,
-      "last_attempted": "2026-08-11 17:02:12 UTC",
-      "last_updated": "2026-08-11 17:02:12 UTC"
+      "cumulative_delta": -1.8,
+      "last_attempted": "2026-08-12 05:28:46 UTC",
+      "last_updated": "2026-08-12 05:28:46 UTC"
     },
     "biosecurity": {
       "label": "Biosecurity",
@@ -42,11 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 08:37:51 UTC",
-      "category": "biosecurity",
-      "status": "no_data"
-    },
     {
       "time": "2026-08-11 09:32:30 UTC",
       "category": "ai_risk",
@@ -577,6 +572,18 @@
         "https://www.aljazeera.com/news/liveblog/2026/8/12/iran-war-live-us-fires-missiles-at-cargo-ship-violating-iran-blockade?traffic_source=rss",
         "https://www.theguardian.com/world/2026/aug/10/ukraine-drone-strike-on-oil-refinery-russia",
         "https://www.npr.org/2026/08/11/g-s1-138160/us-iran-war"
+      ],
+      "data_source": "rss"
+    },
+    {
+      "time": "2026-08-12 05:28:46 UTC",
+      "category": "climate",
+      "status": "updated",
+      "delta": -0.25,
+      "direction": "worse",
+      "rationale": "New headlines report on the ongoing threat of wildfires in California's Big Sur, which follows the recent trend of intensifying extreme weather events and climate impacts.",
+      "sources": [
+        "https://www.theguardian.com/us-news/2026/aug/11/big-sur-timber-fire-evacuations"
       ],
       "data_source": "rss"
     }
