@@ -1,13 +1,13 @@
 {
   "baseline": 85.0,
-  "rotation_index": 0,
-  "last_run_category": "human_factors",
-  "last_run_time": "2026-08-13 16:54:59 UTC",
+  "rotation_index": 1,
+  "last_run_category": "nuclear",
+  "last_run_time": "2026-08-13 20:39:32 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
       "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-12 20:41:24 UTC",
+      "last_attempted": "2026-08-13 20:39:32 UTC",
       "last_updated": "2026-08-11 10:26:01 UTC"
     },
     "conflict": {
@@ -42,19 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 10:17:54 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "The provided headlines indicate ongoing conflicts in Iraq and Ukraine, but no significant new escalations or de-escalations are apparent. Other headlines concern domestic political matters, economic policy, or weather, and do not directly impact the 'Conflict' category.",
-      "sources": [
-        "https://www.aljazeera.com/news/2026/8/11/iraqs-semi-autonomous-kurdish-region-suffers-as-us-iran-war-drags-on?traffic_source=rss",
-        "https://www.aljazeera.com/opinions/2026/8/11/ukraines-40-day-campaign-has-not-brought-the-war-closer-to-an-end?traffic_source=rss"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-08-11 10:18:01 UTC",
       "category": "nuclear",
@@ -527,6 +514,11 @@
     {
       "time": "2026-08-13 16:54:59 UTC",
       "category": "human_factors",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-13 20:39:32 UTC",
+      "category": "nuclear",
       "status": "no_data"
     }
   ]
