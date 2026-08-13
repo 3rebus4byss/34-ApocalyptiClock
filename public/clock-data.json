@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 4,
-  "last_run_category": "biosecurity",
-  "last_run_time": "2026-08-13 09:08:51 UTC",
+  "rotation_index": 5,
+  "last_run_category": "ai_risk",
+  "last_run_time": "2026-08-13 13:04:14 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -31,7 +31,7 @@
     "ai_risk": {
       "label": "AI Risk",
       "cumulative_delta": -0.25,
-      "last_attempted": "2026-08-12 13:03:05 UTC",
+      "last_attempted": "2026-08-13 13:04:14 UTC",
       "last_updated": "2026-08-11 10:19:10 UTC"
     },
     "human_factors": {
@@ -42,22 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 10:15:31 UTC",
-      "category": "nuclear",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "While there are concerns raised about nuclear weapons and warnings of nuclear war, specific actions or escalations that would significantly alter the risk profile are not present in the provided headlines. The assessment of Iran's priorities and discussions about tactical nukes represent ongoing geopolitical considerations rather than immediate shifts.",
-      "sources": [
-        "http://french.people.com.cn/Chine/n3/2026/0810/c31354-20486891.html",
-        "https://www.koreaherald.com/article/10837307",
-        "https://www.zerohedge.com/geopolitical/how-fake-irgc-quote-nuclear-weapons-reached-netanyahus-speech",
-        "https://www.nbcnews.com/politics/national-security/us-assesses-irans-priority-shifted-nuclear-weapons-strait-hormuz-rcna591715",
-        "https://nuclear-news.net/2026/08/11/1-b1-nagasaki-warns-of-risk-of-nuclear-war-on-81st-a-bomb-anniversary/"
-      ],
-      "data_source": "gdeltcloud"
-    },
     {
       "time": "2026-08-11 10:17:31 UTC",
       "category": "climate",
@@ -548,6 +532,11 @@
     {
       "time": "2026-08-13 09:08:51 UTC",
       "category": "biosecurity",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-13 13:04:14 UTC",
+      "category": "ai_risk",
       "status": "no_data"
     }
   ]
