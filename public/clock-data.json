@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-08-13 20:39:32 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-08-14 01:41:17 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-13 01:42:36 UTC",
-      "last_updated": "2026-08-13 01:42:36 UTC"
+      "cumulative_delta": 0.2,
+      "last_attempted": "2026-08-14 01:41:17 UTC",
+      "last_updated": "2026-08-14 01:41:17 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,22 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 10:18:01 UTC",
-      "category": "nuclear",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "Headlines discuss hypothetical scenarios and diplomatic tensions regarding nuclear weapons, with one report suggesting a shift in Iran's priorities away from nuclear weapons development. Nagasaki's warning is a recurring annual event and does not indicate a new escalation.",
-      "sources": [
-        "http://french.people.com.cn/Chine/n3/2026/0810/c31354-20486891.html",
-        "https://www.koreaherald.com/article/10837307",
-        "https://www.zerohedge.com/geopolitical/how-fake-irgc-quote-nuclear-weapons-reached-netanyahus-speech",
-        "https://www.nbcnews.com/politics/national-security/us-assesses-irans-priority-shifted-nuclear-weapons-strait-hormuz-rcna591715",
-        "https://nuclear-news.net/2026/08/11/1-b1-nagasaki-warns-of-risk-of-nuclear-war-on-81st-a-bomb-anniversary/"
-      ],
-      "data_source": "gdeltcloud"
-    },
     {
       "time": "2026-08-11 10:18:27 UTC",
       "category": "climate",
@@ -520,6 +504,19 @@
       "time": "2026-08-13 20:39:32 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-08-14 01:41:17 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.25,
+      "direction": "worse",
+      "rationale": "The UN warning about Yemen returning to war and the US considering an indefinite naval blockade of Iran represent a significant escalation in ongoing conflicts, moving beyond previously assessed trends.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/8/14/yemen-faces-highest-risk-of-returning-to-war-since-2022-truce-un-warns?traffic_source=rss",
+        "https://www.aljazeera.com/news/liveblog/2026/8/14/iran-war-live-us-eyes-indefinite-iran-naval-blockade?traffic_source=rss"
+      ],
+      "data_source": "rss"
     }
   ]
 }
