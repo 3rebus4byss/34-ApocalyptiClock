@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 5,
-  "last_run_category": "ai_risk",
-  "last_run_time": "2026-08-14 12:59:50 UTC",
+  "rotation_index": 0,
+  "last_run_category": "human_factors",
+  "last_run_time": "2026-08-14 16:51:31 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -37,27 +37,11 @@
     "human_factors": {
       "label": "Information Warfare",
       "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-13 16:54:59 UTC",
+      "last_attempted": "2026-08-14 16:51:31 UTC",
       "last_updated": "2026-08-11 10:25:34 UTC"
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 10:19:23 UTC",
-      "category": "human_factors",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "Multiple reports indicate ongoing challenges with disinformation impacting public health responses and social issues across different countries, suggesting a persistent problem in human factors.",
-      "sources": [
-        "https://www.bursa.ro/the-ambulance8221-case-brings-back-the-need-for-a-law-against-disinformation-04638955",
-        "https://delfino.cr/2026/08/quien-decide-que-es-mentira-el-limite-legal-para-que-costa-rica-combata-la-desinformacion",
-        "https://www.japantimes.co.jp/news/2026/08/10/japan/japan-misinformation-social-media/",
-        "https://radiookapi.net/2026/08/10/actualite/societe/la-desinformation-et-la-mefiance-communautaire-compliquent-la-riposte",
-        "https://aktuality.sk/clanok/B8aeIqr/eu-a-socialne-siete-zasiahnu-proti-hoaxom-o-migrantoch-v-ceute-brusel-sa-dohodol-s-metou-aj-tiktokom/"
-      ],
-      "data_source": "gdeltcloud"
-    },
     {
       "time": "2026-08-11 10:21:23 UTC",
       "category": "biosecurity",
@@ -505,6 +489,11 @@
     {
       "time": "2026-08-14 12:59:50 UTC",
       "category": "ai_risk",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-14 16:51:31 UTC",
+      "category": "human_factors",
       "status": "no_data"
     }
   ]
