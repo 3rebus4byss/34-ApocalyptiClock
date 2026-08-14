@@ -1,13 +1,13 @@
 {
   "baseline": 85.0,
-  "rotation_index": 0,
-  "last_run_category": "human_factors",
-  "last_run_time": "2026-08-14 16:51:31 UTC",
+  "rotation_index": 1,
+  "last_run_category": "nuclear",
+  "last_run_time": "2026-08-14 20:29:54 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
       "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-13 20:39:32 UTC",
+      "last_attempted": "2026-08-14 20:29:54 UTC",
       "last_updated": "2026-08-11 10:26:01 UTC"
     },
     "conflict": {
@@ -42,11 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 10:21:23 UTC",
-      "category": "biosecurity",
-      "status": "no_data"
-    },
     {
       "time": "2026-08-11 10:22:02 UTC",
       "category": "biosecurity",
@@ -494,6 +489,11 @@
     {
       "time": "2026-08-14 16:51:31 UTC",
       "category": "human_factors",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-14 20:29:54 UTC",
+      "category": "nuclear",
       "status": "no_data"
     }
   ]
