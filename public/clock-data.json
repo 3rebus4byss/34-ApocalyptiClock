@@ -1,13 +1,13 @@
 {
   "baseline": 85.0,
-  "rotation_index": 0,
-  "last_run_category": "human_factors",
-  "last_run_time": "2026-08-15 16:22:23 UTC",
+  "rotation_index": 1,
+  "last_run_category": "nuclear",
+  "last_run_time": "2026-08-15 20:19:41 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
       "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-14 20:29:54 UTC",
+      "last_attempted": "2026-08-15 20:19:41 UTC",
       "last_updated": "2026-08-11 10:26:01 UTC"
     },
     "conflict": {
@@ -42,21 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 10:26:10 UTC",
-      "category": "climate",
-      "status": "updated",
-      "delta": -0.4,
-      "direction": "worse",
-      "rationale": "Multiple headlines indicate significant climate impacts, including record warm temperatures, increased wildfires linked to climate cuts, and intensified extreme weather, despite some efforts like climate justice plans.",
-      "sources": [
-        "http://cubadebate.cu/noticias/2026/08/10/copernicus-alerta-sobre-impacto-climatico-en-oceanos-y-continentes/",
-        "https://www.newswire.ca/news-releases/more-wildfires-fewer-experts-pipsc-action-warns-of-climate-cuts-830339648.html",
-        "https://www.asiaone.com:443/china/china-bets-ai-weather-forecasting-extreme-weather-intensifies",
-        "https://aftonbladet.se/nyheter/a/QJaMjV/rekordvarm-juli-for-900-miljoner"
-      ],
-      "data_source": "gdeltcloud"
-    },
     {
       "time": "2026-08-11 10:28:03 UTC",
       "category": "nuclear",
@@ -476,6 +461,11 @@
     {
       "time": "2026-08-15 16:22:23 UTC",
       "category": "human_factors",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-15 20:19:41 UTC",
+      "category": "nuclear",
       "status": "no_data"
     }
   ]
