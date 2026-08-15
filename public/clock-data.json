@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 5,
-  "last_run_category": "ai_risk",
-  "last_run_time": "2026-08-15 12:32:11 UTC",
+  "rotation_index": 0,
+  "last_run_category": "human_factors",
+  "last_run_time": "2026-08-15 16:22:23 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -37,27 +37,11 @@
     "human_factors": {
       "label": "Information Warfare",
       "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-14 16:51:31 UTC",
+      "last_attempted": "2026-08-15 16:22:23 UTC",
       "last_updated": "2026-08-11 10:25:34 UTC"
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 10:26:01 UTC",
-      "category": "nuclear",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "Headlines present a mix of rhetoric, potential misinterpretations, and calls for both escalation and de-escalation regarding nuclear weapons, but no concrete developments have occurred in the last six hours to significantly alter the risk assessment.",
-      "sources": [
-        "http://french.people.com.cn/Chine/n3/2026/0810/c31354-20486891.html",
-        "https://www.koreaherald.com/article/10837307",
-        "https://www.zerohedge.com/geopolitical/how-fake-irgc-quote-nuclear-weapons-reached-netanyahus-speech",
-        "https://www.nbcnews.com/politics/national-security/us-assesses-irans-priority-shifted-nuclear-weapons-strait-hormuz-rcna591715",
-        "https://nuclear-news.net/2026/08/11/1-b1-nagasaki-warns-of-risk-of-nuclear-war-on-81st-a-bomb-anniversary/"
-      ],
-      "data_source": "gdeltcloud"
-    },
     {
       "time": "2026-08-11 10:26:10 UTC",
       "category": "climate",
@@ -487,6 +471,11 @@
     {
       "time": "2026-08-15 12:32:11 UTC",
       "category": "ai_risk",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-15 16:22:23 UTC",
+      "category": "human_factors",
       "status": "no_data"
     }
   ]
