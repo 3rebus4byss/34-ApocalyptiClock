@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-08-14 20:29:54 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-08-15 01:04:01 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 0.2,
-      "last_attempted": "2026-08-14 01:41:17 UTC",
-      "last_updated": "2026-08-14 01:41:17 UTC"
+      "cumulative_delta": 0.6,
+      "last_attempted": "2026-08-15 01:04:01 UTC",
+      "last_updated": "2026-08-15 01:04:01 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,11 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 10:22:02 UTC",
-      "category": "biosecurity",
-      "status": "no_data"
-    },
     {
       "time": "2026-08-11 10:24:08 UTC",
       "category": "biosecurity",
@@ -495,6 +490,19 @@
       "time": "2026-08-14 20:29:54 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-08-15 01:04:01 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.35,
+      "direction": "worse",
+      "rationale": "The headlines indicate a significant escalation in the Iran conflict, with the US president vowing to declare the Strait of Hormuz US territory, which represents a substantial increase in geopolitical tension and potential for direct conflict beyond previous assessments.",
+      "sources": [
+        "https://www.aljazeera.com/news/liveblog/2026/8/15/iran-war-live-trump-vows-to-make-hormuz-us-territory-pretty-soon?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/8/14/trump-says-he-will-declare-strait-of-hormuz-a-us-territory?traffic_source=rss"
+      ],
+      "data_source": "rss"
     }
   ]
 }
