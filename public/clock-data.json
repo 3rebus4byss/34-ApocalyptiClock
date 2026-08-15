@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 4,
-  "last_run_category": "biosecurity",
-  "last_run_time": "2026-08-15 08:25:06 UTC",
+  "rotation_index": 5,
+  "last_run_category": "ai_risk",
+  "last_run_time": "2026-08-15 12:32:11 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -31,7 +31,7 @@
     "ai_risk": {
       "label": "AI Risk",
       "cumulative_delta": -0.25,
-      "last_attempted": "2026-08-14 12:59:50 UTC",
+      "last_attempted": "2026-08-15 12:32:11 UTC",
       "last_updated": "2026-08-11 10:19:10 UTC"
     },
     "human_factors": {
@@ -42,22 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 10:25:34 UTC",
-      "category": "human_factors",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "Multiple headlines discuss efforts to combat disinformation and misinformation across various countries and platforms, indicating ongoing challenges rather than a significant shift in the human factors landscape.",
-      "sources": [
-        "https://www.bursa.ro/the-ambulance8221-case-brings-back-the-need-for-a-law-against-disinformation-04638955",
-        "https://delfino.cr/2026/08/quien-decide-que-es-mentira-el-limite-legal-para-que-costa-rica-combata-la-desinformacion",
-        "https://www.japantimes.co.jp/news/2026/08/10/japan/japan-misinformation-social-media/",
-        "https://radiookapi.net/2026/08/10/actualite/societe/la-desinformation-et-la-mefiance-communautaire-compliquent-la-riposte",
-        "https://aktuality.sk/clanok/B8aeIqr/eu-a-socialne-siete-zasiahnu-proti-hoaxom-o-migrantoch-v-ceute-brusel-sa-dohodol-s-metou-aj-tiktokom/"
-      ],
-      "data_source": "gdeltcloud"
-    },
     {
       "time": "2026-08-11 10:26:01 UTC",
       "category": "nuclear",
@@ -499,6 +483,11 @@
         "https://www.theguardian.com/world/2026/aug/15/little-penguin-found-dead-with-h5-bird-flu-on-victorias-phillip-island"
       ],
       "data_source": "rss"
+    },
+    {
+      "time": "2026-08-15 12:32:11 UTC",
+      "category": "ai_risk",
+      "status": "no_data"
     }
   ]
 }
