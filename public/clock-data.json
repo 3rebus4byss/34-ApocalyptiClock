@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 2,
-  "last_run_category": "conflict",
-  "last_run_time": "2026-08-16 01:04:49 UTC",
+  "rotation_index": 3,
+  "last_run_category": "climate",
+  "last_run_time": "2026-08-16 04:35:30 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -18,9 +18,9 @@
     },
     "climate": {
       "label": "Climate",
-      "cumulative_delta": -2.0,
-      "last_attempted": "2026-08-15 04:29:23 UTC",
-      "last_updated": "2026-08-15 04:29:23 UTC"
+      "cumulative_delta": -2.2,
+      "last_attempted": "2026-08-16 04:35:30 UTC",
+      "last_updated": "2026-08-16 04:35:30 UTC"
     },
     "biosecurity": {
       "label": "Biosecurity",
@@ -42,20 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 10:28:16 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "The provided headlines indicate ongoing conflicts in Iraq and Ukraine, with no clear progress towards resolution. Additionally, a headline discusses US war spending, while another touches on political divisions that do not appear to be directly related to armed conflict.",
-      "sources": [
-        "https://www.aljazeera.com/news/2026/8/11/iraqs-semi-autonomous-kurdish-region-suffers-as-us-iran-war-drags-on?traffic_source=rss",
-        "https://www.aljazeera.com/opinions/2026/8/11/ukraines-40-day-campaign-has-not-brought-the-war-closer-to-an-end?traffic_source=rss",
-        "https://www.aljazeera.com/video/money-works/2026/8/11/what-is-the-us-spending-all-their-war-money-on?traffic_source=rss"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-08-11 10:28:23 UTC",
       "category": "climate",
@@ -473,6 +459,23 @@
       "sources": [
         "https://www.aljazeera.com/news/liveblog/2026/8/16/iran-war-live-talks-on-hormuz-strait-continue-israel-kills-11-in-lebanon?traffic_source=rss",
         "https://www.npr.org/2026/08/14/nx-s1-5931244/many-iranians-are-heading-to-turkey-to-escape-the-ongoing-wars-heavy-toll"
+      ],
+      "data_source": "rss"
+    },
+    {
+      "time": "2026-08-16 04:35:30 UTC",
+      "category": "climate",
+      "status": "updated",
+      "delta": -0.2,
+      "direction": "worse",
+      "rationale": "New headlines detail a concerning convergence of extreme weather events, including a hurricane nearing Hawaii, widespread flooding causing fatalities in Indiana and disrupting major transport hubs like Heathrow, and a wildfire in Belgium, alongside continued drought impacts on the Danube, indicating a significant escalation in climate-related disasters.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/crmrr7kjy9vo?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/news/2026/8/15/tropical-storm-lala-expected-to-strengthen-as-it-nears-hawaii?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/8/15/at-least-five-reported-dead-amid-flooding-in-us-state-of-indiana?traffic_source=rss",
+        "https://www.bbc.co.uk/news/articles/cp8eex1nmpvo?at_medium=RSS&at_campaign=rss",
+        "https://www.theguardian.com/news/ng-interactive/2026/aug/16/danube-drought-destroyed-crops-rock-of-starvation-climate-crisis",
+        "https://www.theguardian.com/uk-news/2026/aug/15/heathrow-passengers-face-disruption-after-flood-restricts-access"
       ],
       "data_source": "rss"
     }
