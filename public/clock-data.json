@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-08-15 20:19:41 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-08-16 01:04:49 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 0.6,
-      "last_attempted": "2026-08-15 01:04:01 UTC",
-      "last_updated": "2026-08-15 01:04:01 UTC"
+      "cumulative_delta": 1.1,
+      "last_attempted": "2026-08-16 01:04:49 UTC",
+      "last_updated": "2026-08-16 01:04:49 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,11 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 10:28:03 UTC",
-      "category": "nuclear",
-      "status": "no_data"
-    },
     {
       "time": "2026-08-11 10:28:16 UTC",
       "category": "conflict",
@@ -467,6 +462,19 @@
       "time": "2026-08-15 20:19:41 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-08-16 01:04:49 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.45,
+      "direction": "worse",
+      "rationale": "While South Korea's proposal for peace talks is a positive development, the headlines indicate continued and potentially escalating conflict in the Middle East, with ongoing Iran war developments, Israeli actions in Lebanon, and an increase in civilian displacement.",
+      "sources": [
+        "https://www.aljazeera.com/news/liveblog/2026/8/16/iran-war-live-talks-on-hormuz-strait-continue-israel-kills-11-in-lebanon?traffic_source=rss",
+        "https://www.npr.org/2026/08/14/nx-s1-5931244/many-iranians-are-heading-to-turkey-to-escape-the-ongoing-wars-heavy-toll"
+      ],
+      "data_source": "rss"
     }
   ]
 }
