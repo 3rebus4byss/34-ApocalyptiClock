@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 4,
-  "last_run_category": "biosecurity",
-  "last_run_time": "2026-08-16 08:26:56 UTC",
+  "rotation_index": 5,
+  "last_run_category": "ai_risk",
+  "last_run_time": "2026-08-16 12:33:59 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -31,7 +31,7 @@
     "ai_risk": {
       "label": "AI Risk",
       "cumulative_delta": -0.25,
-      "last_attempted": "2026-08-15 12:32:11 UTC",
+      "last_attempted": "2026-08-16 12:33:59 UTC",
       "last_updated": "2026-08-11 10:19:10 UTC"
     },
     "human_factors": {
@@ -42,11 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 10:28:30 UTC",
-      "category": "biosecurity",
-      "status": "no_data"
-    },
     {
       "time": "2026-08-11 10:28:39 UTC",
       "category": "ai_risk",
@@ -485,6 +480,11 @@
         "https://www.theguardian.com/world/2026/aug/15/little-penguin-found-dead-with-h5-bird-flu-on-victorias-phillip-island"
       ],
       "data_source": "rss"
+    },
+    {
+      "time": "2026-08-16 12:33:59 UTC",
+      "category": "ai_risk",
+      "status": "no_data"
     }
   ]
 }
