@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-08-17 20:23:14 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-08-18 01:01:46 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 1.5,
-      "last_attempted": "2026-08-17 01:05:14 UTC",
-      "last_updated": "2026-08-17 01:05:14 UTC"
+      "cumulative_delta": 1.8,
+      "last_attempted": "2026-08-18 01:01:46 UTC",
+      "last_updated": "2026-08-18 01:01:46 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,11 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 10:37:08 UTC",
-      "category": "conflict",
-      "status": "no_data"
-    },
     {
       "time": "2026-08-11 10:37:16 UTC",
       "category": "biosecurity",
@@ -504,6 +499,20 @@
       "time": "2026-08-17 20:23:14 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-08-18 01:01:46 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.25,
+      "direction": "worse",
+      "rationale": "The US declaring control of the Strait of Hormuz and rejecting an MoU extension indicates a significant escalation of the Iran conflict, while the jailing of a Russian anti-war politician suggests a hardening of domestic policy regarding the Ukraine war.",
+      "sources": [
+        "https://www.aljazeera.com/news/liveblog/2026/8/18/iran-war-live-trump-rejects-mou-extension-as-us-claims-control-of-hormuz?traffic_source=rss",
+        "https://www.bbc.co.uk/news/articles/cj4kjnle2neo?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/video/newsfeed/2026/8/17/russian-politician-sentenced-to-11-years-for-opposing-war-in-ukraine?traffic_source=rss"
+      ],
+      "data_source": "rss"
     }
   ]
 }
