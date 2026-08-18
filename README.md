@@ -149,22 +149,32 @@ you exactly what needs manual resolution rather than guessing.
 
 ## Ads
 
-**Both Adsterra placements (728x90 Banner and Native Banner) were removed**
+**Currently no ads are actually running.**
+
+**Both Adsterra placements** (728x90 Banner and Native Banner) were removed
 — they consistently served low-quality/scam-adjacent creative (fake "you're
 the lucky visitor" prize popups, clickbait dating images), and no
 confirmed self-serve category-exclusion filter was found in Adsterra's
 dashboard or docs. At low traffic the revenue was negligible anyway, and
 that content actively damages first-visit trust — not worth the tradeoff.
 
-Currently the only ad running is **Monetag's In-Page Push tag** in
-`<head>` — it hasn't shown this problem. `public/sw.js` is Monetag's
-site-verification service worker — must stay at the `public/` root to
-work.
+**Monetag's In-Page Push tag** is present in `<head>` but **commented
+out/disabled** — its zone was verified/registered against the old Netlify
+site (now deleted), not the current GitHub Pages domain. Running it
+unverified risks a policy violation. Re-verify the zone against
+`3rebus4byss.github.io` in Monetag's dashboard, then uncomment the
+`<script>` line in `index.html` to re-enable it.
 
-Revisit real display ads once approved for **AdSense** (much stricter
-content review than remnant networks like Adsterra) or once real traffic
-attracts better-tier ad demand. If you add new codes, wire them into the
-`.ad-slot` divs / `<head>` following the existing pattern in
+**AdSense's library tag** is present but inactive until the account is
+approved (harmless to leave in pre-approval; Google won't serve anything
+until then).
+
+`public/sw.js` is Monetag's site-verification service worker — must stay
+at the `public/` root to work regardless of whether the ad tag itself is
+enabled.
+
+If you add new ad codes or re-enable existing ones, wire/uncomment them
+in the `.ad-slot` divs / `<head>` following the existing pattern in
 `index.html`, and update the corresponding `key`/`src`/`container-`
 values if placement IDs change (e.g. after a domain change).
 
