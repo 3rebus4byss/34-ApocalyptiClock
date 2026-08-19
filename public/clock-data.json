@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-08-19 16:29:42 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-08-19 20:22:25 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 1.8,
-      "last_attempted": "2026-08-18 21:21:37 UTC",
-      "last_updated": "2026-08-18 21:21:37 UTC"
+      "cumulative_delta": 1.6,
+      "last_attempted": "2026-08-19 20:22:25 UTC",
+      "last_updated": "2026-08-19 20:22:25 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,20 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 14:15:13 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "The headlines indicate continued risks in ongoing conflicts like the US-Iran war and the Russia-Ukraine war, with increased drone incidents noted in Europe. However, these developments largely represent ongoing situations rather than significant new escalations or de-escalations.",
-      "sources": [
-        "https://www.aljazeera.com/news/2026/8/11/new-level-of-danger-drone-incidents-scare-europe-amid-russia-ukraine-war?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/8/11/iraqs-semi-autonomous-kurdish-region-suffers-as-us-iran-war-drags-on?traffic_source=rss",
-        "https://www.npr.org/2026/08/11/g-s1-138160/us-iran-war"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-08-11 15:08:22 UTC",
       "category": "climate",
@@ -529,6 +515,20 @@
       "time": "2026-08-19 16:29:42 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-08-19 20:22:25 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": -0.2,
+      "direction": "worse",
+      "rationale": "New headlines indicate increased conflict in the Middle East with Canada condemning Israel's actions in Lebanon and Gaza, while the ongoing war with Iran continues to draw US attention away from Asia, suggesting a worsening regional instability.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/8/19/canada-pledges-50m-aid-to-lebanon-and-condemns-israeli-unlawful-invasion?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/8/19/hamas-condemns-new-war-crime-as-israel-kills-10-in-crowded-gaza-hubs?traffic_source=rss",
+        "https://www.npr.org/2026/08/19/nx-s1-5935388/amid-the-iran-war-the-u-s-has-pivoted-its-geopolitical-attention-away-from-asia"
+      ],
+      "data_source": "rss"
     }
   ]
 }
