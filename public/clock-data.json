@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 5,
-  "last_run_category": "ai_risk",
-  "last_run_time": "2026-08-20 08:35:38 UTC",
+  "rotation_index": 0,
+  "last_run_category": "human_factors",
+  "last_run_time": "2026-08-20 12:40:35 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -37,16 +37,11 @@
     "human_factors": {
       "label": "Information Warfare",
       "cumulative_delta": 0.0,
-      "last_attempted": "2026-08-19 12:40:48 UTC",
+      "last_attempted": "2026-08-20 12:40:35 UTC",
       "last_updated": "2026-08-16 16:23:23 UTC"
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 16:09:56 UTC",
-      "category": "human_factors",
-      "status": "no_data"
-    },
     {
       "time": "2026-08-11 16:47:33 UTC",
       "category": "nuclear",
@@ -520,6 +515,11 @@
     {
       "time": "2026-08-20 08:35:38 UTC",
       "category": "ai_risk",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-08-20 12:40:35 UTC",
+      "category": "human_factors",
       "status": "no_data"
     }
   ]
