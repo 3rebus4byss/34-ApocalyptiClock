@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-08-20 16:32:44 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-08-20 20:23:47 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 1.6,
-      "last_attempted": "2026-08-19 20:22:25 UTC",
-      "last_updated": "2026-08-19 20:22:25 UTC"
+      "last_attempted": "2026-08-20 20:23:47 UTC",
+      "last_updated": "2026-08-20 20:23:47 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,20 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-11 16:57:46 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "Headlines indicate a continuation of ongoing conflicts such as the US-Iran and Russia-Ukraine wars, with new reports of drone incidents in Europe and Houthi attacks. However, these do not represent a significant escalation or de-escalation beyond previously assessed trends.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/ckg9wpmzmlno?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/news/2026/8/11/new-level-of-danger-drone-incidents-scare-europe-amid-russia-ukraine-war?traffic_source=rss",
-        "https://www.npr.org/2026/08/11/g-s1-138160/us-iran-war"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-08-11 17:02:12 UTC",
       "category": "climate",
@@ -521,6 +507,20 @@
       "time": "2026-08-20 16:32:44 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-08-20 20:23:47 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "The headlines reflect ongoing conflicts, particularly the war with Iran and its global implications, as well as the Syrian civil war and the war in Gaza. The US sanctions on Iran and potential impact on the ICC are continuations of previously established trends rather than new escalations.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/c87n90eg0p2o?at_medium=RSS&at_campaign=rss",
+        "https://www.npr.org/2026/08/19/nx-s1-5935388/amid-the-iran-war-the-u-s-has-pivoted-its-geopolitical-attention-away-from-asia",
+        "https://www.npr.org/2026/08/19/nx-s1-5937516/why-does-the-u-s-military-seem-stymied-in-the-war-with-iran"
+      ],
+      "data_source": "rss"
     }
   ]
 }
