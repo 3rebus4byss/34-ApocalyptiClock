@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-08-21 16:32:07 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-08-21 20:21:00 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 1.6,
-      "last_attempted": "2026-08-20 20:23:47 UTC",
-      "last_updated": "2026-08-20 20:23:47 UTC"
+      "cumulative_delta": 1.3,
+      "last_attempted": "2026-08-21 20:21:00 UTC",
+      "last_updated": "2026-08-21 20:21:00 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,21 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-12 01:41:21 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "Headlines reflect continued reporting on the US-Iran and Ukraine conflicts, with new developments like sanctions and drone strikes on refineries, but these appear to be ongoing elements of these conflicts rather than significant escalations or de-escalations.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/cly8jexn1z9o?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/news/liveblog/2026/8/12/iran-war-live-us-fires-missiles-at-cargo-ship-violating-iran-blockade?traffic_source=rss",
-        "https://www.theguardian.com/world/2026/aug/10/ukraine-drone-strike-on-oil-refinery-russia",
-        "https://www.npr.org/2026/08/11/g-s1-138160/us-iran-war"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-08-12 05:28:46 UTC",
       "category": "climate",
@@ -513,6 +498,20 @@
       "time": "2026-08-21 16:32:07 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-08-21 20:21:00 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": -0.3,
+      "direction": "worse",
+      "rationale": "The escalation of the conflict in Ukraine, with a deadly drone strike on a civilian shopping center and retaliatory sanctions on cultural products, represents a significant new development beyond the previously assessed Middle East focus.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/c39egw7nmk2o?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/video/newsfeed/2026/8/21/drone-strike-on-ukraine-shopping-centre-kills-six-injures-103?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/8/21/ukraine-sanctions-popular-russian-cartoon-masha-and-the?traffic_source=rss"
+      ],
+      "data_source": "rss"
     }
   ]
 }
