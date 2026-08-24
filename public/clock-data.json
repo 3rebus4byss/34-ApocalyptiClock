@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-08-24 16:35:45 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-08-24 20:27:01 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 0.9,
-      "last_attempted": "2026-08-23 20:21:27 UTC",
-      "last_updated": "2026-08-23 20:21:27 UTC"
+      "cumulative_delta": 0.5,
+      "last_attempted": "2026-08-24 20:27:01 UTC",
+      "last_updated": "2026-08-24 20:27:01 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,19 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-15 01:04:01 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.35,
-      "direction": "worse",
-      "rationale": "The headlines indicate a significant escalation in the Iran conflict, with the US president vowing to declare the Strait of Hormuz US territory, which represents a substantial increase in geopolitical tension and potential for direct conflict beyond previous assessments.",
-      "sources": [
-        "https://www.aljazeera.com/news/liveblog/2026/8/15/iran-war-live-trump-vows-to-make-hormuz-us-territory-pretty-soon?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/8/14/trump-says-he-will-declare-strait-of-hormuz-a-us-territory?traffic_source=rss"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-08-15 04:29:23 UTC",
       "category": "climate",
@@ -514,6 +501,21 @@
       "time": "2026-08-24 16:35:45 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-08-24 20:27:01 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": -0.45,
+      "direction": "worse",
+      "rationale": "The headlines indicate a significant escalation of economic conflict, with the US imposing 'economic D-day' sanctions on Iran and threatening measures against cooperating nations, while also engaging in a trade war with Canada. This represents a further deterioration beyond the already worsening situation.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/8/24/trump-administration-announces-global-economic-war-on-iran",
+        "https://www.theguardian.com/world/2026/aug/24/iran-vows-retaliate-countries-cooperate-fresh-us-sanctions",
+        "https://www.bbc.co.uk/news/articles/cy0j0zz8l83o?at_medium=RSS&at_campaign=rss",
+        "https://www.theguardian.com/us-news/2026/aug/23/donald-trump-lashes-out-after-us-canada-talks-devolve-into-trade-war"
+      ],
+      "data_source": "rss"
     }
   ]
 }
