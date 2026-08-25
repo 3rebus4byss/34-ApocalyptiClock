@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-08-25 16:33:45 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-08-25 20:28:28 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 0.5,
-      "last_attempted": "2026-08-24 20:27:01 UTC",
-      "last_updated": "2026-08-24 20:27:01 UTC"
+      "cumulative_delta": 0.2,
+      "last_attempted": "2026-08-25 20:28:28 UTC",
+      "last_updated": "2026-08-25 20:28:28 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,19 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-16 01:04:49 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.45,
-      "direction": "worse",
-      "rationale": "While South Korea's proposal for peace talks is a positive development, the headlines indicate continued and potentially escalating conflict in the Middle East, with ongoing Iran war developments, Israeli actions in Lebanon, and an increase in civilian displacement.",
-      "sources": [
-        "https://www.aljazeera.com/news/liveblog/2026/8/16/iran-war-live-talks-on-hormuz-strait-continue-israel-kills-11-in-lebanon?traffic_source=rss",
-        "https://www.npr.org/2026/08/14/nx-s1-5931244/many-iranians-are-heading-to-turkey-to-escape-the-ongoing-wars-heavy-toll"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-08-16 04:35:30 UTC",
       "category": "climate",
@@ -507,6 +494,21 @@
       "time": "2026-08-25 16:33:45 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-08-25 20:28:28 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": -0.3,
+      "direction": "better",
+      "rationale": "The removal of US sanctions on Syria represents a significant de-escalation in one conflict area, while the continued strong international condemnation of US sanctions on Iran and the focus on economic rather than military escalation suggests a potential stabilization.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/8/25/syrias-economy-poised-for-improvement-after-us-sanctions-removal?traffic_source=rss",
+        "https://www.bbc.co.uk/news/articles/clyl8965j5go?at_medium=RSS&at_campaign=rss",
+        "https://www.theguardian.com/world/2026/aug/25/china-us-sanctions-iran-oil",
+        "https://www.npr.org/2026/08/25/nx-s1-5943572/trump-iran-sanctions"
+      ],
+      "data_source": "rss"
     }
   ]
 }
