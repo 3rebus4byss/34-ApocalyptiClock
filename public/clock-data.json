@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-08-26 16:46:11 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-08-26 22:41:05 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 0.2,
-      "last_attempted": "2026-08-25 20:28:28 UTC",
-      "last_updated": "2026-08-25 20:28:28 UTC"
+      "last_attempted": "2026-08-26 22:41:05 UTC",
+      "last_updated": "2026-08-26 22:41:05 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,21 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-17 01:05:14 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.4,
-      "direction": "worse",
-      "rationale": "The headlines show a concerning continuation and potential escalation of existing conflicts, with Ukraine launching a significant aerial attack into Russia and continued displacement of Iranians due to the ongoing war, alongside potential shifts in US alliances regarding Iran.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/cx2lll7zvn0o?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/news/liveblog/2026/8/17/iran-war-live-tehran-us-mou-set-to-expire-hamass-al-khayya-meets-kushner?traffic_source=rss",
-        "https://www.npr.org/2026/08/16/nx-s1-5933006/ukraine-aerial-attack-6-dead-russia",
-        "https://www.npr.org/2026/08/14/nx-s1-5931244/many-iranians-are-heading-to-turkey-to-escape-the-ongoing-wars-heavy-toll"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-08-17 04:39:53 UTC",
       "category": "climate",
@@ -507,6 +492,23 @@
       "time": "2026-08-26 16:46:11 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-08-26 22:41:05 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "The headlines reflect ongoing economic conflict between the US and Iran, as well as the trade war with Canada, which are continuations of previously assessed trends rather than new escalations. The new sanctions on left-wing groups represent a minor new development but do not significantly alter the overall conflict landscape.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/8/26/us-imposes-sanctions-on-palestine-action-and-other-left-wing-groups?traffic_source=rss",
+        "https://www.aljazeera.com/video/newsfeed/2026/8/26/trump-says-iran-war-will-continue-for-as-long-as-necessary?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/8/26/iran-emphasises-self-sufficiency-battle-against-us-economic-war?traffic_source=rss",
+        "https://www.theguardian.com/us-news/2026/aug/26/trump-canada-trade-war",
+        "https://www.theguardian.com/us-news/2026/aug/26/paper-product-toilet-paper-tariffs-us-canada",
+        "https://www.theguardian.com/world/2026/aug/25/china-us-sanctions-iran-oil"
+      ],
+      "data_source": "rss"
     }
   ]
 }
