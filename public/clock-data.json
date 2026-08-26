@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 2,
-  "last_run_category": "conflict",
-  "last_run_time": "2026-08-25 20:28:28 UTC",
+  "rotation_index": 3,
+  "last_run_category": "climate",
+  "last_run_time": "2026-08-26 01:07:03 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -19,8 +19,8 @@
     "climate": {
       "label": "Climate",
       "cumulative_delta": -2.2,
-      "last_attempted": "2026-08-25 01:03:02 UTC",
-      "last_updated": "2026-08-25 01:03:02 UTC"
+      "last_attempted": "2026-08-26 01:07:03 UTC",
+      "last_updated": "2026-08-26 01:07:03 UTC"
     },
     "biosecurity": {
       "label": "Biosecurity",
@@ -42,23 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-16 04:35:30 UTC",
-      "category": "climate",
-      "status": "updated",
-      "delta": -0.2,
-      "direction": "worse",
-      "rationale": "New headlines detail a concerning convergence of extreme weather events, including a hurricane nearing Hawaii, widespread flooding causing fatalities in Indiana and disrupting major transport hubs like Heathrow, and a wildfire in Belgium, alongside continued drought impacts on the Danube, indicating a significant escalation in climate-related disasters.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/crmrr7kjy9vo?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/news/2026/8/15/tropical-storm-lala-expected-to-strengthen-as-it-nears-hawaii?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/8/15/at-least-five-reported-dead-amid-flooding-in-us-state-of-indiana?traffic_source=rss",
-        "https://www.bbc.co.uk/news/articles/cp8eex1nmpvo?at_medium=RSS&at_campaign=rss",
-        "https://www.theguardian.com/news/ng-interactive/2026/aug/16/danube-drought-destroyed-crops-rock-of-starvation-climate-crisis",
-        "https://www.theguardian.com/uk-news/2026/aug/15/heathrow-passengers-face-disruption-after-flood-restricts-access"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-08-16 08:26:56 UTC",
       "category": "biosecurity",
@@ -507,6 +490,20 @@
         "https://www.bbc.co.uk/news/articles/clyl8965j5go?at_medium=RSS&at_campaign=rss",
         "https://www.theguardian.com/world/2026/aug/25/china-us-sanctions-iran-oil",
         "https://www.npr.org/2026/08/25/nx-s1-5943572/trump-iran-sanctions"
+      ],
+      "data_source": "rss"
+    },
+    {
+      "time": "2026-08-26 01:07:03 UTC",
+      "category": "climate",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "The headlines describe ongoing wildfires in Nevada and UK preparations for climate impacts, which are continuations of previously assessed ongoing events and do not represent a new escalation or de-escalation in the climate risk category.",
+      "sources": [
+        "https://www.bbc.co.uk/news/videos/cy0zr8lkr8lo?at_medium=RSS&at_campaign=rss",
+        "https://www.theguardian.com/politics/2026/aug/25/uk-to-warn-citizens-to-stock-up-on-food-amid-threat-from-climate-crisis-and-hostile-states",
+        "https://www.theguardian.com/uk-news/2026/aug/25/london-bus-drivers-resume-strike-over-heatwave-working-amid-fears-over-air-con-deal"
       ],
       "data_source": "rss"
     }
