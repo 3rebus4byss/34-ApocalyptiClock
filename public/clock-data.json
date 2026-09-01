@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-08-31 23:36:16 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-09-01 03:22:32 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 0.5,
-      "last_attempted": "2026-08-30 19:14:20 UTC",
-      "last_updated": "2026-08-30 19:14:20 UTC"
+      "cumulative_delta": 0.8,
+      "last_attempted": "2026-09-01 03:22:32 UTC",
+      "last_updated": "2026-09-01 03:22:32 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,20 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-19 20:22:25 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": -0.2,
-      "direction": "worse",
-      "rationale": "New headlines indicate increased conflict in the Middle East with Canada condemning Israel's actions in Lebanon and Gaza, while the ongoing war with Iran continues to draw US attention away from Asia, suggesting a worsening regional instability.",
-      "sources": [
-        "https://www.aljazeera.com/news/2026/8/19/canada-pledges-50m-aid-to-lebanon-and-condemns-israeli-unlawful-invasion?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/8/19/hamas-condemns-new-war-crime-as-israel-kills-10-in-crowded-gaza-hubs?traffic_source=rss",
-        "https://www.npr.org/2026/08/19/nx-s1-5935388/amid-the-iran-war-the-u-s-has-pivoted-its-geopolitical-attention-away-from-asia"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-08-20 01:01:17 UTC",
       "category": "climate",
@@ -509,6 +495,20 @@
       "time": "2026-08-31 23:36:16 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-09-01 03:22:32 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.35,
+      "direction": "worse",
+      "rationale": "Headlines indicate a significant escalation in the US-Iran conflict with vows of 'hard' strikes and new sanctions impacting Iran's economy, alongside a deteriorating humanitarian situation in Sudan.",
+      "sources": [
+        "https://www.aljazeera.com/news/liveblog/2026/9/1/iran-war-live-trump-vows-to-hit-iran-following-first-clash-in-a-month?traffic_source=rss",
+        "https://www.theguardian.com/world/2026/aug/31/iran-economy-crisis-usa-launches-sanctions-inflation-trump",
+        "https://www.theguardian.com/world/2026/aug/30/humanitarian-crisis-worsening-refuge-civilians-sudan-el-obeid"
+      ],
+      "data_source": "rss"
     }
   ]
 }
