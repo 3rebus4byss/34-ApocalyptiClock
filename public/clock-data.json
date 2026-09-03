@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-09-03 08:33:52 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-09-03 15:46:22 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 0.8,
-      "last_attempted": "2026-09-02 08:22:30 UTC",
-      "last_updated": "2026-09-02 08:22:30 UTC"
+      "cumulative_delta": 1.2,
+      "last_attempted": "2026-09-03 15:46:22 UTC",
+      "last_updated": "2026-09-03 15:46:22 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,20 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-21 20:21:00 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": -0.3,
-      "direction": "worse",
-      "rationale": "The escalation of the conflict in Ukraine, with a deadly drone strike on a civilian shopping center and retaliatory sanctions on cultural products, represents a significant new development beyond the previously assessed Middle East focus.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/c39egw7nmk2o?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/video/newsfeed/2026/8/21/drone-strike-on-ukraine-shopping-centre-kills-six-injures-103?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/8/21/ukraine-sanctions-popular-russian-cartoon-masha-and-the?traffic_source=rss"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-08-22 01:03:15 UTC",
       "category": "climate",
@@ -525,6 +511,19 @@
       "time": "2026-09-03 08:33:52 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-09-03 15:46:22 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.4,
+      "direction": "worse",
+      "rationale": "Headlines indicate a significant escalation of the Iran-US conflict, with Iran targeting US bases and accusing the US of a 'war crime' following a missile strike, while also suggesting potential 'desperate steps' if sanctions tighten.",
+      "sources": [
+        "https://www.theguardian.com/world/2026/sep/03/iran-targets-us-bases-as-israel-warns-sanctions-could-drive-tehran-to-desperate-steps",
+        "https://www.theguardian.com/world/2026/sep/02/iran-us-missile-blast-wedding"
+      ],
+      "data_source": "rss"
     }
   ]
 }
