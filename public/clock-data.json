@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-09-04 15:43:26 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-09-04 18:47:09 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 1.2,
-      "last_attempted": "2026-09-03 15:46:22 UTC",
-      "last_updated": "2026-09-03 15:46:22 UTC"
+      "cumulative_delta": 1.5,
+      "last_attempted": "2026-09-04 18:47:09 UTC",
+      "last_updated": "2026-09-04 18:47:09 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,20 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-22 20:18:56 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "The headlines describe ongoing conflicts in Syria and Iran, as well as the impact of the war on Russia, which are continuations of previously reported situations and do not represent a significant new escalation or de-escalation.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/c4gknzgje7go?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/news/2026/8/22/israeli-drone-strike-on-civilian-vehicle-causes-injuries-in-syria?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/8/22/what-did-war-with-the-us-reveal-about-irans-weapons-capabilities?traffic_source=rss"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-08-23 01:09:01 UTC",
       "category": "climate",
@@ -524,6 +510,19 @@
       "time": "2026-09-04 15:43:26 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-09-04 18:47:09 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.3,
+      "direction": "worse",
+      "rationale": "Headlines indicate a significant escalation in the Russia-Ukraine conflict with a drone strike on Ukraine's security services HQ, and continued economic fallout from the Iran conflict impacting US diesel prices.",
+      "sources": [
+        "https://www.aljazeera.com/economy/2026/9/4/diesel-price-hits-all-time-high-in-us-amid-iran-war-woes?traffic_source=rss",
+        "https://www.theguardian.com/world/live/2026/sep/04/russia-ukraine-eu-ministers-migration-hubs-meloni-bardella-latest-news-updates"
+      ],
+      "data_source": "rss"
     }
   ]
 }
