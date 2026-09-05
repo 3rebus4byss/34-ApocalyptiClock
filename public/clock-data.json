@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-09-05 17:54:24 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-09-05 21:55:54 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 1.5,
-      "last_attempted": "2026-09-04 18:47:09 UTC",
-      "last_updated": "2026-09-04 18:47:09 UTC"
+      "cumulative_delta": 2.0,
+      "last_attempted": "2026-09-05 21:55:54 UTC",
+      "last_updated": "2026-09-05 21:55:54 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,20 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-23 20:21:27 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": -0.4,
-      "direction": "worse",
-      "rationale": "The escalation of the Iran war with new US sanctions and potential fuel price hikes, alongside a new trade war between the US and Canada, represents a significant negative development beyond the previously assessed ongoing conflicts.",
-      "sources": [
-        "https://www.aljazeera.com/news/2026/8/23/iran-war-top-us-lawmaker-says-republicans-can-absolutely-win-midterms?traffic_source=rss",
-        "https://www.aljazeera.com/economy/2026/8/23/iran-government-signals-fuel-price-hike-on-eve-of-new-us-sanctions?traffic_source=rss",
-        "https://www.theguardian.com/us-news/2026/aug/23/donald-trump-lashes-out-after-us-canada-talks-devolve-into-trade-war"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-08-24 01:05:33 UTC",
       "category": "climate",
@@ -523,6 +509,25 @@
       "time": "2026-09-05 17:54:24 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-09-05 21:55:54 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.5,
+      "direction": "worse",
+      "rationale": "Headlines indicate a significant escalation in the Iran-US conflict with US strikes on Iranian tankers and Iranian threats, and continued conflict in Ukraine with a Russian drone strike on security services HQ. However, there are also reports of US envoys meeting Putin to discuss ending the Ukraine war.",
+      "sources": [
+        "https://www.bbc.co.uk/news/videos/c74knp7y04eo?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/video/newsfeed/2026/9/5/us-envoys-witkoff-kushner-meet-putin-for-talks-on-ukraine-war?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/9/5/russias-putin-meets-us-envoys-to-discuss-trump-proposal-to-end-ukraine-war?traffic_source=rss",
+        "https://www.theguardian.com/environment/2026/sep/03/china-co2-emissions-iran-war",
+        "https://www.theguardian.com/world/2026/sep/05/steve-witkoff-jared-kushner-russia-revive-ukraine-talks",
+        "https://www.theguardian.com/world/2026/sep/05/europe-unable-sustain-war-of-attrition-russia-defence-officials-say",
+        "https://www.theguardian.com/world/live/2026/sep/04/russia-ukraine-eu-ministers-migration-hubs-meloni-bardella-latest-news-updates",
+        "https://www.theguardian.com/world/2026/sep/05/us-military-iran-tankers"
+      ],
+      "data_source": "rss"
     }
   ]
 }
