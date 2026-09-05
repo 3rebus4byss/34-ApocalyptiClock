@@ -1,13 +1,13 @@
 {
   "baseline": 85.0,
-  "rotation_index": 0,
-  "last_run_category": "human_factors",
-  "last_run_time": "2026-09-05 14:30:45 UTC",
+  "rotation_index": 1,
+  "last_run_category": "nuclear",
+  "last_run_time": "2026-09-05 17:54:24 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
       "cumulative_delta": 0.0,
-      "last_attempted": "2026-09-04 15:43:26 UTC",
+      "last_attempted": "2026-09-05 17:54:24 UTC",
       "last_updated": "2026-09-02 02:43:04 UTC"
     },
     "conflict": {
@@ -42,11 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-23 16:22:26 UTC",
-      "category": "nuclear",
-      "status": "no_data"
-    },
     {
       "time": "2026-08-23 20:21:27 UTC",
       "category": "conflict",
@@ -522,6 +517,11 @@
     {
       "time": "2026-09-05 14:30:45 UTC",
       "category": "human_factors",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-09-05 17:54:24 UTC",
+      "category": "nuclear",
       "status": "no_data"
     }
   ]
