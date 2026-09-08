@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-09-08 08:36:13 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-09-08 15:58:03 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 2.0,
-      "last_attempted": "2026-09-07 02:43:38 UTC",
-      "last_updated": "2026-09-07 02:43:38 UTC"
+      "last_attempted": "2026-09-08 15:58:03 UTC",
+      "last_updated": "2026-09-08 15:58:03 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,21 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-25 20:28:28 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": -0.3,
-      "direction": "better",
-      "rationale": "The removal of US sanctions on Syria represents a significant de-escalation in one conflict area, while the continued strong international condemnation of US sanctions on Iran and the focus on economic rather than military escalation suggests a potential stabilization.",
-      "sources": [
-        "https://www.aljazeera.com/news/2026/8/25/syrias-economy-poised-for-improvement-after-us-sanctions-removal?traffic_source=rss",
-        "https://www.bbc.co.uk/news/articles/clyl8965j5go?at_medium=RSS&at_campaign=rss",
-        "https://www.theguardian.com/world/2026/aug/25/china-us-sanctions-iran-oil",
-        "https://www.npr.org/2026/08/25/nx-s1-5943572/trump-iran-sanctions"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-08-26 01:07:03 UTC",
       "category": "climate",
@@ -531,6 +516,25 @@
       "sources": [
         "https://www.aljazeera.com/news/2026/9/8/iaea-warns-over-iran-nuclear-access-as-western-powers-push-un-referral?traffic_source=rss",
         "https://www.theguardian.com/world/2026/sep/07/syrian-reactor-could-nuclear-weapons-if-completed-un"
+      ],
+      "data_source": "rss"
+    },
+    {
+      "time": "2026-09-08 15:58:03 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "The headlines describe ongoing and new geopolitical tensions including sanctions on Israeli settlements, child recruitment in Yemen, and increased US military access in Australia, but these do not represent a significant escalation beyond the previously assessed conflicts in Ukraine and Iran.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/c8jdev0422jo?at_medium=RSS&at_campaign=rss",
+        "https://www.bbc.co.uk/news/articles/cvgy6gd228vo?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/video/newsfeed/2026/9/8/jerusalem-daily-uk-announces-sanctions-on-israeli-settlement-goods?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/9/8/eu-condemns-serbias-ministers-for-attending-funeral-of-war-criminal-mladic?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/9/8/yemens-reignited-war-fuels-a-new-wave-in-child-recruitment?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/9/8/uk-announces-sanctions-on-illegal-israeli-settlements?traffic_source=rss",
+        "https://www.aljazeera.com/opinions/2026/9/8/brics-summit-may-be-the-only-place-another-iran-ceasefire-can-be-built?traffic_source=rss",
+        "https://www.theguardian.com/australia-news/ng-interactive/2026/sep/07/us-military-bases-in-australia-map-list-spy-satellite-pine-gap"
       ],
       "data_source": "rss"
     }
