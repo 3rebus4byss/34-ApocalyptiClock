@@ -1,14 +1,14 @@
 {
   "baseline": 85.0,
-  "rotation_index": 0,
-  "last_run_category": "human_factors",
-  "last_run_time": "2026-09-08 02:57:18 UTC",
+  "rotation_index": 1,
+  "last_run_category": "nuclear",
+  "last_run_time": "2026-09-08 08:36:13 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
       "cumulative_delta": 0.0,
-      "last_attempted": "2026-09-06 21:56:20 UTC",
-      "last_updated": "2026-09-02 02:43:04 UTC"
+      "last_attempted": "2026-09-08 08:36:13 UTC",
+      "last_updated": "2026-09-08 08:36:13 UTC"
     },
     "conflict": {
       "label": "Conflict",
@@ -42,11 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-25 16:33:45 UTC",
-      "category": "nuclear",
-      "status": "no_data"
-    },
     {
       "time": "2026-08-25 20:28:28 UTC",
       "category": "conflict",
@@ -525,6 +520,19 @@
       "time": "2026-09-08 02:57:18 UTC",
       "category": "human_factors",
       "status": "no_data"
+    },
+    {
+      "time": "2026-09-08 08:36:13 UTC",
+      "category": "nuclear",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines continue to report on ongoing IAEA investigations and concerns regarding Iran's nuclear access and Syria's past nuclear activities. These do not represent a significant new development or change in the existing situation.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/9/8/iaea-warns-over-iran-nuclear-access-as-western-powers-push-un-referral?traffic_source=rss",
+        "https://www.theguardian.com/world/2026/sep/07/syrian-reactor-could-nuclear-weapons-if-completed-un"
+      ],
+      "data_source": "rss"
     }
   ]
 }
