@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 4,
-  "last_run_category": "biosecurity",
-  "last_run_time": "2026-09-11 08:33:18 UTC",
+  "rotation_index": 5,
+  "last_run_category": "ai_risk",
+  "last_run_time": "2026-09-11 15:47:58 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -31,8 +31,8 @@
     "ai_risk": {
       "label": "AI Risk",
       "cumulative_delta": -0.2,
-      "last_attempted": "2026-09-10 08:39:08 UTC",
-      "last_updated": "2026-09-07 22:29:30 UTC"
+      "last_attempted": "2026-09-11 15:47:58 UTC",
+      "last_updated": "2026-09-11 15:47:58 UTC"
     },
     "human_factors": {
       "label": "Information Warfare",
@@ -42,11 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-30 03:27:58 UTC",
-      "category": "ai_risk",
-      "status": "no_data"
-    },
     {
       "time": "2026-08-30 09:44:55 UTC",
       "category": "human_factors",
@@ -501,6 +496,18 @@
       "time": "2026-09-11 08:33:18 UTC",
       "category": "biosecurity",
       "status": "no_data"
+    },
+    {
+      "time": "2026-09-11 15:47:58 UTC",
+      "category": "ai_risk",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "The headline discusses a political figure's proposal to ban AI superintelligence, which is a continuing narrative in the discourse surrounding AI risk and does not represent a new development.",
+      "sources": [
+        "https://www.bbc.co.uk/news/videos/cgjq11576q2o?at_medium=RSS&at_campaign=rss"
+      ],
+      "data_source": "rss"
     }
   ]
 }
