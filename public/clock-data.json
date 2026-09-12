@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-09-11 22:15:09 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-09-12 03:00:54 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 2.0,
-      "last_attempted": "2026-09-10 22:15:33 UTC",
-      "last_updated": "2026-09-10 22:15:33 UTC"
+      "cumulative_delta": 2.4,
+      "last_attempted": "2026-09-12 03:00:54 UTC",
+      "last_updated": "2026-09-12 03:00:54 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,19 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-08-30 19:14:20 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.25,
-      "direction": "worse",
-      "rationale": "New US sanctions on Egypt's Banque Misr represent an expansion of economic conflict beyond Iran, while the worsening humanitarian crisis in Sudan indicates ongoing and deteriorating conflict in that region, both suggesting a negative shift.",
-      "sources": [
-        "https://www.aljazeera.com/news/2026/8/30/banque-misr-egypts-second-largest-hit-by-us-sanctions-what-to-know?traffic_source=rss",
-        "https://www.theguardian.com/world/2026/aug/30/humanitarian-crisis-worsening-refuge-civilians-sudan-el-obeid"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-08-30 22:24:31 UTC",
       "category": "climate",
@@ -508,6 +495,19 @@
       "time": "2026-09-11 22:15:09 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-09-12 03:00:54 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.4,
+      "direction": "worse",
+      "rationale": "New headlines indicate a significant escalation in the Yemen conflict with Houthi advances controlling the Red Sea coast and a Saudi pipeline shutdown, directly impacting the ongoing Iran war and amplifying existing geopolitical tensions.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/c3v4zgzr1kxo?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/news/liveblog/2026/9/12/iran-war-live-houthis-control-red-sea-coast-saudi-pipeline-shut-down?traffic_source=rss"
+      ],
+      "data_source": "rss"
     }
   ]
 }
