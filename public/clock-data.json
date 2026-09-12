@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 5,
-  "last_run_category": "ai_risk",
-  "last_run_time": "2026-09-12 18:05:31 UTC",
+  "rotation_index": 0,
+  "last_run_category": "human_factors",
+  "last_run_time": "2026-09-12 21:56:03 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -37,16 +37,11 @@
     "human_factors": {
       "label": "Information Warfare",
       "cumulative_delta": -0.1,
-      "last_attempted": "2026-09-11 18:58:06 UTC",
-      "last_updated": "2026-09-10 15:48:59 UTC"
+      "last_attempted": "2026-09-12 21:56:03 UTC",
+      "last_updated": "2026-09-12 21:56:03 UTC"
     }
   },
   "history": [
-    {
-      "time": "2026-08-31 18:43:28 UTC",
-      "category": "human_factors",
-      "status": "no_data"
-    },
     {
       "time": "2026-08-31 23:36:16 UTC",
       "category": "nuclear",
@@ -499,6 +494,18 @@
       "time": "2026-09-12 18:05:31 UTC",
       "category": "ai_risk",
       "status": "no_data"
+    },
+    {
+      "time": "2026-09-12 21:56:03 UTC",
+      "category": "human_factors",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "The new headline discusses propaganda related to ongoing conflict, which is a continuation of themes often present in information warfare and does not represent a new escalation or de-escalation beyond what has likely been accounted for.",
+      "sources": [
+        "https://www.aljazeera.com/video/the-listening-post/2026/9/12/selling-the-war-purges-polygraphs-and-propaganda?traffic_source=rss"
+      ],
+      "data_source": "rss"
     }
   ]
 }
