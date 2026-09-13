@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-09-13 02:58:31 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-09-13 15:36:47 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 2.4,
-      "last_attempted": "2026-09-12 03:00:54 UTC",
-      "last_updated": "2026-09-12 03:00:54 UTC"
+      "last_attempted": "2026-09-13 15:36:47 UTC",
+      "last_updated": "2026-09-13 15:36:47 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,20 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-09-01 03:22:32 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.35,
-      "direction": "worse",
-      "rationale": "Headlines indicate a significant escalation in the US-Iran conflict with vows of 'hard' strikes and new sanctions impacting Iran's economy, alongside a deteriorating humanitarian situation in Sudan.",
-      "sources": [
-        "https://www.aljazeera.com/news/liveblog/2026/9/1/iran-war-live-trump-vows-to-hit-iran-following-first-clash-in-a-month?traffic_source=rss",
-        "https://www.theguardian.com/world/2026/aug/31/iran-economy-crisis-usa-launches-sanctions-inflation-trump",
-        "https://www.theguardian.com/world/2026/aug/30/humanitarian-crisis-worsening-refuge-civilians-sudan-el-obeid"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-09-01 09:10:46 UTC",
       "category": "climate",
@@ -506,6 +492,22 @@
       "time": "2026-09-13 02:58:31 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-09-13 15:36:47 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines continue to focus on the ongoing Iran war and its economic impact, as well as the US-Canada trade war, but do not indicate a significant escalation or de-escalation beyond previously assessed tensions.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/ce8767g4jdpo?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/opinions/2026/9/13/the-iran-war-reveals-the-limits-of?traffic_source=rss",
+        "https://www.aljazeera.com/economy/2026/9/13/a-dignified-life-is-a-distant-dream-for-many-iranian-families-amid-us-war?traffic_source=rss",
+        "https://www.npr.org/2026/09/11/g-s1-142935/iran-us-war-jobs-economy",
+        "https://www.npr.org/2026/09/11/nx-s1-5961530/canada-trade-war-auto-parts-supply-chain"
+      ],
+      "data_source": "rss"
     }
   ]
 }
