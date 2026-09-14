@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-09-14 17:35:24 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-09-14 22:55:50 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 2.4,
-      "last_attempted": "2026-09-13 15:36:47 UTC",
-      "last_updated": "2026-09-13 15:36:47 UTC"
+      "last_attempted": "2026-09-14 22:55:50 UTC",
+      "last_updated": "2026-09-14 22:55:50 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,21 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-09-02 08:22:30 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "Headlines reflect ongoing elements of the economic conflict with Iran and trade disputes, as well as continued civil conflict in Sudan and accusations of US election meddling, all of which are continuations of previously established trends and do not represent a significant new escalation or de-escalation.",
-      "sources": [
-        "https://www.aljazeera.com/economy/2026/9/2/we-had-an-ordinary-life-iran-fisherwoman-navigates-uncertainty-of-war?traffic_source=rss",
-        "https://www.theguardian.com/world/2026/aug/30/humanitarian-crisis-worsening-refuge-civilians-sudan-el-obeid",
-        "https://www.theguardian.com/us-news/2026/sep/01/trump-mark-carney-trade-war-canada",
-        "https://www.theguardian.com/world/2026/sep/01/us-trump-rubio-meddling-brazil-election"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-09-02 15:55:16 UTC",
       "category": "climate",
@@ -500,6 +485,20 @@
       "time": "2026-09-14 17:35:24 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-09-14 22:55:50 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines continue to report on the existing conflicts in Yemen and the US-Canada trade war, with no new material developments indicated. The Iran war's impact on BRICS is also a continuation of ongoing geopolitical discussions.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/ce8767g4jdpo?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/economy/2026/9/14/inside-the-houthis-expanding-war-economy-in-yemen?traffic_source=rss",
+        "https://www.aljazeera.com/economy/2026/9/14/carney-pitches-canada-to-global-investors-amid-us-trade-war?traffic_source=rss"
+      ],
+      "data_source": "rss"
     }
   ]
 }
