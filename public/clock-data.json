@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-09-18 22:15:19 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-09-19 02:58:48 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 2.4,
-      "last_attempted": "2026-09-17 22:39:53 UTC",
-      "last_updated": "2026-09-17 22:39:53 UTC"
+      "cumulative_delta": 2.6,
+      "last_attempted": "2026-09-19 02:58:48 UTC",
+      "last_updated": "2026-09-19 02:58:48 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,25 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-09-05 21:55:54 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.5,
-      "direction": "worse",
-      "rationale": "Headlines indicate a significant escalation in the Iran-US conflict with US strikes on Iranian tankers and Iranian threats, and continued conflict in Ukraine with a Russian drone strike on security services HQ. However, there are also reports of US envoys meeting Putin to discuss ending the Ukraine war.",
-      "sources": [
-        "https://www.bbc.co.uk/news/videos/c74knp7y04eo?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/video/newsfeed/2026/9/5/us-envoys-witkoff-kushner-meet-putin-for-talks-on-ukraine-war?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/9/5/russias-putin-meets-us-envoys-to-discuss-trump-proposal-to-end-ukraine-war?traffic_source=rss",
-        "https://www.theguardian.com/environment/2026/sep/03/china-co2-emissions-iran-war",
-        "https://www.theguardian.com/world/2026/sep/05/steve-witkoff-jared-kushner-russia-revive-ukraine-talks",
-        "https://www.theguardian.com/world/2026/sep/05/europe-unable-sustain-war-of-attrition-russia-defence-officials-say",
-        "https://www.theguardian.com/world/live/2026/sep/04/russia-ukraine-eu-ministers-migration-hubs-meloni-bardella-latest-news-updates",
-        "https://www.theguardian.com/world/2026/sep/05/us-military-iran-tankers"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-09-06 02:43:37 UTC",
       "category": "climate",
@@ -531,6 +512,20 @@
       "time": "2026-09-18 22:15:19 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-09-19 02:58:48 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.25,
+      "direction": "worse",
+      "rationale": "New headlines indicate an escalation in existing conflicts with the US imposing further sanctions on Russia over Ukraine and extending sanctions on Iran, alongside Israeli shelling in southern Lebanon.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/9/19/trump-signs-sweeping-russia-sanctions-over-ukraine-war?traffic_source=rss",
+        "https://www.aljazeera.com/news/liveblog/2026/9/19/iran-war-live-trump-extends-sanctions-on-iran-houthi-supporters-in-sanaa?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/9/18/two-injured-by-israeli-shelling-as-troops-advance-in-southern-lebanon?traffic_source=rss"
+      ],
+      "data_source": "rss"
     }
   ]
 }
