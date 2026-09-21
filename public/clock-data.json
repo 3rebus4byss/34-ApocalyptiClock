@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-09-21 09:33:53 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-09-21 17:51:18 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 2.6,
-      "last_attempted": "2026-09-20 09:04:48 UTC",
-      "last_updated": "2026-09-20 09:04:48 UTC"
+      "last_attempted": "2026-09-21 17:51:18 UTC",
+      "last_updated": "2026-09-21 17:51:18 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,25 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-09-08 15:58:03 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "The headlines describe ongoing and new geopolitical tensions including sanctions on Israeli settlements, child recruitment in Yemen, and increased US military access in Australia, but these do not represent a significant escalation beyond the previously assessed conflicts in Ukraine and Iran.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/c8jdev0422jo?at_medium=RSS&at_campaign=rss",
-        "https://www.bbc.co.uk/news/articles/cvgy6gd228vo?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/video/newsfeed/2026/9/8/jerusalem-daily-uk-announces-sanctions-on-israeli-settlement-goods?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/9/8/eu-condemns-serbias-ministers-for-attending-funeral-of-war-criminal-mladic?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/9/8/yemens-reignited-war-fuels-a-new-wave-in-child-recruitment?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/9/8/uk-announces-sanctions-on-illegal-israeli-settlements?traffic_source=rss",
-        "https://www.aljazeera.com/opinions/2026/9/8/brics-summit-may-be-the-only-place-another-iran-ceasefire-can-be-built?traffic_source=rss",
-        "https://www.theguardian.com/australia-news/ng-interactive/2026/sep/07/us-military-bases-in-australia-map-list-spy-satellite-pine-gap"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-09-08 19:18:04 UTC",
       "category": "climate",
@@ -521,6 +502,22 @@
       "time": "2026-09-21 09:33:53 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-09-21 17:51:18 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines report on ongoing conflicts in Yemen, Ukraine, and Iran, with discussions on Europe's 'hybrid war' and Russia's parliamentary elections, but no significant new escalations or de-escalations are detailed beyond the previously assessed situation.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/cw4gm7l742dmo?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/video/inside-story/2026/9/21/how-is-europe-dealing-with-hybrid-war?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/9/21/how-oil-gas-losses-have-shrunk-irans-gdp-by-10-percent-during-war?traffic_source=rss",
+        "https://www.theguardian.com/world/2026/sep/21/putin-consolidates-grip-russia-ukraine-war-veterans-elected-duma",
+        "https://www.npr.org/2026/09/21/nx-s1-5975460/how-russias-parliamentary-election-might-affect-the-war-in-ukraine"
+      ],
+      "data_source": "rss"
     }
   ]
 }
