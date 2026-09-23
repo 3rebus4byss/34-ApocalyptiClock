@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-09-22 22:44:19 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-09-23 03:08:46 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 2.6,
-      "last_attempted": "2026-09-21 17:51:18 UTC",
-      "last_updated": "2026-09-21 17:51:18 UTC"
+      "last_attempted": "2026-09-23 03:08:46 UTC",
+      "last_updated": "2026-09-23 03:08:46 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,22 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-09-09 19:04:12 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "Headlines cover ongoing conflicts in Ukraine and the Middle East, new sanctions on Israeli settlements with potential retaliation, and a US-Canada trade war, but these do not represent a significant escalation beyond the existing assessed tensions.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/cvgyvpxe3yjo?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/video/newsfeed/2026/9/9/explosion-at-depot-storing-weapons-left-from-syria-war-kills-14?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/9/9/as-the-uk-sanctions-israeli-settlements-is-the-two-state-solution-dead?traffic_source=rss",
-        "https://www.aljazeera.com/video/newsfeed/2026/9/9/jerusalem-daily-israel-retaliates-over-sanctions-on-illegal-settlements?traffic_source=rss",
-        "https://www.theguardian.com/us-news/2026/sep/08/trump-canada-trade-war-dairy-alcohol"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-09-09 22:17:45 UTC",
       "category": "climate",
@@ -527,6 +511,22 @@
       "time": "2026-09-22 22:44:19 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-09-23 03:08:46 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines reflect ongoing diplomatic maneuvering and pre-existing tensions in the Iran and Russia conflicts, with no clear escalation or de-escalation beyond what has been previously assessed. The reported EU decision to remove some oligarchs from sanctions could be interpreted as a slight de-escalation, balanced by US aviation sanctions on Iran and the ongoing 'test of who will blink first' narrative.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/c6dj4k98107do?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/news/liveblog/2026/9/23/iran-war-live-trump-confirms-very-good-meeting-with-iran-at-un?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/9/22/iran-flights-to-baghdad-muscat-cancelled-ahead-of-us-aviation-sanctions?traffic_source=rss",
+        "https://www.theguardian.com/world/2026/sep/22/eu-removes-oligarchs-from-russia-sanctions-list-as-deadline-looms",
+        "https://www.npr.org/2026/09/22/nx-s1-5966364/war-between-u-s-and-iran-becomes-a-test-of-who-will-blink-first"
+      ],
+      "data_source": "rss"
     }
   ]
 }
