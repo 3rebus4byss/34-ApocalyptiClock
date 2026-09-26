@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 2,
-  "last_run_category": "conflict",
-  "last_run_time": "2026-09-26 03:21:19 UTC",
+  "rotation_index": 3,
+  "last_run_category": "climate",
+  "last_run_time": "2026-09-26 09:03:22 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -19,8 +19,8 @@
     "climate": {
       "label": "Climate",
       "cumulative_delta": -2.8,
-      "last_attempted": "2026-09-24 23:02:22 UTC",
-      "last_updated": "2026-09-24 23:02:22 UTC"
+      "last_attempted": "2026-09-26 09:03:22 UTC",
+      "last_updated": "2026-09-26 09:03:22 UTC"
     },
     "biosecurity": {
       "label": "Biosecurity",
@@ -42,11 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-09-12 08:21:58 UTC",
-      "category": "climate",
-      "status": "no_data"
-    },
     {
       "time": "2026-09-12 14:56:24 UTC",
       "category": "biosecurity",
@@ -547,6 +542,20 @@
         "https://www.aljazeera.com/news/liveblog/2026/9/26/iran-war-live-tehran-offers-us-plan-to-reopen-hormuz-within-seven-days?traffic_source=rss",
         "https://www.aljazeera.com/news/2026/9/25/iran-says-it-awaits-us-response-on-seven-day-roadmap-to-end-war?traffic_source=rss",
         "https://www.theguardian.com/world/2026/sep/24/fears-return-to-war-tigray-rebels-launch-offensive-against-ethiopian-army"
+      ],
+      "data_source": "rss"
+    },
+    {
+      "time": "2026-09-26 09:03:22 UTC",
+      "category": "climate",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "The headlines describe flooding in Bangkok due to heavy rains and Hurricane Polo approaching Mexico. These events are consistent with ongoing extreme weather patterns and do not represent a new escalation or de-escalation beyond previously assessed trends.",
+      "sources": [
+        "https://www.bbc.co.uk/news/videos/ck9800jdj1q0o?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/news/2026/9/26/disaster-zone-declared-across-bangkok-as-heavy-rain-triggers-flooding?traffic_source=rss",
+        "https://www.theguardian.com/world/2026/sep/25/weather-tracker-hurricane-polo-baja-california-mexico"
       ],
       "data_source": "rss"
     }
