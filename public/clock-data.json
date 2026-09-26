@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-09-25 23:05:24 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-09-26 03:21:19 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 3.0,
-      "last_attempted": "2026-09-24 16:26:57 UTC",
-      "last_updated": "2026-09-24 16:26:57 UTC"
+      "last_attempted": "2026-09-26 03:21:19 UTC",
+      "last_updated": "2026-09-26 03:21:19 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,19 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-09-12 03:00:54 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.4,
-      "direction": "worse",
-      "rationale": "New headlines indicate a significant escalation in the Yemen conflict with Houthi advances controlling the Red Sea coast and a Saudi pipeline shutdown, directly impacting the ongoing Iran war and amplifying existing geopolitical tensions.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/c3v4zgzr1kxo?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/news/liveblog/2026/9/12/iran-war-live-houthis-control-red-sea-coast-saudi-pipeline-shut-down?traffic_source=rss"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-09-12 08:21:58 UTC",
       "category": "climate",
@@ -547,6 +534,21 @@
       "time": "2026-09-25 23:05:24 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-09-26 03:21:19 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines continue to report on the escalation in Ethiopia's Tigray region, which was the basis for the previous 'worse' rating, and ongoing diplomatic efforts regarding Iran. There are no new, distinct escalations or de-escalations beyond what was assessed in the prior check.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/c6d94wywx0ypo?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/news/liveblog/2026/9/26/iran-war-live-tehran-offers-us-plan-to-reopen-hormuz-within-seven-days?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/9/25/iran-says-it-awaits-us-response-on-seven-day-roadmap-to-end-war?traffic_source=rss",
+        "https://www.theguardian.com/world/2026/sep/24/fears-return-to-war-tigray-rebels-launch-offensive-against-ethiopian-army"
+      ],
+      "data_source": "rss"
     }
   ]
 }
