@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-09-27 03:30:35 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-09-27 09:49:39 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 3.0,
-      "last_attempted": "2026-09-26 03:21:19 UTC",
-      "last_updated": "2026-09-26 03:21:19 UTC"
+      "last_attempted": "2026-09-27 09:49:39 UTC",
+      "last_updated": "2026-09-27 09:49:39 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,22 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-09-13 15:36:47 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "Headlines continue to focus on the ongoing Iran war and its economic impact, as well as the US-Canada trade war, but do not indicate a significant escalation or de-escalation beyond previously assessed tensions.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/ce8767g4jdpo?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/opinions/2026/9/13/the-iran-war-reveals-the-limits-of?traffic_source=rss",
-        "https://www.aljazeera.com/economy/2026/9/13/a-dignified-life-is-a-distant-dream-for-many-iranian-families-amid-us-war?traffic_source=rss",
-        "https://www.npr.org/2026/09/11/g-s1-142935/iran-us-war-jobs-economy",
-        "https://www.npr.org/2026/09/11/nx-s1-5961530/canada-trade-war-auto-parts-supply-chain"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-09-13 18:30:45 UTC",
       "category": "climate",
@@ -566,6 +550,23 @@
       "time": "2026-09-27 03:30:35 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-09-27 09:49:39 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines reflect ongoing coverage of the Ethiopian civil war and US-Iran tensions, with a new, isolated explosion in Athens not constituting a significant escalation of the 'Conflict' category. Diplomatic efforts are also highlighted, balancing potential negative movements.",
+      "sources": [
+        "https://www.aljazeera.com/economy/2026/9/27/can-iran-shift-trade-north-to-caspian-sea-as-war-impairs-strait-of-hormuz?traffic_source=rss",
+        "https://www.aljazeera.com/video/newsfeed/2026/9/27/djibouti-urges-world-to-help-as-yemen-war-drives-refugee-influx?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/9/27/ethiopias-army-promises-restraint-amid-fears-of-new-civil-war?traffic_source=rss",
+        "https://www.aljazeera.com/video/newsfeed/2026/9/27/did-the-biggest-week-of-diplomacy-make-headway-in-ending-the-us-iran-war?traffic_source=rss",
+        "https://www.bbc.co.uk/news/articles/c6p3kk78l4l1o?at_medium=RSS&at_campaign=rss",
+        "https://www.theguardian.com/world/2026/sep/26/greek-authorities-seek-answers-after-six-killed-in-athens-apartment-block-explosion"
+      ],
+      "data_source": "rss"
     }
   ]
 }
