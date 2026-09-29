@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-09-28 19:11:13 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-09-29 00:11:10 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 3.0,
-      "last_attempted": "2026-09-27 09:49:39 UTC",
-      "last_updated": "2026-09-27 09:49:39 UTC"
+      "cumulative_delta": 3.2,
+      "last_attempted": "2026-09-29 00:11:10 UTC",
+      "last_updated": "2026-09-29 00:11:10 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,20 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-09-14 22:55:50 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "Headlines continue to report on the existing conflicts in Yemen and the US-Canada trade war, with no new material developments indicated. The Iran war's impact on BRICS is also a continuation of ongoing geopolitical discussions.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/ce8767g4jdpo?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/economy/2026/9/14/inside-the-houthis-expanding-war-economy-in-yemen?traffic_source=rss",
-        "https://www.aljazeera.com/economy/2026/9/14/carney-pitches-canada-to-global-investors-amid-us-trade-war?traffic_source=rss"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-09-15 03:12:54 UTC",
       "category": "climate",
@@ -567,6 +553,20 @@
       "time": "2026-09-28 19:11:13 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-09-29 00:11:10 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.2,
+      "direction": "worse",
+      "rationale": "Headlines indicate an escalation of the conflict in Yemen and renewed tensions in US-Iran relations, with new reporting on arrests near a UK airbase used in the Iran war, suggesting a worsening situation beyond the previously assessed trends.",
+      "sources": [
+        "https://www.bbc.co.uk/news/videos/crp3kgjygnkeo?at_medium=RSS&at_campaign=rss",
+        "https://www.theguardian.com/us-news/live/2026/sep/28/donald-trump-iran-negotiations-fuel-deportations-media-china-latest-news-updates",
+        "https://www.npr.org/2026/09/27/nx-s1-5982718/five-arrested-near-uk-air-base-used-by-u-s-bombers-in-iran-war"
+      ],
+      "data_source": "rss"
     }
   ]
 }
