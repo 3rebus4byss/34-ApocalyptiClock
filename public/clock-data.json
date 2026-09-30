@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-09-30 10:18:59 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-09-30 17:33:57 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,7 +13,7 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 3.2,
-      "last_attempted": "2026-09-29 00:11:10 UTC",
+      "last_attempted": "2026-09-30 17:33:57 UTC",
       "last_updated": "2026-09-29 00:11:10 UTC"
     },
     "climate": {
@@ -42,25 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-09-16 09:02:37 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "Headlines continue to report on the ongoing Iran war, its economic and munitions impact, as well as existing conflicts in Gaza and DRC-Rwanda, with no new escalation or de-escalation indicated.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/cvp8d00j9gg5o?at_medium=RSS&at_campaign=rss",
-        "https://www.bbc.co.uk/news/articles/c9gk58xgng0vo?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/news/2026/9/16/former-kosovo-president-hashim-thaci-faces-verdict-for-alleged-war-crimes?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/9/16/us-house-votes-to-end-iran-war-7-republicans-join-in-favour?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/9/16/drc-rwanda-can-geneva-talks-break-the-cycle-of-war-in-eastern-congo?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/9/16/iran-war-increasing-inflation-straining-us-munitions-congressional-report?traffic_source=rss",
-        "https://www.aljazeera.com/news/liveblog/2026/9/16/iran-war-live-irans-top-diplomat-heads-to-china-as-war-drags-on?traffic_source=rss",
-        "https://www.theguardian.com/world/2026/sep/15/iran-war-cost-cbo-report"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-09-16 16:06:22 UTC",
       "category": "climate",
@@ -560,6 +541,11 @@
     {
       "time": "2026-09-30 10:18:59 UTC",
       "category": "nuclear",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-09-30 17:33:57 UTC",
+      "category": "conflict",
       "status": "no_data"
     }
   ]
