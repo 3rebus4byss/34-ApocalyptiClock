@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-10-01 23:39:51 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-10-02 03:53:49 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 3.2,
-      "last_attempted": "2026-09-30 17:33:57 UTC",
-      "last_updated": "2026-09-29 00:11:10 UTC"
+      "cumulative_delta": 3.8,
+      "last_attempted": "2026-10-02 03:53:49 UTC",
+      "last_updated": "2026-10-02 03:53:49 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,23 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-09-17 22:39:53 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "Headlines continue to report on existing conflicts (Iran, Gaza, Yemen) and related international dynamics such as UN sanctions monitoring, without indicating a significant escalation or de-escalation beyond what has been previously assessed.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/cm9w4n5nverdo?at_medium=RSS&at_campaign=rss",
-        "https://www.bbc.co.uk/news/articles/c6n8m72r13ngo?at_medium=RSS&at_campaign=rss",
-        "https://www.bbc.co.uk/news/articles/cvp8d00j9gg5o?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/news/2026/9/17/russia-china-veto-un-mandate-to-monitor-iran-sanctions?traffic_source=rss",
-        "https://www.theguardian.com/world/2026/sep/17/thursday-briefing-yemens-war-continues-to-threaten-oil-supplies-but-what-about-its-people",
-        "https://www.npr.org/2026/09/17/nx-s1-5972934/us-iran-war-un-report-alleged-war-crimes"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-09-18 03:02:26 UTC",
       "category": "climate",
@@ -547,6 +530,19 @@
       "time": "2026-10-01 23:39:51 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-10-02 03:53:49 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.55,
+      "direction": "worse",
+      "rationale": "New headlines indicate a significant escalation with the US moving 2,000 Marines to the Middle East and a tanker being hit in the Strait of Hormuz, directly amidst ongoing Iran war coverage. Additionally, Putin ruling out a ceasefire with Ukraine further exacerbates existing tensions.",
+      "sources": [
+        "https://www.aljazeera.com/news/liveblog/2026/10/2/iran-war-live-us-moves-2000-marines-to-middle-east-tanker-hit-in-hormuz?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/10/1/russias-putin-rules-out-ceasefire-with-ukraine-during-speech-in-moscow?traffic_source=rss"
+      ],
+      "data_source": "rss"
     }
   ]
 }
