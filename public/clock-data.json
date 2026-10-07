@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-10-06 20:48:04 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-10-07 04:06:01 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 3.8,
-      "last_attempted": "2026-10-04 22:44:13 UTC",
-      "last_updated": "2026-10-04 22:44:13 UTC"
+      "cumulative_delta": 4.2,
+      "last_attempted": "2026-10-07 04:06:01 UTC",
+      "last_updated": "2026-10-07 04:06:01 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,22 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-09-21 17:51:18 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "Headlines report on ongoing conflicts in Yemen, Ukraine, and Iran, with discussions on Europe's 'hybrid war' and Russia's parliamentary elections, but no significant new escalations or de-escalations are detailed beyond the previously assessed situation.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/cw4gm7l742dmo?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/video/inside-story/2026/9/21/how-is-europe-dealing-with-hybrid-war?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/9/21/how-oil-gas-losses-have-shrunk-irans-gdp-by-10-percent-during-war?traffic_source=rss",
-        "https://www.theguardian.com/world/2026/sep/21/putin-consolidates-grip-russia-ukraine-war-veterans-elected-duma",
-        "https://www.npr.org/2026/09/21/nx-s1-5975460/how-russias-parliamentary-election-might-affect-the-war-in-ukraine"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-09-21 23:01:16 UTC",
       "category": "climate",
@@ -560,6 +544,19 @@
       "time": "2026-10-06 20:48:04 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-10-07 04:06:01 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.4,
+      "direction": "worse",
+      "rationale": "New headlines indicate continued or escalated active conflict, with Houthi missiles hitting Aden airport and South Korean fuel being shipped to Russia amidst the ongoing Ukraine war. These developments represent a concerning continuation and potential worsening of already established conflict zones.",
+      "sources": [
+        "https://www.aljazeera.com/news/liveblog/2026/10/7/iran-war-live-yemen-forces-claim-control-over-strategic-taiz-mountain-peak?traffic_source=rss",
+        "https://www.theguardian.com/world/2026/oct/06/oil-tankers-south-korea-russia-ukraine-war"
+      ],
+      "data_source": "rss"
     }
   ]
 }
