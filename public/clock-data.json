@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-10-08 21:01:22 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-10-09 04:27:20 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 4.2,
-      "last_attempted": "2026-10-07 04:06:01 UTC",
-      "last_updated": "2026-10-07 04:06:01 UTC"
+      "cumulative_delta": 4.5,
+      "last_attempted": "2026-10-09 04:27:20 UTC",
+      "last_updated": "2026-10-09 04:27:20 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,22 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-09-23 03:08:46 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "Headlines reflect ongoing diplomatic maneuvering and pre-existing tensions in the Iran and Russia conflicts, with no clear escalation or de-escalation beyond what has been previously assessed. The reported EU decision to remove some oligarchs from sanctions could be interpreted as a slight de-escalation, balanced by US aviation sanctions on Iran and the ongoing 'test of who will blink first' narrative.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/c6dj4k98107do?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/news/liveblog/2026/9/23/iran-war-live-trump-confirms-very-good-meeting-with-iran-at-un?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/9/22/iran-flights-to-baghdad-muscat-cancelled-ahead-of-us-aviation-sanctions?traffic_source=rss",
-        "https://www.theguardian.com/world/2026/sep/22/eu-removes-oligarchs-from-russia-sanctions-list-as-deadline-looms",
-        "https://www.npr.org/2026/09/22/nx-s1-5966364/war-between-u-s-and-iran-becomes-a-test-of-who-will-blink-first"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-09-23 09:02:15 UTC",
       "category": "climate",
@@ -556,6 +540,22 @@
       "time": "2026-10-08 21:01:22 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-10-09 04:27:20 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.25,
+      "direction": "worse",
+      "rationale": "New headlines highlight escalating conflict in Gaza, Ethiopia, and the ongoing war on Iran, with increased reports of civilian casualties and potential regional intervention, indicating a worsening trend beyond previously assessed levels.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/cmx2qlz7qrd4o?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/news/2026/10/9/will-ethiopias-neighbours-intervene-as-tigray-war-escalates?traffic_source=rss",
+        "https://www.aljazeera.com/news/liveblog/2026/10/9/iran-war-live-iranian-media-reports-massive-explosions-in-hormuz-strait?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/10/8/israel-kills-or-wounds-palestinian-every-90-minutes-in-gaza-since-ceasefire?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/10/8/putin-pledges-russias-support-to-end-us-led-war-on-iran?traffic_source=rss"
+      ],
+      "data_source": "rss"
     }
   ]
 }
