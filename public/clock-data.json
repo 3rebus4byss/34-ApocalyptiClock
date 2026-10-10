@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-10-10 19:42:23 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-10-10 23:12:15 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 4.5,
-      "last_attempted": "2026-10-09 04:27:20 UTC",
-      "last_updated": "2026-10-09 04:27:20 UTC"
+      "last_attempted": "2026-10-10 23:12:15 UTC",
+      "last_updated": "2026-10-10 23:12:15 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,19 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-09-24 16:26:57 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.4,
-      "direction": "worse",
-      "rationale": "New headlines indicate a significant escalation of conflict in Ethiopia's Tigray region with a rebel offensive, stoking fears of a return to civil war, which represents a new and worsening development.",
-      "sources": [
-        "https://www.theguardian.com/world/2026/sep/24/fears-return-to-war-tigray-rebels-launch-offensive-against-ethiopian-army",
-        "https://www.npr.org/2026/09/24/nx-s1-5978861/conflict-ethiopia-tigray"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-09-24 23:02:22 UTC",
       "category": "climate",
@@ -543,6 +530,21 @@
       "time": "2026-10-10 19:42:23 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-10-10 23:12:15 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "While headlines indicate continued conflict in Gaza and Sudan, and political statements regarding Ukraine, these do not represent a significant escalation beyond the already assessed trends in the 'Conflict' category. Reports on a potential US-Russia diesel deal suggest de-escalation in one area.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/c8vgx9ew571wo?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/video/newsfeed/2026/10/10/israeli-attack-destroys-building-in-gaza-one-year-into?traffic_source=rss",
+        "https://www.aljazeera.com/video/newsfeed/2026/10/10/palestinians-still-being-killed-in-gaza-one-year-into?traffic_source=rss",
+        "https://www.npr.org/2026/10/10/nx-s1-5996938/u-s-and-russia-tout-diesel-deal-to-ease-sanctions-and-reopen-fuel-flows"
+      ],
+      "data_source": "rss"
     }
   ]
 }
