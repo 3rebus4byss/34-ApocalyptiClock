@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-10-14 03:25:31 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-10-14 09:17:39 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 4.8,
-      "last_attempted": "2026-10-12 17:19:59 UTC",
-      "last_updated": "2026-10-12 17:19:59 UTC"
+      "last_attempted": "2026-10-14 09:17:39 UTC",
+      "last_updated": "2026-10-14 09:17:39 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,23 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-09-27 09:49:39 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "Headlines reflect ongoing coverage of the Ethiopian civil war and US-Iran tensions, with a new, isolated explosion in Athens not constituting a significant escalation of the 'Conflict' category. Diplomatic efforts are also highlighted, balancing potential negative movements.",
-      "sources": [
-        "https://www.aljazeera.com/economy/2026/9/27/can-iran-shift-trade-north-to-caspian-sea-as-war-impairs-strait-of-hormuz?traffic_source=rss",
-        "https://www.aljazeera.com/video/newsfeed/2026/9/27/djibouti-urges-world-to-help-as-yemen-war-drives-refugee-influx?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/9/27/ethiopias-army-promises-restraint-amid-fears-of-new-civil-war?traffic_source=rss",
-        "https://www.aljazeera.com/video/newsfeed/2026/9/27/did-the-biggest-week-of-diplomacy-make-headway-in-ending-the-us-iran-war?traffic_source=rss",
-        "https://www.bbc.co.uk/news/articles/c6p3kk78l4l1o?at_medium=RSS&at_campaign=rss",
-        "https://www.theguardian.com/world/2026/sep/26/greek-authorities-seek-answers-after-six-killed-in-athens-apartment-block-explosion"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-09-27 16:22:48 UTC",
       "category": "climate",
@@ -530,6 +513,19 @@
       "sources": [
         "https://www.theguardian.com/world/2026/oct/13/allies-did-not-warn-kyiv-of-russian-ballistic-missile-strikes-says-zelenskyy",
         "https://www.theguardian.com/us-news/live/2026/oct/13/donald-trump-ilhan-omar-katie-zacharia-alaska-midterms-latest-news-updates"
+      ],
+      "data_source": "rss"
+    },
+    {
+      "time": "2026-10-14 09:17:39 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines discuss the continued financial impact of US sanctions on Iran and uncertainty surrounding a potential Russia-Ukraine ceasefire announced by Trump, but do not indicate a material escalation beyond previously assessed trends in ongoing conflicts.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/10/14/how-do-iranians-move-money-abroad-to-avoid-us-sanctions?traffic_source=rss",
+        "https://www.npr.org/2026/10/12/nx-s1-5998808/trump-announced-a-partial-russia-ukraine-ceasefire-did-either-country-know-about-it"
       ],
       "data_source": "rss"
     }
