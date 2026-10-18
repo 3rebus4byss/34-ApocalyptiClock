@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-10-18 02:53:58 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-10-18 08:34:37 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 4.2,
-      "last_attempted": "2026-10-17 02:52:25 UTC",
-      "last_updated": "2026-10-17 02:52:25 UTC"
+      "cumulative_delta": 3.6,
+      "last_attempted": "2026-10-18 08:34:37 UTC",
+      "last_updated": "2026-10-18 08:34:37 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,19 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-10-02 03:53:49 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.55,
-      "direction": "worse",
-      "rationale": "New headlines indicate a significant escalation with the US moving 2,000 Marines to the Middle East and a tanker being hit in the Strait of Hormuz, directly amidst ongoing Iran war coverage. Additionally, Putin ruling out a ceasefire with Ukraine further exacerbates existing tensions.",
-      "sources": [
-        "https://www.aljazeera.com/news/liveblog/2026/10/2/iran-war-live-us-moves-2000-marines-to-middle-east-tanker-hit-in-hormuz?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/10/1/russias-putin-rules-out-ceasefire-with-ukraine-during-speech-in-moscow?traffic_source=rss"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-10-02 10:19:51 UTC",
       "category": "climate",
@@ -535,6 +522,20 @@
       "time": "2026-10-18 02:53:58 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-10-18 08:34:37 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": -0.65,
+      "direction": "worse",
+      "rationale": "Recent headlines indicate a concerning escalation of multiple ongoing conflicts, including an attack on ships near the UAE, drone activity near Riyadh, and intensified sanctions disputes between the US, Russia, and Ukraine, representing a significant material increase in global conflict risk.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/cxr5yvzv7rp0o?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/news/liveblog/2026/10/18/iran-war-live-tankers-hit-in-hormuz-israeli-settlers-attack-eu-diplomats?traffic_source=rss",
+        "https://www.npr.org/2026/10/17/nx-s1-6006745/us-sanctions-russia"
+      ],
+      "data_source": "rss"
     }
   ]
 }
