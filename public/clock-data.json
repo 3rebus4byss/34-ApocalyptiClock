@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-10-22 09:08:19 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-10-22 16:43:37 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,7 +13,7 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 2.0,
-      "last_attempted": "2026-10-21 03:12:51 UTC",
+      "last_attempted": "2026-10-22 16:43:37 UTC",
       "last_updated": "2026-10-21 03:12:51 UTC"
     },
     "climate": {
@@ -42,19 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-10-07 04:06:01 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.4,
-      "direction": "worse",
-      "rationale": "New headlines indicate continued or escalated active conflict, with Houthi missiles hitting Aden airport and South Korean fuel being shipped to Russia amidst the ongoing Ukraine war. These developments represent a concerning continuation and potential worsening of already established conflict zones.",
-      "sources": [
-        "https://www.aljazeera.com/news/liveblog/2026/10/7/iran-war-live-yemen-forces-claim-control-over-strategic-taiz-mountain-peak?traffic_source=rss",
-        "https://www.theguardian.com/world/2026/oct/06/oil-tankers-south-korea-russia-ukraine-war"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-10-07 15:03:14 UTC",
       "category": "climate",
@@ -516,6 +503,11 @@
     {
       "time": "2026-10-22 09:08:19 UTC",
       "category": "nuclear",
+      "status": "no_data"
+    },
+    {
+      "time": "2026-10-22 16:43:37 UTC",
+      "category": "conflict",
       "status": "no_data"
     }
   ]
