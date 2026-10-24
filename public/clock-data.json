@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-10-23 22:54:51 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-10-24 03:10:45 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 2.0,
-      "last_attempted": "2026-10-22 16:43:37 UTC",
-      "last_updated": "2026-10-21 03:12:51 UTC"
+      "cumulative_delta": 1.5,
+      "last_attempted": "2026-10-24 03:10:45 UTC",
+      "last_updated": "2026-10-24 03:10:45 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,22 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-10-09 04:27:20 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.25,
-      "direction": "worse",
-      "rationale": "New headlines highlight escalating conflict in Gaza, Ethiopia, and the ongoing war on Iran, with increased reports of civilian casualties and potential regional intervention, indicating a worsening trend beyond previously assessed levels.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/cmx2qlz7qrd4o?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/news/2026/10/9/will-ethiopias-neighbours-intervene-as-tigray-war-escalates?traffic_source=rss",
-        "https://www.aljazeera.com/news/liveblog/2026/10/9/iran-war-live-iranian-media-reports-massive-explosions-in-hormuz-strait?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/10/8/israel-kills-or-wounds-palestinian-every-90-minutes-in-gaza-since-ceasefire?traffic_source=rss",
-        "https://www.aljazeera.com/news/2026/10/8/putin-pledges-russias-support-to-end-us-led-war-on-iran?traffic_source=rss"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-10-09 14:57:26 UTC",
       "category": "climate",
@@ -515,6 +499,20 @@
       "time": "2026-10-23 22:54:51 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-10-24 03:10:45 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": -0.5,
+      "direction": "better",
+      "rationale": "The agreement to a localized ceasefire between Russia and Ukraine, brokered by Melania Trump, represents a significant de-escalation, counteracting ongoing regional tensions highlighted by the Saudi interception of a Houthi missile.",
+      "sources": [
+        "https://www.aljazeera.com/video/newsfeed/2026/10/23/russia-ukraine-agree-to-melania-trump-brokered-localised-ceasefire?traffic_source=rss",
+        "https://www.theguardian.com/world/live/2026/oct/23/starlink-ukraine-musk-trump-russia-black-sea-strikes-france-milan-europe-protests-latest-news-updates",
+        "https://www.aljazeera.com/news/liveblog/2026/10/24/iran-war-live-israel-launches-targeted-hebron-operation-after-attack?traffic_source=rss"
+      ],
+      "data_source": "rss"
     }
   ]
 }
