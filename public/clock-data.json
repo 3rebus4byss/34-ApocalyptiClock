@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-10-26 09:39:50 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-10-26 18:10:17 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 1.5,
-      "last_attempted": "2026-10-25 08:57:49 UTC",
-      "last_updated": "2026-10-25 08:57:49 UTC"
+      "cumulative_delta": 1.8,
+      "last_attempted": "2026-10-26 18:10:17 UTC",
+      "last_updated": "2026-10-26 18:10:17 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,20 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-10-12 17:19:59 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.35,
-      "direction": "worse",
-      "rationale": "Despite an announced 'energy ceasefire' between Russia and Ukraine, headlines indicate continued Russian strikes on Ukrainian energy sites, contradicting the ceasefire. Additionally, renewed Houthi attacks hitting Riyadh airport suggest escalation in that conflict zone.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/cvlyd4pdlwkxo?at_medium=RSS&at_campaign=rss",
-        "https://www.theguardian.com/world/live/2026/oct/12/ukraine-russia-trump-energy-ceasefire-nato-zelenskyy-nobel-latest-news-updates",
-        "https://www.theguardian.com/world/2026/oct/11/saudi-coalition-retaliation-houthi-attack-riyadh-airport"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-10-13 01:48:55 UTC",
       "category": "climate",
@@ -507,6 +493,19 @@
       "time": "2026-10-26 09:39:50 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-10-26 18:10:17 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.25,
+      "direction": "worse",
+      "rationale": "New headlines indicate a concerning escalation with Algeria deploying troops to Niger and the UN labeling Russian attacks on Ukrainian infrastructure as war crimes, suggesting a widening and intensifying conflict landscape.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/10/26/algerias-president-orders-troop-deployment-to-neighbouring-niger?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/10/26/russian-attacks-on-ukraines-energy-infrastructure-a-war-crime-un?traffic_source=rss"
+      ],
+      "data_source": "rss"
     }
   ]
 }
