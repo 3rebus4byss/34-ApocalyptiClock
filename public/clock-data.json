@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-10-31 16:46:26 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-10-31 23:03:42 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 1.9,
-      "last_attempted": "2026-10-30 04:12:52 UTC",
-      "last_updated": "2026-10-30 04:12:52 UTC"
+      "last_attempted": "2026-10-31 23:03:42 UTC",
+      "last_updated": "2026-10-31 23:03:42 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,19 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-10-17 02:52:25 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": -0.55,
-      "direction": "worse",
-      "rationale": "The headlines indicate a significant escalation in several conflict zones: a Houthi attack on the Yemeni presidential palace resulting in deaths, and an IRGC report of a naval mine attack on an Iranian supertanker in the Strait of Hormuz, both representing new, serious developments.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/cm62y6lp73zdo?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/news/liveblog/2026/10/17/draft-2?traffic_source=rss"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-10-17 08:14:09 UTC",
       "category": "climate",
@@ -488,6 +475,19 @@
       "time": "2026-10-31 16:46:26 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-10-31 23:03:42 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines discuss UK sanctions on Sudanese military leaders and a report on Gulf states rethinking defense in light of US-Iran war, but these do not represent a new escalation beyond previously assessed situations and the Ukraine ceasefire continues to offer a de-escalatory element.",
+      "sources": [
+        "https://www.theguardian.com/global-development/2026/oct/26/uk-sanctions-sudanese-military-leaders-implicated-in-el-fasher-campaign-of",
+        "https://www.theguardian.com/world/2026/oct/30/gulf-states-rethink-trillion-dollar-defence-us-iran-war-iiss-report"
+      ],
+      "data_source": "rss"
     }
   ]
 }
