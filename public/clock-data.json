@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-11-02 17:48:59 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-11-03 02:01:48 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -12,9 +12,9 @@
     },
     "conflict": {
       "label": "Conflict",
-      "cumulative_delta": 1.9,
-      "last_attempted": "2026-10-31 23:03:42 UTC",
-      "last_updated": "2026-10-31 23:03:42 UTC"
+      "cumulative_delta": 2.1,
+      "last_attempted": "2026-11-03 02:01:48 UTC",
+      "last_updated": "2026-11-03 02:01:48 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,20 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-10-18 08:34:37 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": -0.65,
-      "direction": "worse",
-      "rationale": "Recent headlines indicate a concerning escalation of multiple ongoing conflicts, including an attack on ships near the UAE, drone activity near Riyadh, and intensified sanctions disputes between the US, Russia, and Ukraine, representing a significant material increase in global conflict risk.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/cxr5yvzv7rp0o?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/news/liveblog/2026/10/18/iran-war-live-tankers-hit-in-hormuz-israeli-settlers-attack-eu-diplomats?traffic_source=rss",
-        "https://www.npr.org/2026/10/17/nx-s1-6006745/us-sanctions-russia"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-10-18 15:21:27 UTC",
       "category": "climate",
@@ -488,6 +474,20 @@
       "time": "2026-11-02 17:48:59 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-11-03 02:01:48 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.2,
+      "direction": "worse",
+      "rationale": "The return of fighting in Kherson, Ukraine, after the recent ceasefire, indicates a direct escalation of a major conflict previously showing de-escalatory signs. This outweighs continued, albeit positive, diplomatic efforts regarding Iran.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/ckg5jlyp66jzo?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/news/liveblog/2026/11/3/iran-war-live-vance-sees-progress-in-talks-tehran-says-ball-in-us-court?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/11/2/iran-pushing-accelerated-plan-for-ceasefire-talks-with-us?traffic_source=rss"
+      ],
+      "data_source": "rss"
     }
   ]
 }
