@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-11-10 21:39:44 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-11-11 04:31:45 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 2.1,
-      "last_attempted": "2026-11-08 14:47:59 UTC",
-      "last_updated": "2026-11-06 23:58:14 UTC"
+      "last_attempted": "2026-11-11 04:31:45 UTC",
+      "last_updated": "2026-11-11 04:31:45 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,20 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-10-24 03:10:45 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": -0.5,
-      "direction": "better",
-      "rationale": "The agreement to a localized ceasefire between Russia and Ukraine, brokered by Melania Trump, represents a significant de-escalation, counteracting ongoing regional tensions highlighted by the Saudi interception of a Houthi missile.",
-      "sources": [
-        "https://www.aljazeera.com/video/newsfeed/2026/10/23/russia-ukraine-agree-to-melania-trump-brokered-localised-ceasefire?traffic_source=rss",
-        "https://www.theguardian.com/world/live/2026/oct/23/starlink-ukraine-musk-trump-russia-black-sea-strikes-france-milan-europe-protests-latest-news-updates",
-        "https://www.aljazeera.com/news/liveblog/2026/10/24/iran-war-live-israel-launches-targeted-hebron-operation-after-attack?traffic_source=rss"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-10-24 08:38:34 UTC",
       "category": "climate",
@@ -468,6 +454,22 @@
       "time": "2026-11-10 21:39:44 UTC",
       "category": "nuclear",
       "status": "no_data"
+    },
+    {
+      "time": "2026-11-11 04:31:45 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines report on ongoing situations like the Iran war and potential renewed conflict in Tigray, and also on diplomatic efforts, but present no significant new escalation or de-escalation events beyond what has already been assessed.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/cwm262pzezy0o?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/video/newsfeed/2026/11/11/aje-onl-nf_iran-opens-training-camp-for-women-101126?traffic_source=rss",
+        "https://www.aljazeera.com/news/2026/11/11/tigray-displaced-families-fear-renewed-war-as-hopes-of-returning-home-fade?traffic_source=rss",
+        "https://www.aljazeera.com/news/liveblog/2026/11/11/iran-war-live-hegseth-survives-impeachment-bid-iran-denies-us-talks?traffic_source=rss",
+        "https://www.npr.org/2026/11/10/nx-s1-6034616/kushner-and-witkoff-renew-peace-talks-to-end-war-between-russia-and-ukraine"
+      ],
+      "data_source": "rss"
     }
   ]
 }
