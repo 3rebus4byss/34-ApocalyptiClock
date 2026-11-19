@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-11-19 12:27:10 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-11-19 22:55:21 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 1.7,
-      "last_attempted": "2026-11-17 12:47:39 UTC",
-      "last_updated": "2026-11-17 12:47:39 UTC"
+      "last_attempted": "2026-11-19 22:55:21 UTC",
+      "last_updated": "2026-11-19 22:55:21 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,20 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-10-30 04:12:52 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.15,
-      "direction": "worse",
-      "rationale": "Headlines indicate new or intensified conflicts with US sanctions on Rwanda over DR Congo, Ethiopia acquiring Russian military equipment amid the Tigray war, and Iranian tankers struck by mines in the Strait of Hormuz, collectively suggesting a worsening conflict situation.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/cm87zw51qw0jo?at_medium=RSS&at_campaign=rss",
-        "https://www.bbc.co.uk/news/articles/cw78prj801pvo?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/news/liveblog/2026/10/30/iran-war-live-irgc-says-four-tankers-struck-mines-in-strait-of-hormuz?traffic_source=rss"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-10-30 14:47:47 UTC",
       "category": "climate",
@@ -468,6 +454,20 @@
       "rationale": "North Korea's expansion of its uranium enrichment facility, as reported by the UN nuclear watchdog, indicates a concerning advancement in its nuclear program, suggesting an escalation beyond previous concerns.",
       "sources": [
         "https://www.aljazeera.com/news/2026/11/19/north-korea-expanding-uranium-enrichment-facility-un-nuclear-watchdog-says?traffic_source=rss"
+      ],
+      "data_source": "rss"
+    },
+    {
+      "time": "2026-11-19 22:55:21 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines indicate ongoing diplomatic efforts for Ukraine, continued underground fighting, and US political maneuvering regarding war powers, but these represent continuations of existing conflicts and do not signal a significant new escalation or de-escalation.",
+      "sources": [
+        "https://www.bbc.co.uk/news/articles/ckzd9nln5e6go?at_medium=RSS&at_campaign=rss",
+        "https://www.bbc.co.uk/news/videos/c8p3vw4q6nzzo?at_medium=RSS&at_campaign=rss",
+        "https://www.aljazeera.com/news/2026/11/19/senate-republicans-in-us-reject-measure-to-limit-trumps-war-powers-in-iran?traffic_source=rss"
       ],
       "data_source": "rss"
     }
