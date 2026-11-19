@@ -1,14 +1,14 @@
 {
   "baseline": 85.0,
-  "rotation_index": 0,
-  "last_run_category": "human_factors",
-  "last_run_time": "2026-11-19 01:42:02 UTC",
+  "rotation_index": 1,
+  "last_run_category": "nuclear",
+  "last_run_time": "2026-11-19 12:27:10 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
-      "cumulative_delta": -0.2,
-      "last_attempted": "2026-11-17 02:47:29 UTC",
-      "last_updated": "2026-10-14 03:25:31 UTC"
+      "cumulative_delta": -0.5,
+      "last_attempted": "2026-11-19 12:27:10 UTC",
+      "last_updated": "2026-11-19 12:27:10 UTC"
     },
     "conflict": {
       "label": "Conflict",
@@ -42,11 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-10-29 20:53:15 UTC",
-      "category": "nuclear",
-      "status": "no_data"
-    },
     {
       "time": "2026-10-30 04:12:52 UTC",
       "category": "conflict",
@@ -463,6 +458,18 @@
       "time": "2026-11-19 01:42:02 UTC",
       "category": "human_factors",
       "status": "no_data"
+    },
+    {
+      "time": "2026-11-19 12:27:10 UTC",
+      "category": "nuclear",
+      "status": "updated",
+      "delta": -0.3,
+      "direction": "worse",
+      "rationale": "North Korea's expansion of its uranium enrichment facility, as reported by the UN nuclear watchdog, indicates a concerning advancement in its nuclear program, suggesting an escalation beyond previous concerns.",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/11/19/north-korea-expanding-uranium-enrichment-facility-un-nuclear-watchdog-says?traffic_source=rss"
+      ],
+      "data_source": "rss"
     }
   ]
 }
