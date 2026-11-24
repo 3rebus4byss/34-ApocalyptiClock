@@ -1,14 +1,14 @@
 {
   "baseline": 85.0,
-  "rotation_index": 0,
-  "last_run_category": "human_factors",
-  "last_run_time": "2026-11-23 19:47:56 UTC",
+  "rotation_index": 1,
+  "last_run_category": "nuclear",
+  "last_run_time": "2026-11-24 04:36:03 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
       "cumulative_delta": -0.5,
-      "last_attempted": "2026-11-21 21:26:22 UTC",
-      "last_updated": "2026-11-21 21:26:22 UTC"
+      "last_attempted": "2026-11-24 04:36:03 UTC",
+      "last_updated": "2026-11-24 04:36:03 UTC"
     },
     "conflict": {
       "label": "Conflict",
@@ -42,11 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-11-02 17:48:59 UTC",
-      "category": "nuclear",
-      "status": "no_data"
-    },
     {
       "time": "2026-11-03 02:01:48 UTC",
       "category": "conflict",
@@ -470,6 +465,18 @@
       "time": "2026-11-23 19:47:56 UTC",
       "category": "human_factors",
       "status": "no_data"
+    },
+    {
+      "time": "2026-11-24 04:36:03 UTC",
+      "category": "nuclear",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "The headline discusses a UK politician backing a report that supports NATO membership and maintaining nuclear weapons, which is a statement of existing policy and doctrine and does not represent a new development in the nuclear threat.",
+      "sources": [
+        "https://www.theguardian.com/politics/2026/nov/24/zack-polanski-backs-report-endorsing-nato-membership-maintaining-nuclear-weapons"
+      ],
+      "data_source": "rss"
     }
   ]
 }
