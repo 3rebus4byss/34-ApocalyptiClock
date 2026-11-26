@@ -1,14 +1,14 @@
 {
   "baseline": 85.0,
-  "rotation_index": 0,
-  "last_run_category": "human_factors",
-  "last_run_time": "2026-11-26 07:34:43 UTC",
+  "rotation_index": 1,
+  "last_run_category": "nuclear",
+  "last_run_time": "2026-11-26 18:05:27 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
-      "cumulative_delta": -0.5,
-      "last_attempted": "2026-11-24 04:36:03 UTC",
-      "last_updated": "2026-11-24 04:36:03 UTC"
+      "cumulative_delta": -0.7,
+      "last_attempted": "2026-11-26 18:05:27 UTC",
+      "last_updated": "2026-11-26 18:05:27 UTC"
     },
     "conflict": {
       "label": "Conflict",
@@ -42,11 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-11-04 19:20:12 UTC",
-      "category": "nuclear",
-      "status": "no_data"
-    },
     {
       "time": "2026-11-05 00:43:25 UTC",
       "category": "conflict",
@@ -485,6 +480,18 @@
       "time": "2026-11-26 07:34:43 UTC",
       "category": "human_factors",
       "status": "no_data"
+    },
+    {
+      "time": "2026-11-26 18:05:27 UTC",
+      "category": "nuclear",
+      "status": "updated",
+      "delta": -0.2,
+      "direction": "worse",
+      "rationale": "Kim Jong Un's vow to build more nuclear weapons, directly ignoring diplomatic overtures, represents a clear escalation of North Korea's nuclear ambitions beyond previously reported facility expansions.",
+      "sources": [
+        "https://www.npr.org/2026/11/26/g-s1-155955/north-korea-kim-nuclear-weapons-trump"
+      ],
+      "data_source": "rss"
     }
   ]
 }
