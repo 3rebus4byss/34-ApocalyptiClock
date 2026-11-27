@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 2,
-  "last_run_category": "conflict",
-  "last_run_time": "2026-11-27 02:39:51 UTC",
+  "rotation_index": 3,
+  "last_run_category": "climate",
+  "last_run_time": "2026-11-27 13:27:39 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -19,8 +19,8 @@
     "climate": {
       "label": "Climate",
       "cumulative_delta": -4.5,
-      "last_attempted": "2026-11-25 03:23:00 UTC",
-      "last_updated": "2026-11-20 05:36:14 UTC"
+      "last_attempted": "2026-11-27 13:27:39 UTC",
+      "last_updated": "2026-11-27 13:27:39 UTC"
     },
     "biosecurity": {
       "label": "Biosecurity",
@@ -42,11 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-11-05 11:52:08 UTC",
-      "category": "climate",
-      "status": "no_data"
-    },
     {
       "time": "2026-11-05 19:27:59 UTC",
       "category": "biosecurity",
@@ -488,6 +483,18 @@
         "https://www.aljazeera.com/video/newsfeed/2026/11/27/inside-ukraines-power-crisis-amid-its-war-with-russia?traffic_source=rss",
         "https://www.aljazeera.com/news/liveblog/2026/11/27/iran-war-live-irans-araghchi-calls-deadly-kuwait-attack-suspicious?traffic_source=rss",
         "https://www.theguardian.com/world/2026/nov/26/israel-officially-sanctions-torture-palestinian-prisoners-confessions-report"
+      ],
+      "data_source": "rss"
+    },
+    {
+      "time": "2026-11-27 13:27:39 UTC",
+      "category": "climate",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "The headline describes severe weather in the US, which is a common occurrence and does not represent a new or escalating climate-related event beyond what is already implicitly accounted for in the ongoing climate crisis.",
+      "sources": [
+        "https://www.theguardian.com/us-news/2026/nov/27/heavy-rain-wind-flooding-us-thanksgiving"
       ],
       "data_source": "rss"
     }
