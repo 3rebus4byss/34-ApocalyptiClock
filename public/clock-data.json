@@ -1,8 +1,8 @@
 {
   "baseline": 85.0,
-  "rotation_index": 1,
-  "last_run_category": "nuclear",
-  "last_run_time": "2026-11-26 18:05:27 UTC",
+  "rotation_index": 2,
+  "last_run_category": "conflict",
+  "last_run_time": "2026-11-27 02:39:51 UTC",
   "categories": {
     "nuclear": {
       "label": "Nuclear",
@@ -13,8 +13,8 @@
     "conflict": {
       "label": "Conflict",
       "cumulative_delta": 1.9,
-      "last_attempted": "2026-11-24 19:18:38 UTC",
-      "last_updated": "2026-11-24 19:18:38 UTC"
+      "last_attempted": "2026-11-27 02:39:51 UTC",
+      "last_updated": "2026-11-27 02:39:51 UTC"
     },
     "climate": {
       "label": "Climate",
@@ -42,22 +42,6 @@
     }
   },
   "history": [
-    {
-      "time": "2026-11-05 00:43:25 UTC",
-      "category": "conflict",
-      "status": "updated",
-      "delta": 0.0,
-      "direction": "steady",
-      "rationale": "Headlines indicate continued discussion and blame regarding the Iran war's impact on US elections, and a brief mention of the Kherson ceasefire, but no new escalations or de-escalations are evident beyond previously assessed events.",
-      "sources": [
-        "https://www.bbc.co.uk/news/articles/c6d934npl9y8o?at_medium=RSS&at_campaign=rss",
-        "https://www.aljazeera.com/news/liveblog/2026/11/5/iran-war-live-trump-admits-war-caused-election-loss-but-had-to-do-it?traffic_source=rss",
-        "https://www.aljazeera.com/video/newsfeed/2026/11/4/trump-blames-iran-war-for-midterms-losses?traffic_source=rss",
-        "https://www.aljazeera.com/news/liveblog/2026/11/4/us-midterm-election-results-live-trump-reacts-as-more-results-awaited?traffic_source=rss",
-        "https://www.npr.org/2026/11/03/g-s1-151238/ukraine-russia-ceasefire-oleshky-kherson"
-      ],
-      "data_source": "rss"
-    },
     {
       "time": "2026-11-05 11:52:08 UTC",
       "category": "climate",
@@ -490,6 +474,20 @@
       "rationale": "Kim Jong Un's vow to build more nuclear weapons, directly ignoring diplomatic overtures, represents a clear escalation of North Korea's nuclear ambitions beyond previously reported facility expansions.",
       "sources": [
         "https://www.npr.org/2026/11/26/g-s1-155955/north-korea-kim-nuclear-weapons-trump"
+      ],
+      "data_source": "rss"
+    },
+    {
+      "time": "2026-11-27 02:39:51 UTC",
+      "category": "conflict",
+      "status": "updated",
+      "delta": 0.0,
+      "direction": "steady",
+      "rationale": "Headlines indicate ongoing conflicts such as the Iran war and the situation in Ukraine, with reports of casualties and continued accusations, but these do not represent a significant new escalation or de-escalation beyond what has already been factored into the cumulative standing.",
+      "sources": [
+        "https://www.aljazeera.com/video/newsfeed/2026/11/27/inside-ukraines-power-crisis-amid-its-war-with-russia?traffic_source=rss",
+        "https://www.aljazeera.com/news/liveblog/2026/11/27/iran-war-live-irans-araghchi-calls-deadly-kuwait-attack-suspicious?traffic_source=rss",
+        "https://www.theguardian.com/world/2026/nov/26/israel-officially-sanctions-torture-palestinian-prisoners-confessions-report"
       ],
       "data_source": "rss"
     }
